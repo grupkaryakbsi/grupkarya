@@ -526,9 +526,9 @@
             <div class="form-group"><label>Jenis Prestasi *</label>
                 <select id="pointTypeSelect">
                     <option value="">-- Pilih Jenis --</option>
-                    <option value="latihan">📚 Latihan Wajib (+10 poin)</option>
-                    <option value="karya">🎨 Karya (+15 poin)</option>
-                    <option value="lomba">🏆 Lomba (+20 poin)</option>
+                    <option value="latihan">📚 Latihan Wajib (+30 poin)</option>
+                    <option value="karya">🎨 Karya (+50 poin)</option>
+                    <option value="lomba">🏆 Lomba (+70 poin)</option>
                 </select>
             </div>
             <div class="form-group"><label>Deskripsi Prestasi *</label><textarea id="pointDesc" rows="3" placeholder="Juara 1 Lomba Fotografi..."></textarea></div>
@@ -1351,7 +1351,7 @@ function renderCVProfile(){
     else{
         achDiv.innerHTML='';[...currentUser.achievements].reverse().forEach(a=>{
             const cls=a.type==='latihan'?'point-latihan':a.type==='karya'?'point-karya':'point-lomba';
-            const pts=a.type==='latihan'?'+10':a.type==='karya'?'+15':'+20';
+            const pts=a.type==='latihan'?'+30':a.type==='karya'?'+50':'+70';
             achDiv.innerHTML+=`<div style="background:var(--bg-main);padding:14px;border-radius:10px;margin-bottom:10px;border-left:4px solid var(--success)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:8px"><span class="point-badge ${cls}">${a.type} ${pts} poin</span><span style="font-size:.8rem;color:var(--text-secondary)">${new Date(a.timestamp).toLocaleDateString('id-ID')}</span></div><div style="font-size:.9rem;color:var(--text-primary)">${a.description}</div></div>`;
         });
     }
@@ -1401,7 +1401,7 @@ function downloadCV(){
         section('RIWAYAT PRESTASI');doc.setFontSize(10);doc.setFont(undefined,'normal');
         currentUser.achievements.forEach((a,i)=>{
             if(y>270){doc.addPage();y=20;}
-            const typeLabel=a.type==='latihan'?'Latihan':a.type==='karya'?'Karya':'Lomba',pts=a.type==='latihan'?10:a.type==='karya'?15:20;
+            const typeLabel=a.type==='latihan'?'Latihan':a.type==='karya'?'Karya':'Lomba',pts=a.type==='latihan'?30:a.type==='karya'?50:20;
             doc.setFont(undefined,'bold');doc.text(`${i+1}. [${typeLabel} +${pts} poin]`,20,y);doc.setFont(undefined,'normal');y+=7;
             const lines=doc.splitTextToSize(a.description,160);doc.text(lines,25,y);y+=lines.length*6+3;
         });
@@ -1429,7 +1429,7 @@ async function submitAddPoints(){
     const type=document.getElementById('pointTypeSelect').value,desc=document.getElementById('pointDesc').value.trim();
     if(!teamId||!nim||!type||!desc){alert('Semua field wajib diisi!');return;}showLoading();
     try{
-        const pts=type==='latihan'?10:type==='karya'?15:20;
+        const pts=type==='latihan'?30:type==='karya'?50:20;
         const team=allTeams.find(t=>t.id===teamId),member=allUsers.find(u=>u.nim===nim);
         const newAch=[...(member.achievements||[]),{type,description:desc,points:pts,timestamp:Date.now()}];
         const newLog=[...(member.point_logs||[]),{type,description:desc,points:pts,timestamp:Date.now()}];

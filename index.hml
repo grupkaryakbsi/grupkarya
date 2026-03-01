@@ -192,7 +192,7 @@
         .post-action-btn:hover{background:var(--secondary);color:var(--primary)}
         .post-action-btn.liked{color:var(--danger)}
         .post-delete-btn{background:var(--danger);color:#fff;padding:8px 16px;border-radius:20px;font-size:.85rem;border:none;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif}
-        /* Avatar di post — klikable */
+        /* Avatar di post Â— klikable */
         .post-avatar-link{cursor:pointer;transition:transform .2s;flex-shrink:0}
         .post-avatar-link:hover{transform:scale(1.08)}
 
@@ -372,7 +372,7 @@
              style="height:55px;object-fit:contain;margin-bottom:12px;filter:drop-shadow(0 2px 8px rgba(255,255,255,.15))"
              onerror="this.style.display='none'">
         <p style="font-size:1.2rem;font-weight:800">GRUP KARYA</p>
-        <p style="opacity:.6;margin-top:8px;font-weight:600">© 2026 Platform Kolaborasi Mahasiswa</p>
+        <p style="opacity:.6;margin-top:8px;font-weight:600">Â© 2026 Platform Kolaborasi Mahasiswa</p>
     </footer>
 
     <!-- LOGIN MODAL -->
@@ -715,7 +715,7 @@
                         <span style="color:var(--text-primary);font-size:.9rem;font-weight:600" id="badgePreviewNameSmall">Nama Lencana</span>
                     </div>
                     <div style="margin-top:20px;padding:15px;background:var(--bg-main);border-radius:12px;border:2px dashed var(--border-color);width:100%;font-size:.85rem;color:var(--text-secondary)">
-                        ?? <strong>Tips:</strong><br>• Emoji untuk lencana ringan<br>• Foto untuk lencana spesial<br>• Pilih warna yang kontras
+                        ?? <strong>Tips:</strong><br>Â• Emoji untuk lencana ringan<br>Â• Foto untuk lencana spesial<br>Â• Pilih warna yang kontras
                     </div>
                 </div>
             </div>
@@ -818,7 +818,7 @@
                     <div class="game-card-icon">??</div>
                     <div class="game-card-name">Wharewolf</div>
                     <div class="game-card-desc">Game role-playing online multiplayer. Temukan siapa serigala di antara kalian melalui analisis bahasa & argumentasi!</div>
-                    <div class="game-card-badge">6–12 Pemain • Multiplayer</div>
+                    <div class="game-card-badge">6Â–12 Pemain Â• Multiplayer</div>
                 </div>
                 <!-- Slot game berikutnya -->
                 <div class="game-card" style="opacity:.45;cursor:not-allowed" onclick="alert('Game ini belum tersedia. Segera hadir!')">
@@ -856,7 +856,7 @@
                 <div style="font-size:3rem;margin-bottom:10px">?</div>
                 <h3 style="font-size:1.5rem;margin-bottom:10px">Ruang Tunggu</h3>
                 <div id="wwRoomCodeDisplay" class="ww-room-code">----</div>
-                <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:20px">Bagikan kode ini ke teman-temanmu (6–12 pemain)</p>
+                <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:20px">Bagikan kode ini ke teman-temanmu (6Â–12 pemain)</p>
                 <div id="wwWaitingPlayers" class="ww-player-lobby-list"></div>
                 <p id="wwWaitingStatus" style="color:rgba(255,255,255,.5);font-size:.85rem;margin:15px 0">Menunggu pemain bergabung...</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -1100,7 +1100,7 @@ async function goToJoinList(){
             onmouseover="this.style.background='var(--secondary)'" onmouseout="this.style.background='transparent'"
             onclick="selectTeam(${t.id},this)">
             <div style="font-weight:700">${t.name}</div>
-            <div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} • ${t.points} poin • ${members.length} anggota</div>
+            <div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} Â• ${t.points} poin Â• ${members.length} anggota</div>
         </div>`;
     });
     if(!data?.length)container.innerHTML='<p style="text-align:center;padding:20px;color:var(--text-secondary)">Belum ada tim tersedia</p>';
@@ -1148,7 +1148,7 @@ async function finalCreateTeam(){
 }
 
 /* ============================================================
-   LEADERBOARD TABLE — dengan baris klikable
+   LEADERBOARD TABLE Â— dengan baris klikable
 ============================================================ */
 function renderTables(){
     const sorted=[...allTeams].sort((a,b)=>b.points-a.points);
@@ -1178,7 +1178,7 @@ function renderTables(){
 }
 
 /* ============================================================
-   CHART — FIX: Gunakan data point_logs real dari database
+   CHART Â— FIX: Gunakan data point_logs real dari database
    Kumpulkan semua point_logs dari semua users,
    group per hari/bulan, lalu tampilkan sebagai grafik akumulasi
 ============================================================ */
@@ -1259,7 +1259,7 @@ function changeTimeFilter(filter,event){
 }
 
 /* ============================================================
-   FEED — Foto profil + klik ke profil poster
+   FEED Â— Foto profil + klik ke profil poster
 ============================================================ */
 function previewImage(event){
     const file=event.target.files[0];if(!file)return;
@@ -1321,7 +1321,7 @@ function createPostCard(post){
             </div>
             <div class="post-user-info" style="cursor:${posterUser?'pointer':'default'}" ${posterUser?`onclick="openViewProfile('${post.author_nim}')"`:''}>
                 <div class="post-user-name">${post.author_name}</div>
-                <div class="post-user-meta">?? ${post.author_team} • ?? ${getTimeAgo(post.timestamp)}</div>
+                <div class="post-user-meta">?? ${post.author_team} Â• ?? ${getTimeAgo(post.timestamp)}</div>
             </div>
             ${canDelete?`<button class="post-delete-btn" onclick="deletePost(${post.id})">??? Hapus</button>`:''}
         </div>
@@ -1426,7 +1426,7 @@ async function deletePost(postId){
 }
 
 /* ============================================================
-   FITUR BARU: SEARCH MODAL — Cari Pengguna
+   FITUR BARU: SEARCH MODAL Â— Cari Pengguna
 ============================================================ */
 function openSearchModal(){
     openModal('searchModal');
@@ -1474,7 +1474,7 @@ function renderSearchResults(users){
 }
 
 /* ============================================================
-   FITUR BARU: VIEW PROFILE — Lihat profil orang lain (read-only)
+   FITUR BARU: VIEW PROFILE Â— Lihat profil orang lain (read-only)
 ============================================================ */
 function openViewProfile(nim){
     const u=allUsers.find(x=>x.nim===nim);
@@ -1630,7 +1630,7 @@ function renderTeamMembers(teamName){
         const role=m.team_roles?.[teamName]||'Anggota';
         const isSelf=currentUser&&m.nim===currentUser.nim?' <span style="color:var(--primary);font-size:.85rem">(Anda)</span>':'';
         c.innerHTML+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px dotted var(--border-color)">
-            <div><span style="color:var(--text-primary);font-weight:600">${m.name}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim} • ${m.points} poin</div></div>
+            <div><span style="color:var(--text-primary);font-weight:600">${m.name}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim} Â• ${m.points} poin</div></div>
             <span class="${role==='Ketua'?'role-ketua':'role-anggota'}">${role}</span>
         </div>`;
     });
@@ -2045,7 +2045,7 @@ async function adminDeleteTeam(){
     allTeams.forEach(t=>{
         const members=allUsers.filter(u=>u.teams?.includes(t.name)).length;
         const div=document.createElement('div');div.style.cssText='background:var(--bg-card);padding:15px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border-color)';
-        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${t.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} • ${t.points} poin • ${members} anggota</div></div><button onclick="confirmDeleteTeam(${t.id})" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">??? Hapus</button>`;
+        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${t.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} Â• ${t.points} poin Â• ${members} anggota</div></div><button onclick="confirmDeleteTeam(${t.id})" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">??? Hapus</button>`;
         container.appendChild(div);
     });openModal('deleteTeamModal');
 }
@@ -2081,7 +2081,7 @@ async function adminDeletePost(){
     if(!allPosts.length){container.innerHTML='<p style="text-align:center;padding:30px;color:var(--text-secondary)">Belum ada postingan</p>';openModal('deletePostModal');return;}
     allPosts.forEach(p=>{
         const div=document.createElement('div');div.style.cssText='background:var(--bg-card);padding:15px;border-radius:10px;margin-bottom:10px;border:1px solid var(--border-color)';
-        div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div style="flex:1"><div style="font-weight:700;color:var(--text-primary)">${p.author_name}</div><div style="font-size:.8rem;color:var(--text-secondary);margin-bottom:8px">${p.author_team} • ${getTimeAgo(p.timestamp)}</div><div style="color:var(--text-primary);font-size:.9rem;line-height:1.5">${p.content?(p.content.length>100?p.content.substring(0,100)+'...':p.content):'<em style="color:var(--text-secondary)">Hanya foto</em>'}</div>${p.image?'<div style="margin-top:6px;font-size:.8rem;color:var(--primary)">??? Ada foto</div>':''}</div><button onclick="confirmDeletePost(${p.id})" style="padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">???</button></div>`;
+        div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div style="flex:1"><div style="font-weight:700;color:var(--text-primary)">${p.author_name}</div><div style="font-size:.8rem;color:var(--text-secondary);margin-bottom:8px">${p.author_team} Â• ${getTimeAgo(p.timestamp)}</div><div style="color:var(--text-primary);font-size:.9rem;line-height:1.5">${p.content?(p.content.length>100?p.content.substring(0,100)+'...':p.content):'<em style="color:var(--text-secondary)">Hanya foto</em>'}</div>${p.image?'<div style="margin-top:6px;font-size:.8rem;color:var(--primary)">??? Ada foto</div>':''}</div><button onclick="confirmDeletePost(${p.id})" style="padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">???</button></div>`;
         container.appendChild(div);
     });openModal('deletePostModal');
 }
@@ -2108,7 +2108,7 @@ async function downloadExcelData(){
    BOOT
 ============================================================ */
 /* ============================================================
-   GAME MODULE — WHAREWOLF
+   GAME MODULE Â— WHAREWOLF
    Tabel Supabase: ww_rooms, ww_players, ww_messages, ww_actions
    Semua terhapus otomatis setelah game selesai
 ============================================================ */
@@ -2160,7 +2160,7 @@ const WW_CLUES_POET = [
     "Ia menyelinap di antara kata-kata,\nbersembunyi dalam metafora gelap.",
     "Di padang sunyi ia berburu,\nmenyamar sebagai penjaga pagi.",
     "Taring tersembunyi di balik senyum,\nbulu halus menutupi cakar tajam.",
-    "Gelapnya bukan malam—\nmelainkan jiwa yang memilih diam.",
+    "Gelapnya bukan malamÂ—\nmelainkan jiwa yang memilih diam.",
     "Ia minum dari sumur yang sama,\nnamun menuangkan racun di malam hari.",
 ];
 const WW_CLUES_JOURNALIST = [
@@ -2261,12 +2261,12 @@ function wwShowLobby(){
                     oninput="this.value=this.value.toUpperCase()">
                 <button onclick="wwJoinRoom()" style="padding:14px 20px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;cursor:pointer;font-weight:800;font-family:'Nunito',sans-serif">Masuk</button>
             </div>
-            <div style="color:rgba(255,255,255,.4);font-size:.8rem;text-align:center">Butuh 6–12 pemain untuk memulai</div>
+            <div style="color:rgba(255,255,255,.4);font-size:.8rem;text-align:center">Butuh 6Â–12 pemain untuk memulai</div>
         </div>`;
 }
 
 /* ============================================================
-   ROOM MANAGEMENT — Supabase
+   ROOM MANAGEMENT Â— Supabase
 ============================================================ */
 async function wwCreateRoom(){
     showLoading();
@@ -2512,7 +2512,7 @@ function wwBuildMsgEl(m){
     div.className=`ww-msg ${cls}`;
     div.innerHTML=`${senderLabel}<div>${m.content}</div><div class="msg-time">${new Date(m.created_at).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})}</div>`;
 
-    // Keyword scoring — hanya untuk pesan pemain biasa
+    // Keyword scoring Â— hanya untuk pesan pemain biasa
     if(m.type==='chat'&&m.sender_nim===wwState.myNim){
         const lc=m.content.toLowerCase();
         const hit=WW_TRIGGER_KEYWORDS.filter(kw=>lc.includes(kw)).length;
@@ -2570,7 +2570,7 @@ function wwUpdateScoreDisplay(){
 }
 
 /* ============================================================
-   ACTION PANEL — berdasarkan fase & peran
+   ACTION PANEL Â— berdasarkan fase & peran
 ============================================================ */
 function wwRenderActionPanel(){
     const panel = document.getElementById('wwActionPanel');
@@ -2631,7 +2631,7 @@ function wwRenderActionPanel(){
 ============================================================ */
 async function wwSelectNightTarget(nim,name){
     wwState.nightTarget=nim;
-    document.getElementById('wwNightSelected').innerHTML=`?? Target dipilih: <strong>${name}</strong> — Menunggu akhir malam...`;
+    document.getElementById('wwNightSelected').innerHTML=`?? Target dipilih: <strong>${name}</strong> Â— Menunggu akhir malam...`;
     // Simpan aksi ke DB
     await db.from('ww_actions').upsert({
         room_id:wwState.roomId, actor_nim:wwState.myNim,
@@ -2661,10 +2661,10 @@ async function wwUseSkillTarget(role, targetNim, targetName){
     let clue='';
     if(role==='journalist'){
         clue=isWolf ? WW_CLUES_JOURNALIST[Math.floor(Math.random()*WW_CLUES_JOURNALIST.length)] : `"Aku hanya mengamati, bukan berburu. Kepentinganku adalah kebenaran."`;
-        await wwPostClue(`[?? Penulis Koran — Wawancara dengan ${targetName}]\n\n${clue}`);
+        await wwPostClue(`[?? Penulis Koran Â— Wawancara dengan ${targetName}]\n\n${clue}`);
     } else if(role==='detective'){
         clue=isWolf ? WW_CLUES_DETECTIVE[Math.floor(Math.random()*WW_CLUES_DETECTIVE.length)] : `"Tidak mencurigakan. Pola perilaku normal."`;
-        await wwPostClue(`[?? Detektif — Penyelidikan terhadap ${targetName}]\n\nHasil analisis: ${clue}`);
+        await wwPostClue(`[?? Detektif Â— Penyelidikan terhadap ${targetName}]\n\nHasil analisis: ${clue}`);
     }
     await wwAddScoreDB(3,'Skill investigasi digunakan (+3 poin)');
     wwRenderActionPanel();
@@ -2762,8 +2762,8 @@ async function wwOnPhaseTimeout(){
                 const {data:victim}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('nim',kill.target_nim).single();
                 if(victim&&victim.alive){
                     await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',kill.target_nim);
-                    const lastWords=["Maaf, aku tidak bisa menyelesaikan tugasku...","Percayalah pada kalimat terakhirku: kebenaran selalu menang.","Aku pergi, tapi jejakku tetap ada dalam kata-kata.","Jangan biarkan kegelapan memenangkan percakapan.","Cari yang paling diam—merekalah yang paling berbahaya."];
-                    await wwPostSystemMessage(`?? Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" — ${victim.name}`,'dead');
+                    const lastWords=["Maaf, aku tidak bisa menyelesaikan tugasku...","Percayalah pada kalimat terakhirku: kebenaran selalu menang.","Aku pergi, tapi jejakku tetap ada dalam kata-kata.","Jangan biarkan kegelapan memenangkan percakapan.","Cari yang paling diamÂ—merekalah yang paling berbahaya."];
+                    await wwPostSystemMessage(`?? Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" Â— ${victim.name}`,'dead');
                     await wwCheckGameOver();
                     return;
                 }
@@ -2887,7 +2887,7 @@ async function wwEndAndSavePoints(){
             // Tambah ke point_logs user
             const dbUser=allUsers.find(u=>u.nim===wwState.myNim);
             if(dbUser){
-                const newAch=[...(dbUser.achievements||[]),{type:'karya',description:`Game Wharewolf — ${pts} poin`,points:pts,timestamp:Date.now()}];
+                const newAch=[...(dbUser.achievements||[]),{type:'karya',description:`Game Wharewolf Â— ${pts} poin`,points:pts,timestamp:Date.now()}];
                 const newLog=[...(dbUser.point_logs||[]),{type:'karya',description:'Game Wharewolf',points:pts,timestamp:Date.now()}];
                 await db.from('users').update({points:dbUser.points+pts,achievements:newAch,point_logs:newLog}).eq('nim',wwState.myNim);
                 dbUser.points+=pts;dbUser.achievements=newAch;dbUser.point_logs=newLog;
@@ -2920,4 +2920,5 @@ async function wwEndAndSavePoints(){
 window.onload=init;
     </script>
 </body>
+
 </html>

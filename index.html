@@ -192,7 +192,7 @@
         .post-action-btn:hover{background:var(--secondary);color:var(--primary)}
         .post-action-btn.liked{color:var(--danger)}
         .post-delete-btn{background:var(--danger);color:#fff;padding:8px 16px;border-radius:20px;font-size:.85rem;border:none;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif}
-        /* Avatar di post  klikable */
+        /* Avatar di post — klikable */
         .post-avatar-link{cursor:pointer;transition:transform .2s;flex-shrink:0}
         .post-avatar-link:hover{transform:scale(1.08)}
 
@@ -271,7 +271,7 @@
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="spinner"></div>
-        <div class="loading-text">? Memuat data...</div>
+        <div class="loading-text">⏳ Memuat data...</div>
     </div>
 
     <nav>
@@ -280,15 +280,15 @@
             <span>GRUP KARYA</span>
         </div>
         <div class="nav-links">
-            <a onclick="scrollToSection('beranda')">?? Beranda</a>
-            <a onclick="openTeamListModal()">?? Tim</a>
-            <a onclick="scrollToSection('leaderboard')">?? Klasemen</a>
-            <button class="btn-search-nav" onclick="openSearchModal()" title="Cari Pengguna">??</button>
-            <button class="btn-game-nav" onclick="openGameListModal()" title="Mini Game">?? Game</button>
-            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">??</button>
+            <a onclick="scrollToSection('beranda')">📘 Beranda</a>
+            <a onclick="openTeamListModal()">👥 Tim</a>
+            <a onclick="scrollToSection('leaderboard')">🏆 Klasemen</a>
+            <button class="btn-search-nav" onclick="openSearchModal()" title="Cari Pengguna">🔍</button>
+            <button class="btn-game-nav" onclick="openGameListModal()" title="Mini Game">🎮 Game</button>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
             <div id="navGuest" style="display:flex;gap:12px">
-                <button onclick="openLoginModal()" class="btn-nav">?? Masuk</button>
-                <button onclick="openRegisterModal()" class="btn-nav">? Daftar</button>
+                <button onclick="openLoginModal()" class="btn-nav">🔑 Masuk</button>
+                <button onclick="openRegisterModal()" class="btn-nav">✨ Daftar</button>
             </div>
             <div id="navUser" style="display:none">
                 <div class="user-pill" id="userPillBtn" onclick="openUserProfile()">
@@ -304,13 +304,13 @@
              onerror="this.style.display='none'">
         <h1>Dari Minat, Jadi Karya Nyata</h1>
         <p style="font-size:1.3rem;opacity:.9;font-weight:600;position:relative;z-index:1">Platform Kolaborasi Mahasiswa Sastra Indonesia</p>
-        <button onclick="checkLoginAction()" class="btn-nav" style="font-size:1.1rem;padding:14px 40px;margin-top:25px;position:relative;z-index:1">?? Mulai Sekarang</button>
+        <button onclick="checkLoginAction()" class="btn-nav" style="font-size:1.1rem;padding:14px 40px;margin-top:25px;position:relative;z-index:1">▶️ Mulai Sekarang</button>
     </header>
 
     <section id="beranda">
         <div class="card">
             <div class="stats-header">
-                <h2 class="stats-title">?? Perkembangan Poin</h2>
+                <h2 class="stats-title">📊 Perkembangan Poin</h2>
                 <div class="time-filter">
                     <button class="time-filter-btn active" onclick="changeTimeFilter('weekly',event)">Mingguan</button>
                     <button class="time-filter-btn" onclick="changeTimeFilter('monthly',event)">Bulanan</button>
@@ -324,7 +324,7 @@
                 <div class="create-post-header">
                     <div class="user-avatar" id="createAvatar">A</div>
                     <div style="flex:1">
-                        <textarea class="create-post-textarea" id="postInput" placeholder="? Apa yang ingin kamu bagikan hari ini?"></textarea>
+                        <textarea class="create-post-textarea" id="postInput" placeholder="✨ Apa yang ingin kamu bagikan hari ini?"></textarea>
                         <div id="imgPreviewBox" style="display:none" class="image-preview-box">
                             <img id="imgPreview" class="image-preview" src="">
                             <button class="remove-img-btn" onclick="removeImage()">&times;</button>
@@ -332,16 +332,16 @@
                     </div>
                 </div>
                 <div class="create-post-actions">
-                    <button class="btn-upload" onclick="document.getElementById('fileInput').click()">??? Upload Foto</button>
+                    <button class="btn-upload" onclick="document.getElementById('fileInput').click()">🖼️ Upload Foto</button>
                     <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewImage(event)">
-                    <button class="btn-post" onclick="createPost()">?? Posting</button>
+                    <button class="btn-post" onclick="createPost()">📤 Posting</button>
                 </div>
             </div>
         </div>
 
         <div id="loginPromptSection" style="display:none">
             <div style="background:#fff3cd;border:3px dashed var(--warning);border-radius:16px;padding:40px;text-align:center;margin-bottom:30px">
-                <h3 style="color:#856404;font-size:1.8rem;margin-bottom:15px">?? Login untuk Berbagi Karya</h3>
+                <h3 style="color:#856404;font-size:1.8rem;margin-bottom:15px">🎨 Login untuk Berbagi Karya</h3>
                 <p style="color:#856404">Bergabung dan bagikan karyamu!</p>
                 <button class="btn-nav" onclick="openLoginModal()" style="margin-top:15px;padding:12px 32px">Masuk Sekarang</button>
             </div>
@@ -351,7 +351,7 @@
 
     <section id="leaderboard" style="background:linear-gradient(135deg,#1a0a25,#0f0a15);padding-top:80px;padding-bottom:80px;max-width:100%">
         <div style="max-width:1400px;margin:0 auto;padding:0 5%">
-            <h2 class="section-title" style="color:#fff">?? Klasemen Tim</h2>
+            <h2 class="section-title" style="color:#fff">🏆 Klasemen Tim</h2>
             <div style="overflow-x:auto">
                 <table><thead><tr><th>Rank</th><th>Tim</th><th>Fokus</th><th>Lencana</th><th>Poin</th></tr></thead>
                 <tbody id="teamTableBody"></tbody></table>
@@ -360,7 +360,7 @@
     </section>
 
     <section id="individu">
-        <h2 class="section-title">? Klasemen Individu</h2>
+        <h2 class="section-title">⭐ Klasemen Individu</h2>
         <div style="overflow-x:auto">
             <table><thead><tr><th>Nama</th><th>Tim</th><th>Peran</th><th>Poin</th></tr></thead>
             <tbody id="individuTableBody"></tbody></table>
@@ -379,13 +379,13 @@
     <div id="loginModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('loginModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:30px;color:var(--primary)">?? Masuk ke Akun</h2>
+            <h2 style="text-align:center;margin-bottom:30px;color:var(--primary)">🔑 Masuk ke Akun</h2>
             <div id="loginAlert"></div>
             <div class="form-group"><label>NIM</label><input type="text" id="loginNim" placeholder="Contoh: 12345678" onkeypress="if(event.key==='Enter')processLogin()"></div>
             <div class="form-group"><label>Password</label><input type="password" id="loginPass" placeholder="Masukkan password" onkeypress="if(event.key==='Enter')processLogin()"></div>
-            <button class="btn-full" onclick="processLogin()">?? Masuk</button>
+            <button class="btn-full" onclick="processLogin()">🚀 Masuk</button>
             <p style="text-align:center;margin-top:20px;color:var(--text-secondary)">
-                Belum punya akun? <a onclick="switchModal('loginModal','registerModal')" style="color:var(--primary);cursor:pointer;font-weight:700">? Daftar di sini</a>
+                Belum punya akun? <a onclick="switchModal('loginModal','registerModal')" style="color:var(--primary);cursor:pointer;font-weight:700">✨ Daftar di sini</a>
             </p>
         </div>
     </div>
@@ -395,51 +395,51 @@
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('registerModal')">&times;</button>
             <div id="regStep1" class="form-step active">
-                <h3 style="margin-bottom:5px;color:var(--text-primary)">?? Langkah 1/3</h3>
+                <h3 style="margin-bottom:5px;color:var(--text-primary)">📝 Langkah 1/3</h3>
                 <p style="color:var(--text-secondary);margin-bottom:20px">Data Diri</p>
                 <div id="regAlert"></div>
                 <div class="form-group"><label>Nama Lengkap *</label><input type="text" id="regNama" placeholder="Budi Santoso"></div>
                 <div class="form-group"><label>NIM *</label><input type="text" id="regNim" placeholder="12345678"></div>
                 <div class="form-group"><label>Kelas</label><input type="text" id="regKelas" placeholder="TI-3A"></div>
-                <button class="btn-full" onclick="regNext1()">Lanjut ??</button>
+                <button class="btn-full" onclick="regNext1()">Lanjut ➡️</button>
             </div>
             <div id="regStep2" class="form-step">
-                <h3 style="margin-bottom:5px;color:var(--text-primary)">?? Langkah 2/3</h3>
+                <h3 style="margin-bottom:5px;color:var(--text-primary)">🔒 Langkah 2/3</h3>
                 <p style="color:var(--text-secondary);margin-bottom:20px">Keamanan Akun</p>
                 <div id="regAlert2"></div>
                 <div class="form-group"><label>Password * (min 6 karakter)</label><input type="password" id="regPass" placeholder="Minimal 6 karakter"></div>
                 <div class="form-group"><label>Konfirmasi Password *</label><input type="password" id="regPassConfirm" placeholder="Ketik ulang password"></div>
                 <div style="background:var(--bg-main);padding:15px;border-radius:12px;margin:15px 0;display:flex;align-items:center;gap:10px">
                     <input type="checkbox" id="robotCheck" style="width:20px;height:20px;accent-color:var(--primary)">
-                    <label for="robotCheck" style="display:inline;font-weight:normal;color:var(--text-primary);cursor:pointer">?? Saya bukan robot</label>
+                    <label for="robotCheck" style="display:inline;font-weight:normal;color:var(--text-primary);cursor:pointer">🤖 Saya bukan robot</label>
                 </div>
-                <button class="btn-full" onclick="regNext2()">Lanjut ??</button>
-                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep1')">?? Kembali</button>
+                <button class="btn-full" onclick="regNext2()">Lanjut ➡️</button>
+                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep1')">⬅️ Kembali</button>
             </div>
             <div id="regStep3" class="form-step">
-                <h3 style="margin-bottom:5px;color:var(--text-primary)">?? Langkah 3/3</h3>
+                <h3 style="margin-bottom:5px;color:var(--text-primary)">👥 Langkah 3/3</h3>
                 <p style="color:var(--text-secondary);margin-bottom:20px">Pilih Tim</p>
                 <div style="background:var(--bg-main);padding:20px;border-radius:12px;margin-bottom:20px">
                     <p style="color:var(--text-secondary);font-size:.9rem">Halo <strong id="regNamaPreview" style="color:var(--primary)">-</strong>! Pilih bergabung ke tim yang ada atau buat tim baru.</p>
                 </div>
-                <button class="btn-full" style="background:var(--bg-card);color:var(--primary);border:2px solid var(--primary);margin-bottom:10px" onclick="goToJoinList()">?? Bergabung ke Tim yang Ada</button>
-                <button class="btn-full" style="background:var(--success)" onclick="showStep('panelCreateTeam')">?? Buat Tim Baru</button>
-                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep2')">?? Kembali</button>
+                <button class="btn-full" style="background:var(--bg-card);color:var(--primary);border:2px solid var(--primary);margin-bottom:10px" onclick="goToJoinList()">👥 Bergabung ke Tim yang Ada</button>
+                <button class="btn-full" style="background:var(--success)" onclick="showStep('panelCreateTeam')">🚀 Buat Tim Baru</button>
+                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep2')">⬅️ Kembali</button>
             </div>
             <div id="panelJoinTeam" class="form-step">
-                <h3 style="margin-bottom:20px;color:var(--text-primary)">?? Pilih Tim</h3>
+                <h3 style="margin-bottom:20px;color:var(--text-primary)">🔍 Pilih Tim</h3>
                 <div id="joinListContainer" style="height:300px;overflow-y:auto;border:2px solid var(--border-color);border-radius:12px;padding:10px;margin:15px 0;background:var(--bg-main)"></div>
-                <button class="btn-full" style="background:var(--success)" onclick="finalJoinTeam()">? Konfirmasi Bergabung</button>
-                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep3')">?? Kembali</button>
+                <button class="btn-full" style="background:var(--success)" onclick="finalJoinTeam()">✅ Konfirmasi Bergabung</button>
+                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep3')">⬅️ Kembali</button>
             </div>
             <div id="panelCreateTeam" class="form-step">
-                <h3 style="margin-bottom:20px;color:var(--text-primary)">?? Buat Tim Baru</h3>
+                <h3 style="margin-bottom:20px;color:var(--text-primary)">🚀 Buat Tim Baru</h3>
                 <div class="form-group"><label>Nama Tim *</label><input type="text" id="newTeamName" placeholder="Alpha Creative"></div>
                 <div class="form-group"><label>Fokus Kegiatan *</label><input type="text" id="newTeamFocus" placeholder="Film & Media"></div>
                 <div class="form-group"><label>Visi & Misi</label><textarea id="newTeamVisi" rows="3" placeholder="Menjadi tim terbaik..."></textarea></div>
                 <div class="form-group"><label>Arah Pengembangan</label><input type="text" id="newTeamDev" placeholder="Produksi Film Pendek"></div>
-                <button class="btn-full" style="background:var(--success)" onclick="finalCreateTeam()">?? Buat Tim & Daftar</button>
-                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep3')">?? Kembali</button>
+                <button class="btn-full" style="background:var(--success)" onclick="finalCreateTeam()">🎉 Buat Tim & Daftar</button>
+                <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="showStep('regStep3')">⬅️ Kembali</button>
             </div>
         </div>
     </div>
@@ -451,19 +451,19 @@
             <!-- ADMIN PANEL -->
             <div id="adminPanelSection" style="display:none;padding:40px">
                 <div style="background:linear-gradient(135deg,#dc3545,#c82333);color:#fff;padding:30px;border-radius:16px">
-                    <h2 style="margin-bottom:10px">?? ADMIN PANEL</h2>
+                    <h2 style="margin-bottom:10px">⚙️ ADMIN PANEL</h2>
                     <p style="opacity:.9;margin-bottom:20px">Akses penuh sistem</p>
                     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px">
-                        <button onclick="adminAddPoints()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">? Tambah Poin</button>
-                        <button onclick="adminAddBadge()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">?? Kirim Lencana</button>
-                        <button onclick="openDesainLencana()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">?? Desain Lencana</button>
-                        <button onclick="lihatDaftarLencana()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">?? Daftar Lencana</button>
-                        <button onclick="downloadExcelData()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">?? Download Excel</button>
-                        <button onclick="adminDeleteTeam()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">??? Hapus Tim</button>
-                        <button onclick="adminDeleteUser()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">?? Hapus User</button>
-                        <button onclick="adminDeletePost()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">??? Hapus Post</button>
+                        <button onclick="adminAddPoints()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">⭐ Tambah Poin</button>
+                        <button onclick="adminAddBadge()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🏅 Kirim Lencana</button>
+                        <button onclick="openDesainLencana()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🎨 Desain Lencana</button>
+                        <button onclick="lihatDaftarLencana()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">📋 Daftar Lencana</button>
+                        <button onclick="downloadExcelData()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">📊 Download Excel</button>
+                        <button onclick="adminDeleteTeam()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🗑️ Hapus Tim</button>
+                        <button onclick="adminDeleteUser()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">👤 Hapus User</button>
+                        <button onclick="adminDeletePost()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🗑️ Hapus Post</button>
                     </div>
-                    <button class="btn-full" style="background:rgba(0,0,0,.3);margin-top:25px;border:2px solid rgba(255,255,255,.3)" onclick="processLogout()">?? Keluar Admin</button>
+                    <button class="btn-full" style="background:rgba(0,0,0,.3);margin-top:25px;border:2px solid rgba(255,255,255,.3)" onclick="processLogout()">🚪 Keluar Admin</button>
                 </div>
             </div>
             <!-- CV PROFILE -->
@@ -480,7 +480,7 @@
                     <div style="margin-bottom:30px;padding-bottom:30px;border-bottom:2px solid var(--border-color)">
                         <div style="font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:20px;display:flex;align-items:center;gap:10px">
                             <span style="width:4px;height:25px;background:linear-gradient(135deg,#7B2D8B,#E8395A);border-radius:2px;display:inline-block"></span>
-                            ?? Informasi Profil
+                            📋 Informasi Profil
                         </div>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
                             <div><div style="font-size:.85rem;color:var(--text-secondary);font-weight:600;margin-bottom:5px">Tim & Jabatan</div><div id="cvTeamRole" style="font-weight:500;color:var(--text-primary)">-</div></div>
@@ -491,16 +491,16 @@
                     <div style="margin-bottom:30px;padding-bottom:30px;border-bottom:2px solid var(--border-color)">
                         <div style="font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:20px;display:flex;align-items:center;gap:10px">
                             <span style="width:4px;height:25px;background:linear-gradient(135deg,#7B2D8B,#E8395A);border-radius:2px;display:inline-block"></span>
-                            ?? Prestasi
+                            🏆 Prestasi
                         </div>
                         <div id="cvAchievements"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi</p></div>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
-                        <button class="btn-full" style="margin-top:0;background:var(--gray)" onclick="downloadCV()">?? Download CV</button>
-                        <button class="btn-full" style="margin-top:0;background:var(--purple)" onclick="openEditProfile()">?? Edit Profil</button>
+                        <button class="btn-full" style="margin-top:0;background:var(--gray)" onclick="downloadCV()">📄 Download CV</button>
+                        <button class="btn-full" style="margin-top:0;background:var(--purple)" onclick="openEditProfile()">✏️ Edit Profil</button>
                     </div>
-                    <button class="btn-full" style="margin-top:12px" onclick="openMyTeamPage()">?? Laman Tim Saya</button>
-                    <button class="btn-full" style="background:var(--danger);margin-top:12px" onclick="processLogout()">?? Keluar</button>
+                    <button class="btn-full" style="margin-top:12px" onclick="openMyTeamPage()">👥 Laman Tim Saya</button>
+                    <button class="btn-full" style="background:var(--danger);margin-top:12px" onclick="processLogout()">🚪 Keluar</button>
                 </div>
             </div>
         </div>
@@ -510,15 +510,15 @@
     <div id="editProfileModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('editProfileModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">?? Edit Profil</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">✏️ Edit Profil</h2>
             <div class="logo-upload-area" onclick="document.getElementById('profilePhotoInput').click()">
                 <div id="editProfilePreview" style="width:100px;height:100px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;margin:0 auto 12px;overflow:hidden"><span id="editProfileText">A</span></div>
-                <p style="color:var(--primary);font-weight:700">?? Klik untuk ubah foto profil</p>
+                <p style="color:var(--primary);font-weight:700">📸 Klik untuk ubah foto profil</p>
             </div>
             <input type="file" id="profilePhotoInput" accept="image/*" style="display:none" onchange="previewProfilePhoto(event)">
             <div class="form-group" style="margin-top:20px"><label>Nama Lengkap</label><input type="text" id="editName"></div>
             <div class="form-group"><label>Kelas</label><input type="text" id="editKelas" placeholder="TI-3A"></div>
-            <button class="btn-full" style="background:var(--success)" onclick="saveProfile()">?? Simpan Perubahan</button>
+            <button class="btn-full" style="background:var(--success)" onclick="saveProfile()">💾 Simpan Perubahan</button>
             <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="closeModal('editProfileModal')">Batal</button>
         </div>
     </div>
@@ -527,7 +527,7 @@
     <div id="teamListModal" class="modal-overlay">
         <div class="modal-content modal-large">
             <button class="close-btn" onclick="closeModal('teamListModal')">&times;</button>
-            <h2 style="text-align:center;color:var(--gold);margin-bottom:30px">?? Daftar Semua Tim</h2>
+            <h2 style="text-align:center;color:var(--gold);margin-bottom:30px">👥 Daftar Semua Tim</h2>
             <div class="team-grid" id="allTeamsGrid"></div>
         </div>
     </div>
@@ -544,39 +544,39 @@
                     </div>
                     <div id="detailBadges" style="display:flex;gap:8px;justify-content:center;margin-top:15px;flex-wrap:wrap"></div>
                     <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
-                        <button class="btn-icon" id="joinOrChatBtn" onclick="handleJoinOrChat()" style="width:100%"><span id="joinBtnText">?? Bergabung</span></button>
-                        <button class="btn-icon" onclick="shareTeamLink()" style="width:100%;background:var(--purple)">?? Share</button>
-                        <button class="btn-icon" id="leaveTeamBtn" style="background:var(--danger);display:none;width:100%" onclick="leaveTeam()">?? Keluar Tim</button>
+                        <button class="btn-icon" id="joinOrChatBtn" onclick="handleJoinOrChat()" style="width:100%"><span id="joinBtnText">👋 Bergabung</span></button>
+                        <button class="btn-icon" onclick="shareTeamLink()" style="width:100%;background:var(--purple)">🔗 Share</button>
+                        <button class="btn-icon" id="leaveTeamBtn" style="background:var(--danger);display:none;width:100%" onclick="leaveTeam()">🚪 Keluar Tim</button>
                     </div>
                 </div>
                 <div>
-                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">?? Visi & Misi</div><div id="detailVisi" style="color:var(--text-primary)">-</div></div>
-                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">?? Fokus</div><div id="detailFocus" style="color:var(--text-primary)">-</div></div>
-                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">? Poin</div><div><span id="detailPoints" style="font-size:1.5rem;color:var(--success);font-weight:700">0</span> poin (Rank #<span id="detailRank">1</span>)</div></div>
-                    <div><div style="font-weight:700;color:var(--primary);margin-bottom:5px">?? Anggota</div><div id="detailMemberCount" style="color:var(--text-primary)">0 anggota</div></div>
+                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">💡 Visi & Misi</div><div id="detailVisi" style="color:var(--text-primary)">-</div></div>
+                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">🎯 Fokus</div><div id="detailFocus" style="color:var(--text-primary)">-</div></div>
+                    <div style="margin-bottom:15px"><div style="font-weight:700;color:var(--primary);margin-bottom:5px">⭐ Poin</div><div><span id="detailPoints" style="font-size:1.5rem;color:var(--success);font-weight:700">0</span> poin (Rank #<span id="detailRank">1</span>)</div></div>
+                    <div><div style="font-weight:700;color:var(--primary);margin-bottom:5px">👥 Anggota</div><div id="detailMemberCount" style="color:var(--text-primary)">0 anggota</div></div>
                 </div>
             </div>
             <div style="display:flex;border-bottom:3px solid var(--border-color);margin-bottom:30px;overflow-x:auto">
-                <button class="tab-btn active" onclick="switchTeamTab('info')">?? Info</button>
-                <button class="tab-btn" onclick="switchTeamTab('members')">?? Anggota</button>
-                <button class="tab-btn" onclick="switchTeamTab('activities')">?? Log</button>
-                <button class="tab-btn" onclick="switchTeamTab('chat')">?? Chat</button>
-                <button class="tab-btn" id="manageTab" onclick="switchTeamTab('manage')" style="display:none">?? Kelola</button>
+                <button class="tab-btn active" onclick="switchTeamTab('info')">📋 Info</button>
+                <button class="tab-btn" onclick="switchTeamTab('members')">👥 Anggota</button>
+                <button class="tab-btn" onclick="switchTeamTab('activities')">📜 Log</button>
+                <button class="tab-btn" onclick="switchTeamTab('chat')">💬 Chat</button>
+                <button class="tab-btn" id="manageTab" onclick="switchTeamTab('manage')" style="display:none">⚙️ Kelola</button>
             </div>
-            <div id="tabInfo" style="display:block"><h4 style="color:var(--primary);margin-bottom:10px">??? Arah Pengembangan</h4><p id="detailDev" style="color:var(--text-primary)">-</p></div>
-            <div id="tabMembers" style="display:none"><h4 style="color:var(--primary);margin-bottom:10px">?? Daftar Anggota</h4><div id="membersList"></div></div>
+            <div id="tabInfo" style="display:block"><h4 style="color:var(--primary);margin-bottom:10px">🗺️ Arah Pengembangan</h4><p id="detailDev" style="color:var(--text-primary)">-</p></div>
+            <div id="tabMembers" style="display:none"><h4 style="color:var(--primary);margin-bottom:10px">👥 Daftar Anggota</h4><div id="membersList"></div></div>
             <div id="tabActivities" style="display:none">
-                <h4 style="color:var(--primary);margin-bottom:10px">?? Riwayat Kegiatan</h4>
+                <h4 style="color:var(--primary);margin-bottom:10px">📜 Riwayat Kegiatan</h4>
                 <div style="overflow-x:auto"><table><thead><tr><th>Kegiatan</th><th>Tanggal</th></tr></thead><tbody id="activityLogBody"></tbody></table></div>
             </div>
             <div id="tabChat" style="display:none">
-                <div id="chatAccessDenied" style="background:#ffe6e6;padding:25px;text-align:center;border-radius:12px;color:var(--danger);display:none"><h3>?? Chat hanya untuk anggota tim</h3></div>
+                <div id="chatAccessDenied" style="background:#ffe6e6;padding:25px;text-align:center;border-radius:12px;color:var(--danger);display:none"><h3>🔒 Chat hanya untuk anggota tim</h3></div>
                 <div id="chatAccessGranted" style="display:none">
                     <div style="background:var(--bg-card);border:2px solid var(--border-color);border-radius:16px;height:450px;display:flex;flex-direction:column">
-                        <div style="background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;padding:15px 20px;border-radius:14px 14px 0 0;font-weight:700">?? Chat Tim - <span id="chatTeamName">Tim</span></div>
+                        <div style="background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;padding:15px 20px;border-radius:14px 14px 0 0;font-weight:700">💬 Chat Tim - <span id="chatTeamName">Tim</span></div>
                         <div id="chatMessages" style="flex:1;padding:15px;overflow-y:auto;background:var(--bg-main)"></div>
                         <div style="display:flex;padding:12px;border-top:2px solid var(--border-color);gap:10px;background:var(--bg-card);border-radius:0 0 14px 14px">
-                            <input type="text" id="chatInput" placeholder="?? Ketik pesan..." style="flex:1;padding:10px 18px;border:2px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);border-radius:25px;font-family:'Nunito',sans-serif" onkeypress="if(event.key==='Enter')sendMessage()">
+                            <input type="text" id="chatInput" placeholder="💬 Ketik pesan..." style="flex:1;padding:10px 18px;border:2px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);border-radius:25px;font-family:'Nunito',sans-serif" onkeypress="if(event.key==='Enter')sendMessage()">
                             <button onclick="sendMessage()" style="padding:10px 22px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif">Kirim</button>
                         </div>
                     </div>
@@ -584,7 +584,7 @@
             </div>
             <div id="tabManage" style="display:none">
                 <div style="padding:20px;background:var(--bg-main);border:2px dashed var(--warning);border-radius:12px">
-                    <h4 style="color:var(--text-primary);margin-bottom:15px">?? Kelola Anggota Tim</h4>
+                    <h4 style="color:var(--text-primary);margin-bottom:15px">⚙️ Kelola Anggota Tim</h4>
                     <div id="manageMembers"></div>
                 </div>
             </div>
@@ -595,18 +595,18 @@
     <div id="teamSettingsModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('teamSettingsModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--warning)">?? Pengaturan Tim</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--warning)">⚙️ Pengaturan Tim</h2>
             <div class="logo-upload-area" onclick="document.getElementById('teamLogoInput').click()">
                 <div id="teamLogoPreview" style="width:100px;height:100px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 12px;font-weight:700;overflow:hidden"><span id="teamLogoText">TM</span></div>
-                <p style="color:var(--primary);font-weight:700">??? Klik untuk upload logo tim</p>
+                <p style="color:var(--primary);font-weight:700">🖼️ Klik untuk upload logo tim</p>
             </div>
             <input type="file" id="teamLogoInput" accept="image/*" style="display:none" onchange="previewTeamLogo(event)">
             <div class="form-group" style="margin-top:15px"><label>Nama Tim</label><input type="text" id="settingsName"></div>
             <div class="form-group"><label>Visi & Misi</label><textarea id="settingsVisi" rows="3"></textarea></div>
             <div class="form-group"><label>Fokus Kegiatan</label><input type="text" id="settingsFocus"></div>
             <div class="form-group"><label>Arah Pengembangan</label><input type="text" id="settingsDev"></div>
-            <div class="form-group"><label>?? Aktifkan Lencana (Max 3)</label><div id="settingsBadgesList" style="margin-top:8px"></div></div>
-            <button class="btn-full" style="background:var(--success)" onclick="saveTeamSettings()">?? Simpan Pengaturan</button>
+            <div class="form-group"><label>🏅 Aktifkan Lencana (Max 3)</label><div id="settingsBadgesList" style="margin-top:8px"></div></div>
+            <button class="btn-full" style="background:var(--success)" onclick="saveTeamSettings()">💾 Simpan Pengaturan</button>
         </div>
     </div>
 
@@ -614,19 +614,19 @@
     <div id="addPointsModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('addPointsModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--success)">? Tambah Poin</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--success)">⭐ Tambah Poin</h2>
             <div class="form-group"><label>Pilih Tim *</label><select id="pointTeamSelect" onchange="loadTeamMembers()"><option value="">-- Pilih Tim --</option></select></div>
             <div class="form-group"><label>Pilih Anggota *</label><select id="pointMemberSelect"><option value="">-- Pilih tim dulu --</option></select></div>
             <div class="form-group"><label>Jenis Prestasi *</label>
                 <select id="pointTypeSelect">
                     <option value="">-- Pilih Jenis --</option>
-                    <option value="latihan">?? Latihan Wajib (+30 poin)</option>
-                    <option value="karya">?? Karya (+50 poin)</option>
-                    <option value="lomba">?? Lomba (+70 poin)</option>
+                    <option value="latihan">📚 Latihan Wajib (+30 poin)</option>
+                    <option value="karya">🎨 Karya (+50 poin)</option>
+                    <option value="lomba">🏆 Lomba (+70 poin)</option>
                 </select>
             </div>
             <div class="form-group"><label>Deskripsi Prestasi *</label><textarea id="pointDesc" rows="3" placeholder="Juara 1 Lomba Fotografi..."></textarea></div>
-            <button class="btn-full" style="background:var(--success)" onclick="submitAddPoints()">? Tambahkan Poin</button>
+            <button class="btn-full" style="background:var(--success)" onclick="submitAddPoints()">✅ Tambahkan Poin</button>
         </div>
     </div>
 
@@ -634,14 +634,14 @@
     <div id="addBadgeModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('addBadgeModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--warning)">?? Kirim Lencana ke Tim</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--warning)">🏅 Kirim Lencana ke Tim</h2>
             <div class="form-group"><label>Pilih Tim *</label><select id="badgeTeamSelect"><option value="">-- Pilih Tim --</option></select></div>
             <div class="form-group"><label>Pilih Lencana *</label><select id="badgeTypeSelect"><option value="">-- Pilih Lencana --</option></select></div>
             <div id="badgePreviewBox" style="display:none;margin:15px 0;padding:15px;background:var(--bg-main);border-radius:12px;text-align:center">
                 <div id="badgeSendPreview" style="width:60px;height:60px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:1.8rem"></div>
                 <div id="badgeSendName" style="font-weight:700;color:var(--text-primary)"></div>
             </div>
-            <button class="btn-full" style="background:var(--warning);color:#000" onclick="submitAddBadge()">?? Kirim Lencana</button>
+            <button class="btn-full" style="background:var(--warning);color:#000" onclick="submitAddBadge()">🚀 Kirim Lencana</button>
         </div>
     </div>
 
@@ -649,7 +649,7 @@
     <div id="desainLencanaModal" class="modal-overlay">
         <div class="modal-content modal-large" style="max-width:750px">
             <button class="close-btn" onclick="closeModal('desainLencanaModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">?? Desain Lencana Baru</h2>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">🎨 Desain Lencana Baru</h2>
             <p style="text-align:center;color:var(--text-secondary);margin-bottom:25px">Buat lencana custom untuk dikirim ke tim</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px">
                 <div>
@@ -657,36 +657,36 @@
                     <div class="form-group">
                         <label>Pilih Emoji</label>
                         <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:10px">
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('?')" class="emoji-btn">?</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('?')" class="emoji-btn">?</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
-                            <button onclick="selectEmoji('??')" class="emoji-btn">??</button>
+                            <button onclick="selectEmoji('🏆')" class="emoji-btn">🏆</button>
+                            <button onclick="selectEmoji('⭐')" class="emoji-btn">⭐</button>
+                            <button onclick="selectEmoji('🎨')" class="emoji-btn">🎨</button>
+                            <button onclick="selectEmoji('🎮')" class="emoji-btn">🎮</button>
+                            <button onclick="selectEmoji('🎭')" class="emoji-btn">🎭</button>
+                            <button onclick="selectEmoji('🚀')" class="emoji-btn">🚀</button>
+                            <button onclick="selectEmoji('💡')" class="emoji-btn">💡</button>
+                            <button onclick="selectEmoji('🔥')" class="emoji-btn">🔥</button>
+                            <button onclick="selectEmoji('💎')" class="emoji-btn">💎</button>
+                            <button onclick="selectEmoji('🌟')" class="emoji-btn">🌟</button>
+                            <button onclick="selectEmoji('🎯')" class="emoji-btn">🎯</button>
+                            <button onclick="selectEmoji('🏅')" class="emoji-btn">🏅</button>
+                            <button onclick="selectEmoji('🦁')" class="emoji-btn">🦁</button>
+                            <button onclick="selectEmoji('🦋')" class="emoji-btn">🦋</button>
+                            <button onclick="selectEmoji('🌈')" class="emoji-btn">🌈</button>
+                            <button onclick="selectEmoji('⚡')" class="emoji-btn">⚡</button>
+                            <button onclick="selectEmoji('🎪')" class="emoji-btn">🎪</button>
+                            <button onclick="selectEmoji('🎵')" class="emoji-btn">🎵</button>
                         </div>
                         <input type="text" id="badgeEmojiInput" placeholder="Atau ketik emoji sendiri..." oninput="updateBadgePreview()">
                     </div>
                     <div class="form-group">
                         <label>ATAU Upload Foto Lencana</label>
                         <div class="logo-upload-area" onclick="document.getElementById('badgePhotoInput').click()" style="padding:15px">
-                            <p style="color:var(--primary);font-weight:700;margin:0;font-size:.9rem">?? Klik untuk upload foto (max 1MB)</p>
+                            <p style="color:var(--primary);font-weight:700;margin:0;font-size:.9rem">📸 Klik untuk upload foto (max 1MB)</p>
                         </div>
                         <input type="file" id="badgePhotoInput" accept="image/*" style="display:none" onchange="previewBadgePhoto(event)">
                         <div id="badgePhotoPreviewBox" style="display:none;margin-top:10px;text-align:center">
                             <img id="badgePhotoPreviewImg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid var(--primary)">
-                            <button onclick="clearBadgePhoto()" style="display:block;margin:8px auto 0;background:var(--danger);color:#fff;border:none;border-radius:8px;padding:4px 12px;cursor:pointer;font-size:.8rem;font-family:'Nunito',sans-serif">??? Hapus Foto</button>
+                            <button onclick="clearBadgePhoto()" style="display:block;margin:8px auto 0;background:var(--danger);color:#fff;border:none;border-radius:8px;padding:4px 12px;cursor:pointer;font-size:.8rem;font-family:'Nunito',sans-serif">🗑️ Hapus Foto</button>
                         </div>
                     </div>
                     <div class="form-group">
@@ -706,7 +706,7 @@
                     </div>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items:center;padding-top:20px">
-                    <div style="font-weight:700;color:var(--text-primary);margin-bottom:20px;font-size:1rem">? Preview Lencana</div>
+                    <div style="font-weight:700;color:var(--text-primary);margin-bottom:20px;font-size:1rem">✨ Preview Lencana</div>
                     <div id="badgePreviewLarge" style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#ffd700,#ff8c00);display:flex;align-items:center;justify-content:center;font-size:3rem;margin-bottom:12px;border:4px solid rgba(255,255,255,.4);box-shadow:0 8px 25px rgba(0,0,0,.25);overflow:hidden"></div>
                     <div id="badgePreviewName" style="font-weight:700;color:var(--text-primary);font-size:1rem;text-align:center;margin-bottom:30px;min-height:24px">Nama Lencana</div>
                     <div style="font-size:.8rem;color:var(--text-secondary);margin-bottom:10px">Preview di leaderboard:</div>
@@ -715,12 +715,12 @@
                         <span style="color:var(--text-primary);font-size:.9rem;font-weight:600" id="badgePreviewNameSmall">Nama Lencana</span>
                     </div>
                     <div style="margin-top:20px;padding:15px;background:var(--bg-main);border-radius:12px;border:2px dashed var(--border-color);width:100%;font-size:.85rem;color:var(--text-secondary)">
-                        ?? <strong>Tips:</strong><br> Emoji untuk lencana ringan<br> Foto untuk lencana spesial<br> Pilih warna yang kontras
+                        💡 <strong>Tips:</strong><br>• Emoji untuk lencana ringan<br>• Foto untuk lencana spesial<br>• Pilih warna yang kontras
                     </div>
                 </div>
             </div>
             <div style="border-top:2px solid var(--border-color);margin-top:25px;padding-top:20px">
-                <button class="btn-full" style="background:var(--success);margin-top:0" onclick="simpanDesainLencana()">?? Simpan Lencana ke Daftar</button>
+                <button class="btn-full" style="background:var(--success);margin-top:0" onclick="simpanDesainLencana()">💾 Simpan Lencana ke Daftar</button>
             </div>
         </div>
     </div>
@@ -729,9 +729,9 @@
     <div id="daftarLencanaModal" class="modal-overlay">
         <div class="modal-content modal-large" style="max-width:700px">
             <button class="close-btn" onclick="closeModal('daftarLencanaModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">?? Daftar Lencana Custom</h2>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">📋 Daftar Lencana Custom</h2>
             <p style="text-align:center;color:var(--text-secondary);margin-bottom:20px">Semua lencana yang sudah dibuat admin</p>
-            <button onclick="openDesainLencana()" class="btn-full" style="margin-bottom:20px;margin-top:0">?? Buat Lencana Baru</button>
+            <button onclick="openDesainLencana()" class="btn-full" style="margin-bottom:20px;margin-top:0">🎨 Buat Lencana Baru</button>
             <div id="daftarLencanaList"></div>
         </div>
     </div>
@@ -740,7 +740,7 @@
     <div id="deleteTeamModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('deleteTeamModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">??? Hapus Tim</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">🗑️ Hapus Tim</h2>
             <div id="deleteTeamList" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
@@ -749,7 +749,7 @@
     <div id="deleteUserModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('deleteUserModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">?? Hapus User</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">👤 Hapus User</h2>
             <div id="deleteUserList" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
@@ -758,7 +758,7 @@
     <div id="deletePostModal" class="modal-overlay">
         <div class="modal-content modal-large">
             <button class="close-btn" onclick="closeModal('deletePostModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">??? Hapus Postingan</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--danger)">🗑️ Hapus Postingan</h2>
             <div id="deletePostList" style="max-height:450px;overflow-y:auto"></div>
         </div>
     </div>
@@ -767,9 +767,9 @@
     <div id="searchModal" class="modal-overlay">
         <div class="modal-content" style="max-width:600px">
             <button class="close-btn" onclick="closeModal('searchModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">?? Cari Pengguna</h2>
+            <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">🔍 Cari Pengguna</h2>
             <div style="display:flex;gap:10px;margin-bottom:20px">
-                <input type="text" id="searchInput" placeholder="?? Ketik nama pengguna..."
+                <input type="text" id="searchInput" placeholder="🔎 Ketik nama pengguna..."
                     style="flex:1;padding:14px 18px;border:2px solid var(--border-color);background:var(--bg-card);color:var(--text-primary);border-radius:12px;font-family:'Nunito',sans-serif;font-size:1rem"
                     oninput="filterSearchResults()" onkeypress="if(event.key==='Enter')filterSearchResults()">
                 <button onclick="filterSearchResults()" class="btn-icon" style="padding:14px 20px">Cari</button>
@@ -792,7 +792,7 @@
             </div>
             <div class="profile-body">
                 <div style="margin-bottom:25px;padding-bottom:25px;border-bottom:2px solid var(--border-color)">
-                    <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">?? Informasi</div>
+                    <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">📋 Informasi</div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
                         <div><div style="font-size:.8rem;color:var(--text-secondary);font-weight:600;margin-bottom:4px">Tim & Jabatan</div><div id="vpTeamRole" style="font-weight:600;color:var(--text-primary)">-</div></div>
                         <div><div style="font-size:.8rem;color:var(--text-secondary);font-weight:600;margin-bottom:4px">Total Poin</div><div id="vpPoints" style="color:var(--success);font-weight:700;font-size:1.2rem">0</div></div>
@@ -800,7 +800,7 @@
                     </div>
                 </div>
                 <div>
-                    <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">?? Riwayat Prestasi</div>
+                    <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">🏆 Riwayat Prestasi</div>
                     <div id="vpAchievements"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi</p></div>
                 </div>
             </div>
@@ -811,24 +811,24 @@
     <div id="gameListModal" class="modal-overlay">
         <div class="modal-content" style="max-width:650px">
             <button class="close-btn" onclick="closeModal('gameListModal')">&times;</button>
-            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">?? Mini Game</h2>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">🎮 Mini Game</h2>
             <p style="text-align:center;color:var(--text-secondary);margin-bottom:10px">Pilih permainan untuk dimulai</p>
             <div class="game-list-grid">
                 <div class="game-card" onclick="openWerewolfGame()">
-                    <div class="game-card-icon">??</div>
+                    <div class="game-card-icon">🐺</div>
                     <div class="game-card-name">Wharewolf</div>
                     <div class="game-card-desc">Game role-playing online multiplayer. Temukan siapa serigala di antara kalian melalui analisis bahasa & argumentasi!</div>
-                    <div class="game-card-badge">612 Pemain  Multiplayer</div>
+                    <div class="game-card-badge">6–12 Pemain • Multiplayer</div>
                 </div>
                 <!-- Slot game berikutnya -->
                 <div class="game-card" style="opacity:.45;cursor:not-allowed" onclick="alert('Game ini belum tersedia. Segera hadir!')">
-                    <div class="game-card-icon">??</div>
+                    <div class="game-card-icon">🧩</div>
                     <div class="game-card-name">Word Puzzle</div>
                     <div class="game-card-desc">Tebak kata tersembunyi dari petunjuk yang diberikan. Segera hadir!</div>
                     <div class="game-card-badge" style="background:var(--gray)">Coming Soon</div>
                 </div>
                 <div class="game-card" style="opacity:.45;cursor:not-allowed" onclick="alert('Game ini belum tersedia. Segera hadir!')">
-                    <div class="game-card-icon">??</div>
+                    <div class="game-card-icon">📝</div>
                     <div class="game-card-name">Quiz Sastra</div>
                     <div class="game-card-desc">Uji pengetahuan sastra Indonesiamu lewat kuis seru berhadiah poin!</div>
                     <div class="game-card-badge" style="background:var(--gray)">Coming Soon</div>
@@ -841,27 +841,27 @@
     <div id="wwOverlay" class="ww-overlay">
         <!-- LOBBY SCREEN -->
         <div id="wwLobbyScreen" class="ww-lobby">
-            <div style="font-size:4rem;margin-bottom:10px">??</div>
+            <div style="font-size:4rem;margin-bottom:10px">🐺</div>
             <h2>WHAREWOLF</h2>
             <p style="color:rgba(255,255,255,.65);margin-bottom:25px;max-width:450px">Game role-playing berbasis analisis bahasa. Temukan siapa serigala di antara kalian!</p>
             <div id="wwLobbyContent">
                 <!-- Akan diisi JS: form buat/join room -->
             </div>
-            <button onclick="closeWerewolfGame()" style="margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 24px;border-radius:20px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">? Keluar</button>
+            <button onclick="closeWerewolfGame()" style="margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 24px;border-radius:20px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">✕ Keluar</button>
         </div>
 
         <!-- WAITING ROOM -->
         <div id="wwWaitingScreen" style="display:none;color:#fff;padding:30px;text-align:center;width:100%">
             <div style="max-width:500px;margin:0 auto">
-                <div style="font-size:3rem;margin-bottom:10px">?</div>
+                <div style="font-size:3rem;margin-bottom:10px">⏳</div>
                 <h3 style="font-size:1.5rem;margin-bottom:10px">Ruang Tunggu</h3>
                 <div id="wwRoomCodeDisplay" class="ww-room-code">----</div>
-                <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:20px">Bagikan kode ini ke teman-temanmu (612 pemain)</p>
+                <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:20px">Bagikan kode ini ke teman-temanmu (6–12 pemain)</p>
                 <div id="wwWaitingPlayers" class="ww-player-lobby-list"></div>
                 <p id="wwWaitingStatus" style="color:rgba(255,255,255,.5);font-size:.85rem;margin:15px 0">Menunggu pemain bergabung...</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                    <button id="wwStartBtn" onclick="wwHostStartGame()" style="display:none;padding:14px 32px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1rem;font-family:'Nunito',sans-serif">?? Mulai Permainan</button>
-                    <button onclick="wwLeaveRoom()" style="padding:14px 24px;background:rgba(244,67,54,.3);border:1px solid rgba(244,67,54,.5);color:#ef9a9a;border-radius:25px;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif">?? Keluar Room</button>
+                    <button id="wwStartBtn" onclick="wwHostStartGame()" style="display:none;padding:14px 32px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1rem;font-family:'Nunito',sans-serif">🚀 Mulai Permainan</button>
+                    <button onclick="wwLeaveRoom()" style="padding:14px 24px;background:rgba(244,67,54,.3);border:1px solid rgba(244,67,54,.5);color:#ef9a9a;border-radius:25px;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif">🚪 Keluar Room</button>
                 </div>
             </div>
         </div>
@@ -870,13 +870,13 @@
         <div id="wwGameScreen" style="display:none;width:100%;height:100%;position:relative">
             <div class="ww-header">
                 <div class="ww-title">
-                    ?? WHAREWOLF
+                    🐺 WHAREWOLF
                     <span id="wwRoundBadge" style="background:rgba(255,255,255,.15);padding:4px 12px;border-radius:12px;font-size:.8rem">Ronde 1</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:12px">
-                    <span id="wwPhaseBadge" class="ww-phase-badge phase-night ww-phase-active">?? Malam</span>
+                    <span id="wwPhaseBadge" class="ww-phase-badge phase-night ww-phase-active">🌙 Malam</span>
                     <span id="wwTimerDisplay" style="color:#fff;font-weight:700;font-size:.9rem;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:12px">--:--</span>
-                    <button onclick="wwLeaveRoom()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:14px;cursor:pointer;font-size:.8rem;font-family:'Nunito',sans-serif">? Keluar</button>
+                    <button onclick="wwLeaveRoom()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:14px;cursor:pointer;font-size:.8rem;font-family:'Nunito',sans-serif">✕ Keluar</button>
                 </div>
             </div>
             <div class="ww-body">
@@ -899,7 +899,7 @@
                     <div id="wwActionPanel" class="ww-action-panel" style="display:none"></div>
                     <!-- Input chat -->
                     <div id="wwInputArea" class="ww-input-area">
-                        <input type="text" id="wwChatInput" class="ww-input" placeholder="?? Ketik pesanmu..." onkeypress="if(event.key==='Enter')wwSendChat()" maxlength="300">
+                        <input type="text" id="wwChatInput" class="ww-input" placeholder="💬 Ketik pesanmu..." onkeypress="if(event.key==='Enter')wwSendChat()" maxlength="300">
                         <button onclick="wwSendChat()" class="ww-send-btn">Kirim</button>
                     </div>
                 </div>
@@ -909,12 +909,12 @@
                 <div id="wwResultTitle" class="ww-result-title">-</div>
                 <div id="wwResultBody" style="color:rgba(255,255,255,.75);margin-bottom:25px;max-width:500px;line-height:1.7"></div>
                 <div id="wwFinalScores" style="margin-bottom:25px;width:100%;max-width:400px"></div>
-                <button onclick="wwEndAndSavePoints()" style="padding:16px 40px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1.1rem;font-family:'Nunito',sans-serif">? Simpan Poin & Keluar</button>
+                <button onclick="wwEndAndSavePoints()" style="padding:16px 40px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1.1rem;font-family:'Nunito',sans-serif">✅ Simpan Poin & Keluar</button>
             </div>
         </div>
     </div>
 
-    <div id="copiedToast" class="copied-toast">? Link berhasil disalin!</div>
+    <div id="copiedToast" class="copied-toast">✅ Link berhasil disalin!</div>
     <script>
 const SUPABASE_URL = 'https://cixnbqutgnzscmspuxft.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_B-6wORsbqmfoM3kp1mDUBA_SFIuHUak';
@@ -992,7 +992,7 @@ function showStep(id){document.querySelectorAll('.form-step').forEach(s=>s.class
 function toggleTheme(){currentTheme=currentTheme==='light'?'dark':'light';localStorage.setItem('gk_theme',currentTheme);applyTheme();}
 function applyTheme(){
     document.documentElement.setAttribute('data-theme',currentTheme);
-    document.getElementById('themeToggle').innerHTML=currentTheme==='light'?'??':'??';
+    document.getElementById('themeToggle').innerHTML=currentTheme==='light'?'🌙':'☀️';
     if(statsChart){statsChart.destroy();initChart();}
 }
 function checkLoginAction(){currentUser?openUserProfile():openModal('loginModal');}
@@ -1004,10 +1004,10 @@ function getTimeAgo(ts){
 }
 function getBadgeIcon(b){
     const standard={
-        members:'<span class="badge-icon" style="background:linear-gradient(135deg,#ff9800,#f57c00)" title="Anggota Terbanyak">??</span>',
-        active:'<span class="badge-icon" style="background:linear-gradient(135deg,#4caf50,#388e3c)" title="Tim Teraktif">?</span>',
-        creative:'<span class="badge-icon" style="background:linear-gradient(135deg,#9c27b0,#7b1fa2)" title="Tim Terkreatif">??</span>',
-        achievement:'<span class="badge-icon" style="background:linear-gradient(135deg,#f44336,#d32f2f)" title="Tim Terprestasi">??</span>'
+        members:'<span class="badge-icon" style="background:linear-gradient(135deg,#ff9800,#f57c00)" title="Anggota Terbanyak">👥</span>',
+        active:'<span class="badge-icon" style="background:linear-gradient(135deg,#4caf50,#388e3c)" title="Tim Teraktif">⚡</span>',
+        creative:'<span class="badge-icon" style="background:linear-gradient(135deg,#9c27b0,#7b1fa2)" title="Tim Terkreatif">🎨</span>',
+        achievement:'<span class="badge-icon" style="background:linear-gradient(135deg,#f44336,#d32f2f)" title="Tim Terprestasi">🏆</span>'
     };
     if(standard[b])return standard[b];
     if(b&&b.startsWith('custom_')){
@@ -1032,9 +1032,9 @@ async function processLogin(){
     try{
         if(nim===ADMIN.nim&&pass===ADMIN.pass){currentUser=ADMIN;localStorage.setItem('gk_admin','true');localStorage.removeItem('gk_nim');finishLogin(alertDiv);return;}
         const{data,error}=await db.from('users').select('*').eq('nim',nim).eq('pass',pass).single();
-        if(error||!data){alertDiv.innerHTML='<div class="alert alert-danger">? NIM atau password salah!</div>';return;}
+        if(error||!data){alertDiv.innerHTML='<div class="alert alert-danger">❌ NIM atau password salah!</div>';return;}
         currentUser=data;localStorage.setItem('gk_nim',nim);localStorage.removeItem('gk_admin');finishLogin(alertDiv);
-    }catch(e){alertDiv.innerHTML=`<div class="alert alert-danger">?? Error: ${e.message}</div>`;}
+    }catch(e){alertDiv.innerHTML=`<div class="alert alert-danger">⚠️ Error: ${e.message}</div>`;}
     finally{hideLoading();}
 }
 function finishLogin(alertDiv){
@@ -1050,7 +1050,7 @@ async function processLogout(){
 function updateNavState(){
     if(currentUser){
         document.getElementById('navGuest').style.display='none';document.getElementById('navUser').style.display='block';
-        document.getElementById('navUserName').innerText=currentUser.isAdmin?'?? ADMIN':currentUser.name.split(' ')[0];
+        document.getElementById('navUserName').innerText=currentUser.isAdmin?'⚙️ ADMIN':currentUser.name.split(' ')[0];
         document.getElementById('userPillBtn').className=currentUser.isAdmin?'user-pill admin-pill':'user-pill';
     }else{document.getElementById('navGuest').style.display='flex';document.getElementById('navUser').style.display='none';}
 }
@@ -1091,7 +1091,7 @@ function regNext2(){
 async function goToJoinList(){
     showStep('panelJoinTeam');
     const container=document.getElementById('joinListContainer');
-    container.innerHTML='<p style="text-align:center;padding:20px;color:var(--text-secondary)">? Memuat daftar tim...</p>';
+    container.innerHTML='<p style="text-align:center;padding:20px;color:var(--text-secondary)">⏳ Memuat daftar tim...</p>';
     const{data}=await db.from('teams').select('*').order('points',{ascending:false});
     container.innerHTML='';
     (data||[]).forEach(t=>{
@@ -1100,7 +1100,7 @@ async function goToJoinList(){
             onmouseover="this.style.background='var(--secondary)'" onmouseout="this.style.background='transparent'"
             onclick="selectTeam(${t.id},this)">
             <div style="font-weight:700">${t.name}</div>
-            <div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus}  ${t.points} poin  ${members.length} anggota</div>
+            <div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} • ${t.points} poin • ${members.length} anggota</div>
         </div>`;
     });
     if(!data?.length)container.innerHTML='<p style="text-align:center;padding:20px;color:var(--text-secondary)">Belum ada tim tersedia</p>';
@@ -1123,9 +1123,9 @@ async function finalJoinTeam(){
             teams:[team.name],team_roles:{[team.name]:role},points:0,achievements:[],point_logs:[],profile_photo:null,join_date:Date.now()
         });
         if(error)throw error;
-        alert(`? Registrasi berhasil!\nAnda bergabung sebagai ${role} di tim ${team.name}.\nSilakan Login.`);
+        alert(`✅ Registrasi berhasil!\nAnda bergabung sebagai ${role} di tim ${team.name}.\nSilakan Login.`);
         closeModal('registerModal');tempRegData={};selectedTeamId=null;await loadAllData();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function finalCreateTeam(){
     const name=document.getElementById('newTeamName').value.trim(),focus=document.getElementById('newTeamFocus').value.trim();
@@ -1142,19 +1142,19 @@ async function finalCreateTeam(){
             teams:[name],team_roles:{[name]:'Ketua'},points:100,achievements:[],point_logs:[],profile_photo:null,join_date:Date.now()
         });
         if(userErr)throw userErr;
-        alert(`?? Tim "${name}" berhasil dibuat!\nAnda terdaftar sebagai Ketua.\nSilakan Login.`);
+        alert(`🚀 Tim "${name}" berhasil dibuat!\nAnda terdaftar sebagai Ketua.\nSilakan Login.`);
         closeModal('registerModal');tempRegData={};await loadAllData();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 
 /* ============================================================
-   LEADERBOARD TABLE  dengan baris klikable
+   LEADERBOARD TABLE — dengan baris klikable
 ============================================================ */
 function renderTables(){
     const sorted=[...allTeams].sort((a,b)=>b.points-a.points);
     const teamBody=document.getElementById('teamTableBody');teamBody.innerHTML='';
     sorted.forEach((t,i)=>{
-        const medal=i===0?'??':i===1?'??':i===2?'??':(i+1);
+        const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);
         const badges=(t.badges||[]).map(b=>getBadgeIcon(b)).join('')||'<span style="color:var(--text-secondary)">-</span>';
         const tr=document.createElement('tr');
         tr.className='clickable-row';
@@ -1178,7 +1178,7 @@ function renderTables(){
 }
 
 /* ============================================================
-   CHART  FIX: Gunakan data point_logs real dari database
+   CHART — FIX: Gunakan data point_logs real dari database
    Kumpulkan semua point_logs dari semua users,
    group per hari/bulan, lalu tampilkan sebagai grafik akumulasi
 ============================================================ */
@@ -1259,7 +1259,7 @@ function changeTimeFilter(filter,event){
 }
 
 /* ============================================================
-   FEED  Foto profil + klik ke profil poster
+   FEED — Foto profil + klik ke profil poster
 ============================================================ */
 function previewImage(event){
     const file=event.target.files[0];if(!file)return;
@@ -1283,14 +1283,14 @@ async function createPost(){
             content,image:uploadedImage,likes:[],comments:[],timestamp:Date.now()
         });
         if(error)throw error;
-        document.getElementById('postInput').value='';removeImage();await loadAllData();renderFeed();alert('? Postingan berhasil dibuat!');
-    }catch(e){alert('? Gagal posting: '+e.message);}finally{hideLoading();}
+        document.getElementById('postInput').value='';removeImage();await loadAllData();renderFeed();alert('✅ Postingan berhasil dibuat!');
+    }catch(e){alert('❌ Gagal posting: '+e.message);}finally{hideLoading();}
 }
 
 function renderFeed(){
     const container=document.getElementById('feedContainer');
     if(!allPosts.length){
-        container.innerHTML=`<div style="text-align:center;padding:60px;color:var(--text-secondary)"><p style="font-size:4rem">??</p><p style="font-size:1.2rem;margin-top:10px">Belum ada postingan</p><p style="font-size:.9rem;margin-top:5px">Jadilah yang pertama berbagi karya!</p></div>`;
+        container.innerHTML=`<div style="text-align:center;padding:60px;color:var(--text-secondary)"><p style="font-size:4rem">🎨</p><p style="font-size:1.2rem;margin-top:10px">Belum ada postingan</p><p style="font-size:.9rem;margin-top:5px">Jadilah yang pertama berbagi karya!</p></div>`;
         return;
     }
     container.innerHTML='';applyFYP([...allPosts]).forEach(p=>container.appendChild(createPostCard(p)));
@@ -1321,21 +1321,21 @@ function createPostCard(post){
             </div>
             <div class="post-user-info" style="cursor:${posterUser?'pointer':'default'}" ${posterUser?`onclick="openViewProfile('${post.author_nim}')"`:''}>
                 <div class="post-user-name">${post.author_name}</div>
-                <div class="post-user-meta">?? ${post.author_team}  ?? ${getTimeAgo(post.timestamp)}</div>
+                <div class="post-user-meta">👥 ${post.author_team} • 🕐 ${getTimeAgo(post.timestamp)}</div>
             </div>
-            ${canDelete?`<button class="post-delete-btn" onclick="deletePost(${post.id})">??? Hapus</button>`:''}
+            ${canDelete?`<button class="post-delete-btn" onclick="deletePost(${post.id})">🗑️ Hapus</button>`:''}
         </div>
         ${post.content?`<div class="post-content">${post.content}</div>`:''}
         ${post.image?`<img src="${post.image}" class="post-image" onclick="viewImage('${post.image}')" alt="Post Image">`:''}
         <div class="post-actions">
-            <button class="post-action-btn ${isLiked?'liked':''}" onclick="toggleLike(${post.id})">${isLiked?'??':'??'} <span id="likeCount_${post.id}">${post.likes?.length||0}</span> Suka</button>
-            <button class="post-action-btn" onclick="toggleComments(${post.id})">?? <span id="commentCount_${post.id}">${post.comments?.length||0}</span> Komentar</button>
+            <button class="post-action-btn ${isLiked?'liked':''}" onclick="toggleLike(${post.id})">${isLiked?'❤️':'🤍'} <span id="likeCount_${post.id}">${post.likes?.length||0}</span> Suka</button>
+            <button class="post-action-btn" onclick="toggleComments(${post.id})">💬 <span id="commentCount_${post.id}">${post.comments?.length||0}</span> Komentar</button>
         </div>
         <div id="comments_${post.id}" style="display:none;margin-top:18px;padding-top:18px;border-top:2px solid var(--border-color)">
             <div id="commentsList_${post.id}"></div>
             ${currentUser&&!currentUser.isAdmin?`
                 <div style="display:flex;gap:10px;margin-top:15px">
-                    <input type="text" id="commentInput_${post.id}" placeholder="?? Tulis komentar..." style="flex:1;padding:10px 18px;border:2px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);border-radius:25px;font-size:.95rem;font-family:'Nunito',sans-serif" onkeypress="if(event.key==='Enter')addComment(${post.id})">
+                    <input type="text" id="commentInput_${post.id}" placeholder="💬 Tulis komentar..." style="flex:1;padding:10px 18px;border:2px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);border-radius:25px;font-size:.95rem;font-family:'Nunito',sans-serif" onkeypress="if(event.key==='Enter')addComment(${post.id})">
                     <button onclick="addComment(${post.id})" style="padding:10px 22px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif">Kirim</button>
                 </div>`:`<p style="text-align:center;color:var(--text-secondary);padding:10px;font-size:.9rem">Login untuk berkomentar</p>`}
         </div>`;
@@ -1359,7 +1359,7 @@ async function toggleLike(postId){
     const isLiked=likes.includes(currentUser.nim);
     const btn=document.querySelector(`#post_${postId} .post-action-btn`);
     btn.className='post-action-btn'+(isLiked?' liked':'');
-    btn.innerHTML=`${isLiked?'??':'??'} <span id="likeCount_${postId}">${likes.length}</span> Suka`;
+    btn.innerHTML=`${isLiked?'❤️':'🤍'} <span id="likeCount_${postId}">${likes.length}</span> Suka`;
 }
 function toggleComments(postId){
     const s=document.getElementById('comments_'+postId);
@@ -1379,7 +1379,7 @@ function renderComments(postId){
                 <div style="color:var(--text-primary);line-height:1.6;margin-top:3px">${c.text}</div>
                 <div style="display:flex;gap:15px;margin-top:6px;align-items:center">
                     <span style="font-size:.75rem;color:var(--text-secondary)">${getTimeAgo(c.timestamp)}</span>
-                    ${currentUser&&!currentUser.isAdmin?`<button onclick="toggleReply(${postId},${ci})" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:.8rem;font-weight:700;font-family:'Nunito',sans-serif">?? Balas</button>`:''}
+                    ${currentUser&&!currentUser.isAdmin?`<button onclick="toggleReply(${postId},${ci})" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:.8rem;font-weight:700;font-family:'Nunito',sans-serif">↩️ Balas</button>`:''}
                 </div>
                 <div id="replyForm_${postId}_${ci}" style="display:none;margin-top:8px">
                     <div style="display:flex;gap:8px">
@@ -1426,7 +1426,7 @@ async function deletePost(postId){
 }
 
 /* ============================================================
-   FITUR BARU: SEARCH MODAL  Cari Pengguna
+   FITUR BARU: SEARCH MODAL — Cari Pengguna
 ============================================================ */
 function openSearchModal(){
     openModal('searchModal');
@@ -1442,7 +1442,7 @@ function filterSearchResults(){
 function renderSearchResults(users){
     const c=document.getElementById('searchResultsContainer');
     if(!users.length){
-        c.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:2.5rem">??</p><p style="margin-top:10px">Pengguna tidak ditemukan</p></div>';
+        c.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:2.5rem">🔍</p><p style="margin-top:10px">Pengguna tidak ditemukan</p></div>';
         return;
     }
     c.innerHTML='';
@@ -1462,7 +1462,7 @@ function renderSearchResults(users){
             <div class="search-avatar-sm">${avContent}</div>
             <div style="flex:1">
                 <div style="font-weight:800;color:var(--text-primary)">${u.name}</div>
-                <div style="font-size:.85rem;color:var(--text-secondary);margin-top:2px">?? ${teams}</div>
+                <div style="font-size:.85rem;color:var(--text-secondary);margin-top:2px">👥 ${teams}</div>
                 <div style="font-size:.8rem;color:var(--text-secondary)">NIM: ${u.nim} | Kelas: ${u.kelas||'-'}</div>
             </div>
             <div style="text-align:right">
@@ -1474,7 +1474,7 @@ function renderSearchResults(users){
 }
 
 /* ============================================================
-   FITUR BARU: VIEW PROFILE  Lihat profil orang lain (read-only)
+   FITUR BARU: VIEW PROFILE — Lihat profil orang lain (read-only)
 ============================================================ */
 function openViewProfile(nim){
     const u=allUsers.find(x=>x.nim===nim);
@@ -1566,7 +1566,7 @@ async function openTeamDetail(teamId){
     logoEl.innerHTML=team.logo?`<img src="${team.logo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:`<span>${team.logo_text}</span>`;
     if(isLeader){
         logoEl.style.cssText='width:120px;height:120px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 15px;font-weight:700;overflow:hidden;cursor:pointer;border:4px solid var(--gold);box-shadow:0 0 20px rgba(255,215,0,.35)';
-        logoEl.title='?? Klik untuk pengaturan tim';logoEl.onclick=openTeamSettings;
+        logoEl.title='⚙️ Klik untuk pengaturan tim';logoEl.onclick=openTeamSettings;
     }else{
         logoEl.style.cssText='width:120px;height:120px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 15px;font-weight:700;overflow:hidden';
         logoEl.onclick=null;
@@ -1587,7 +1587,7 @@ async function openTeamDetail(teamId){
 }
 function updateJoinButton(team){
     const isMember=currentUser&&!currentUser.isAdmin&&currentUser.teams?.includes(team.name);
-    document.getElementById('joinBtnText').innerText=isMember?'?? Buka Chat':'?? Bergabung';
+    document.getElementById('joinBtnText').innerText=isMember?'💬 Buka Chat':'👋 Bergabung';
     document.getElementById('joinOrChatBtn').style.background=isMember?'var(--primary)':'var(--success)';
     document.getElementById('leaveTeamBtn').style.display=isMember?'flex':'none';
 }
@@ -1606,21 +1606,21 @@ async function handleJoinOrChat(){
         await db.from('users').update({teams:newTeams,team_roles:newRoles}).eq('nim',currentUser.nim);
         currentUser.teams=newTeams;currentUser.team_roles=newRoles;
         const u=allUsers.find(u=>u.nim===currentUser.nim);if(u){u.teams=newTeams;u.team_roles=newRoles;}
-        alert(`? Berhasil bergabung sebagai ${role}!`);openTeamDetail(team.id);renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Berhasil bergabung sebagai ${role}!`);openTeamDetail(team.id);renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function leaveTeam(){
     if(!currentUser)return;const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
     const isLeader=currentUser.team_roles?.[team.name]==='Ketua';
-    const msg=isLeader?`?? KELUAR dari "${team.name}"?\nAnda adalah KETUA tim ini!`:`Keluar dari tim "${team.name}"?`;
+    const msg=isLeader?`⚠️ KELUAR dari "${team.name}"?\nAnda adalah KETUA tim ini!`:`Keluar dari tim "${team.name}"?`;
     if(!confirm(msg))return;showLoading();
     try{
         const newTeams=currentUser.teams.filter(t=>t!==team.name),newRoles={...currentUser.team_roles};
         delete newRoles[team.name];
         await db.from('users').update({teams:newTeams,team_roles:newRoles}).eq('nim',currentUser.nim);
         currentUser.teams=newTeams;currentUser.team_roles=newRoles;
-        alert(`? Anda telah keluar dari ${team.name}`);closeModal('teamDetailModal');await loadAllData();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Anda telah keluar dari ${team.name}`);closeModal('teamDetailModal');await loadAllData();renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 function renderTeamMembers(teamName){
     const c=document.getElementById('membersList');c.innerHTML='';
@@ -1630,7 +1630,7 @@ function renderTeamMembers(teamName){
         const role=m.team_roles?.[teamName]||'Anggota';
         const isSelf=currentUser&&m.nim===currentUser.nim?' <span style="color:var(--primary);font-size:.85rem">(Anda)</span>':'';
         c.innerHTML+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px dotted var(--border-color)">
-            <div><span style="color:var(--text-primary);font-weight:600">${m.name}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim}  ${m.points} poin</div></div>
+            <div><span style="color:var(--text-primary);font-weight:600">${m.name}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim} • ${m.points} poin</div></div>
             <span class="${role==='Ketua'?'role-ketua':'role-anggota'}">${role}</span>
         </div>`;
     });
@@ -1663,7 +1663,7 @@ function switchTeamTab(tab){
 async function loadChatMessages(teamName,silent=false){
     const{data}=await db.from('chats').select('*').eq('team_name',teamName).order('timestamp',{ascending:true}).limit(100);
     const messages=data||[],container=document.getElementById('chatMessages');
-    if(!messages.length){container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:2rem">??</p><p style="margin-top:8px">Belum ada pesan. Mulai percakapan!</p></div>';return;}
+    if(!messages.length){container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:2rem">💬</p><p style="margin-top:8px">Belum ada pesan. Mulai percakapan!</p></div>';return;}
     const atBottom=container.scrollHeight-container.scrollTop-container.clientHeight<50;
     container.innerHTML='';
     messages.forEach(msg=>{
@@ -1705,16 +1705,16 @@ function openTeamSettings(){
     document.getElementById('settingsFocus').value=team.focus||'';document.getElementById('settingsDev').value=team.dev||'';
     const badgesList=document.getElementById('settingsBadgesList');badgesList.innerHTML='';
     const available=team.available_badges||[];
-    if(!available.length){badgesList.innerHTML='<p style="color:var(--text-secondary);padding:10px;font-size:.9rem">?? Belum ada lencana dari admin.</p>';}
+    if(!available.length){badgesList.innerHTML='<p style="color:var(--text-secondary);padding:10px;font-size:.9rem">📭 Belum ada lencana dari admin.</p>';}
     else{
-        const standardNames={members:'?? Anggota Terbanyak',active:'? Tim Teraktif',creative:'?? Tim Terkreatif',achievement:'?? Tim Terprestasi'};
+        const standardNames={members:'👥 Anggota Terbanyak',active:'⚡ Tim Teraktif',creative:'🎨 Tim Terkreatif',achievement:'🏆 Tim Terprestasi'};
         available.forEach(bid=>{
             const isActive=team.badges?.includes(bid);let badgeName=standardNames[bid]||'';
-            if(!badgeName){const cb=allCustomBadges.find(b=>b.badge_id===bid);if(cb){badgeName=(cb.photo?'??':cb.emoji||'')+' '+cb.name;}}
+            if(!badgeName){const cb=allCustomBadges.find(b=>b.badge_id===bid);if(cb){badgeName=(cb.photo?'📸':cb.emoji||'')+' '+cb.name;}}
             badgesList.innerHTML+=`<div style="padding:12px;background:${isActive?'#e8f5e9':'var(--bg-main)'};border-radius:8px;margin-bottom:8px;display:flex;align-items:center;gap:10px;border:2px solid ${isActive?'var(--success)':'var(--border-color)'}">
                 <input type="checkbox" id="badge_${bid}" ${isActive?'checked':''} style="width:18px;height:18px;cursor:pointer;accent-color:var(--primary)">
                 <label for="badge_${bid}" style="display:inline;font-weight:600;cursor:pointer;color:var(--text-primary)">${badgeName}</label>
-                ${isActive?'<span style="margin-left:auto;color:var(--success);font-size:.8rem">? Aktif</span>':''}
+                ${isActive?'<span style="margin-left:auto;color:var(--success);font-size:.8rem">✅ Aktif</span>':''}
             </div>`;
         });
     }
@@ -1754,9 +1754,9 @@ async function saveTeamSettings(){
                 currentUser.team_roles=nr;
             }
         }
-        uploadedTeamLogo=null;await loadAllData();alert('? Pengaturan tim berhasil disimpan!');
+        uploadedTeamLogo=null;await loadAllData();alert('✅ Pengaturan tim berhasil disimpan!');
         closeModal('teamSettingsModal');renderTables();openTeamDetail(team.id);
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 function loadManageInterface(){
     const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
@@ -1770,30 +1770,30 @@ function loadManageInterface(){
         container.appendChild(div);
         if(!isSelf){
             const actDiv=document.getElementById('act_'+member.nim);
-            if(isLeader){actDiv.innerHTML=`<button onclick="changeMemberRole('${member.nim}','Anggota')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--warning);color:#000;font-family:'Nunito',sans-serif">?? Turunkan</button>`;}
-            else{actDiv.innerHTML=`<button onclick="changeMemberRole('${member.nim}','Ketua')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--success);color:#fff;font-family:'Nunito',sans-serif">?? Ketua</button><button onclick="kickMember('${member.nim}')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--danger);color:#fff;font-family:'Nunito',sans-serif">?? Keluarkan</button>`;}
+            if(isLeader){actDiv.innerHTML=`<button onclick="changeMemberRole('${member.nim}','Anggota')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--warning);color:#000;font-family:'Nunito',sans-serif">⬇️ Turunkan</button>`;}
+            else{actDiv.innerHTML=`<button onclick="changeMemberRole('${member.nim}','Ketua')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--success);color:#fff;font-family:'Nunito',sans-serif">👑 Ketua</button><button onclick="kickMember('${member.nim}')" style="padding:7px 12px;border:none;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:700;background:var(--danger);color:#fff;font-family:'Nunito',sans-serif">🚫 Keluarkan</button>`;}
         }
     });
 }
 async function changeMemberRole(nim,newRole){
     const team=allTeams.find(t=>t.id===currentViewingTeamId),member=allUsers.find(u=>u.nim===nim);if(!team||!member)return;
     if(newRole==='Ketua'){
-        if(!confirm(`Jadikan ${member.name} sebagai Ketua?\n\n?? Anda akan otomatis menjadi Anggota biasa!`))return;
+        if(!confirm(`Jadikan ${member.name} sebagai Ketua?\n\n⚠️ Anda akan otomatis menjadi Anggota biasa!`))return;
         const oldLeader=allUsers.find(u=>u.teams?.includes(team.name)&&u.team_roles?.[team.name]==='Ketua');
         if(oldLeader){const lr={...oldLeader.team_roles,[team.name]:'Anggota'};await db.from('users').update({team_roles:lr}).eq('nim',oldLeader.nim);oldLeader.team_roles=lr;if(currentUser?.nim===oldLeader.nim)currentUser.team_roles=lr;}
     }else{if(!confirm(`Turunkan ${member.name} dari posisi Ketua?`))return;}
     const nr={...member.team_roles,[team.name]:newRole};await db.from('users').update({team_roles:nr}).eq('nim',nim);member.team_roles=nr;
-    alert(`? ${member.name} sekarang menjadi ${newRole}!`);await loadAllData();openTeamDetail(team.id);renderTables();
+    alert(`✅ ${member.name} sekarang menjadi ${newRole}!`);await loadAllData();openTeamDetail(team.id);renderTables();
 }
 async function kickMember(nim){
     const team=allTeams.find(t=>t.id===currentViewingTeamId),member=allUsers.find(u=>u.nim===nim);if(!team||!member)return;
-    if(!confirm(`?? KELUARKAN "${member.name}" dari tim "${team.name}"?`))return;showLoading();
+    if(!confirm(`🚫 KELUARKAN "${member.name}" dari tim "${team.name}"?`))return;showLoading();
     try{
         const newTeams=member.teams.filter(t=>t!==team.name),newRoles={...member.team_roles};delete newRoles[team.name];
         await db.from('users').update({teams:newTeams,team_roles:newRoles}).eq('nim',nim);
         member.teams=newTeams;member.team_roles=newRoles;
-        alert(`? ${member.name} telah dikeluarkan dari tim!`);loadManageInterface();renderTeamMembers(team.name);renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ ${member.name} telah dikeluarkan dari tim!`);loadManageInterface();renderTeamMembers(team.name);renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 
 /* ============================================================
@@ -1845,8 +1845,8 @@ async function saveProfile(){
         await db.from('users').update(updateData).eq('nim',currentUser.nim);
         currentUser.name=name;currentUser.kelas=kelas;if(uploadedProfilePhoto)currentUser.profile_photo=uploadedProfilePhoto;
         const u=allUsers.find(u=>u.nim===currentUser.nim);if(u){u.name=name;u.kelas=kelas;if(uploadedProfilePhoto)u.profile_photo=uploadedProfilePhoto;}
-        alert('? Profil berhasil diperbarui!');uploadedProfilePhoto=null;closeModal('editProfileModal');renderCVProfile();updateHomepageUI();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert('✅ Profil berhasil diperbarui!');uploadedProfilePhoto=null;closeModal('editProfileModal');renderCVProfile();updateHomepageUI();renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 function openMyTeamPage(){
     if(!currentUser?.teams?.length){alert('Anda belum bergabung dengan tim!');return;}
@@ -1874,7 +1874,7 @@ function downloadCV(){
         });
     }
     doc.setFontSize(9);doc.setTextColor(150,150,150);doc.text(`Dicetak: ${new Date().toLocaleDateString('id-ID')} | Grup Karya Platform`,105,290,{align:'center'});
-    doc.save('CV_'+currentUser.name.replace(/\s+/g,'_')+'.pdf');alert('? CV berhasil didownload!');
+    doc.save('CV_'+currentUser.name.replace(/\s+/g,'_')+'.pdf');alert('✅ CV berhasil didownload!');
 }
 
 /* ============================================================
@@ -1914,22 +1914,22 @@ async function submitAddPoints(){
         team.points+=pts;team.activities=newActs;
         /* Refresh grafik setelah poin ditambah */
         initChart();
-        alert(`? Berhasil tambah ${pts} poin ke ${member.name}!\nTotal poin: ${member.points}`);closeModal('addPointsModal');renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Berhasil tambah ${pts} poin ke ${member.name}!\nTotal poin: ${member.points}`);closeModal('addPointsModal');renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function adminAddBadge(){
     const teamSel=document.getElementById('badgeTeamSelect');teamSel.innerHTML='<option value="">-- Pilih Tim --</option>';
     allTeams.forEach(t=>teamSel.innerHTML+=`<option value="${t.id}">${t.name}</option>`);
     const badgeSel=document.getElementById('badgeTypeSelect');
-    badgeSel.innerHTML=`<option value="">-- Pilih Lencana --</option><optgroup label="?? Lencana Standar"><option value="members">?? Anggota Terbanyak</option><option value="active">? Tim Teraktif</option><option value="creative">?? Tim Terkreatif</option><option value="achievement">?? Tim Terprestasi</option></optgroup>`;
-    if(allCustomBadges.length>0){badgeSel.innerHTML+=`<optgroup label="? Lencana Custom">`;allCustomBadges.forEach(b=>{const icon=b.photo?'??':(b.emoji||'');badgeSel.innerHTML+=`<option value="${b.badge_id}">${icon} ${b.name}</option>`;});badgeSel.innerHTML+=`</optgroup>`;}
+    badgeSel.innerHTML=`<option value="">-- Pilih Lencana --</option><optgroup label="🏅 Lencana Standar"><option value="members">👥 Anggota Terbanyak</option><option value="active">⚡ Tim Teraktif</option><option value="creative">🎨 Tim Terkreatif</option><option value="achievement">🏆 Tim Terprestasi</option></optgroup>`;
+    if(allCustomBadges.length>0){badgeSel.innerHTML+=`<optgroup label="✨ Lencana Custom">`;allCustomBadges.forEach(b=>{const icon=b.photo?'📸':(b.emoji||'');badgeSel.innerHTML+=`<option value="${b.badge_id}">${icon} ${b.name}</option>`;});badgeSel.innerHTML+=`</optgroup>`;}
     document.getElementById('badgePreviewBox').style.display='none';badgeSel.onchange=function(){updateBadgeSendPreview(this.value);};openModal('addBadgeModal');
 }
 function updateBadgeSendPreview(badgeId){
     const box=document.getElementById('badgePreviewBox'),prev=document.getElementById('badgeSendPreview'),name=document.getElementById('badgeSendName');
     if(!badgeId){box.style.display='none';return;}
     box.style.display='block';
-    const si={members:{icon:'??',color:'linear-gradient(135deg,#ff9800,#f57c00)',name:'Anggota Terbanyak'},active:{icon:'?',color:'linear-gradient(135deg,#4caf50,#388e3c)',name:'Tim Teraktif'},creative:{icon:'??',color:'linear-gradient(135deg,#9c27b0,#7b1fa2)',name:'Tim Terkreatif'},achievement:{icon:'??',color:'linear-gradient(135deg,#f44336,#d32f2f)',name:'Tim Terprestasi'}};
+    const si={members:{icon:'👥',color:'linear-gradient(135deg,#ff9800,#f57c00)',name:'Anggota Terbanyak'},active:{icon:'⚡',color:'linear-gradient(135deg,#4caf50,#388e3c)',name:'Tim Teraktif'},creative:{icon:'🎨',color:'linear-gradient(135deg,#9c27b0,#7b1fa2)',name:'Tim Terkreatif'},achievement:{icon:'🏆',color:'linear-gradient(135deg,#f44336,#d32f2f)',name:'Tim Terprestasi'}};
     if(si[badgeId]){prev.style.background=si[badgeId].color;prev.innerHTML=si[badgeId].icon;name.innerText=si[badgeId].name;}
     else{const cb=allCustomBadges.find(b=>b.badge_id===badgeId);if(cb){prev.style.background=cb.photo?'#f5f5f5':(cb.color||'linear-gradient(135deg,#ffd700,#ff8c00)');prev.innerHTML=cb.photo?`<img src="${cb.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:(cb.emoji||'');name.innerText=cb.name;}}
 }
@@ -1942,8 +1942,8 @@ async function submitAddBadge(){
         const newBadges=[...(team.available_badges||[]),badge];
         await db.from('teams').update({available_badges:newBadges}).eq('id',teamId);team.available_badges=newBadges;
         const badgeName=document.getElementById('badgeSendName').innerText||badge;
-        alert(`? Lencana "${badgeName}" berhasil dikirim ke tim ${team.name}!`);closeModal('addBadgeModal');await loadAllData();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Lencana "${badgeName}" berhasil dikirim ke tim ${team.name}!`);closeModal('addBadgeModal');await loadAllData();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 
 /* ============================================================
@@ -2005,29 +2005,29 @@ async function simpanDesainLencana(){
         const{error}=await db.from('custom_badges').insert(badgeData);
         if(error){const existing=JSON.parse(localStorage.getItem('gk_custom_badges')||'[]');existing.push(badgeData);localStorage.setItem('gk_custom_badges',JSON.stringify(existing));allCustomBadges.push(badgeData);}
         else{allCustomBadges.unshift(badgeData);}
-        alert(`? Lencana "${name}" berhasil dibuat!`);closeModal('desainLencanaModal');
+        alert(`✅ Lencana "${name}" berhasil dibuat!`);closeModal('desainLencanaModal');
     }catch(e){
         const newId='custom_'+Date.now();const badgeData={badge_id:newId,name,emoji:currentBadgeDesign.photo?null:(currentBadgeDesign.emoji||''),photo:currentBadgeDesign.photo||null,color:currentBadgeDesign.color,created_at:Date.now()};
         const existing=JSON.parse(localStorage.getItem('gk_custom_badges')||'[]');existing.push(badgeData);localStorage.setItem('gk_custom_badges',JSON.stringify(existing));allCustomBadges.unshift(badgeData);
-        alert(`? Lencana "${name}" berhasil dibuat! (lokal)`);closeModal('desainLencanaModal');
+        alert(`✅ Lencana "${name}" berhasil dibuat! (lokal)`);closeModal('desainLencanaModal');
     }finally{hideLoading();}
 }
 async function lihatDaftarLencana(){
     await loadAllData();const container=document.getElementById('daftarLencanaList');container.innerHTML='';
-    if(!allCustomBadges.length){container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:3rem">??</p><p style="margin-top:10px">Belum ada lencana custom.</p></div>';openModal('daftarLencanaModal');return;}
+    if(!allCustomBadges.length){container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-secondary)"><p style="font-size:3rem">🏅</p><p style="margin-top:10px">Belum ada lencana custom.</p></div>';openModal('daftarLencanaModal');return;}
     allCustomBadges.forEach(b=>{
         const content=b.photo?`<img src="${b.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:(b.emoji||'');
         const bg=b.photo?'#f5f5f5':(b.color||'linear-gradient(135deg,#ffd700,#ff8c00)');
         const div=document.createElement('div');div.className='badge-card';
         div.innerHTML=`<div style="width:55px;height:55px;border-radius:50%;background:${bg};display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;overflow:hidden;border:3px solid var(--border-color)">${content}</div>
             <div style="flex:1"><div style="font-weight:700;color:var(--text-primary);font-size:1rem">${b.name}</div><div style="font-size:.8rem;color:var(--text-secondary);margin-top:3px">ID: ${b.badge_id}</div><div style="font-size:.8rem;color:var(--text-secondary)">Dibuat: ${new Date(b.created_at).toLocaleDateString('id-ID')}</div></div>
-            <button onclick="hapusLencanaCustom('${b.badge_id}')" style="background:var(--danger);color:#fff;border:none;border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:.85rem;flex-shrink:0;font-family:'Nunito',sans-serif">??? Hapus</button>`;
+            <button onclick="hapusLencanaCustom('${b.badge_id}')" style="background:var(--danger);color:#fff;border:none;border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:.85rem;flex-shrink:0;font-family:'Nunito',sans-serif">🗑️ Hapus</button>`;
         container.appendChild(div);
     });openModal('daftarLencanaModal');
 }
 async function hapusLencanaCustom(badgeId){
     const badge=allCustomBadges.find(b=>b.badge_id===badgeId);if(!badge)return;
-    if(!confirm(`??? HAPUS lencana "${badge.name}"?`))return;showLoading();
+    if(!confirm(`🗑️ HAPUS lencana "${badge.name}"?`))return;showLoading();
     try{
         await db.from('custom_badges').delete().eq('badge_id',badgeId);
         for(const team of allTeams){
@@ -2036,8 +2036,8 @@ async function hapusLencanaCustom(badgeId){
                 await db.from('teams').update({badges:newBadges,available_badges:newAvailable}).eq('id',team.id);
         }
         allCustomBadges=allCustomBadges.filter(b=>b.badge_id!==badgeId);
-        alert(`? Lencana "${badge.name}" berhasil dihapus!`);lihatDaftarLencana();await loadAllData();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Lencana "${badge.name}" berhasil dihapus!`);lihatDaftarLencana();await loadAllData();renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function adminDeleteTeam(){
     const container=document.getElementById('deleteTeamList');container.innerHTML='';
@@ -2045,20 +2045,20 @@ async function adminDeleteTeam(){
     allTeams.forEach(t=>{
         const members=allUsers.filter(u=>u.teams?.includes(t.name)).length;
         const div=document.createElement('div');div.style.cssText='background:var(--bg-card);padding:15px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border-color)';
-        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${t.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus}  ${t.points} poin  ${members} anggota</div></div><button onclick="confirmDeleteTeam(${t.id})" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">??? Hapus</button>`;
+        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${t.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">${t.focus} • ${t.points} poin • ${members} anggota</div></div><button onclick="confirmDeleteTeam(${t.id})" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">🗑️ Hapus</button>`;
         container.appendChild(div);
     });openModal('deleteTeamModal');
 }
 async function confirmDeleteTeam(teamId){
     const team=allTeams.find(t=>t.id===teamId);
-    if(!confirm(`??? HAPUS TIM "${team.name}"?\n${allUsers.filter(u=>u.teams?.includes(team.name)).length} anggota akan kehilangan tim ini!`))return;
+    if(!confirm(`🗑️ HAPUS TIM "${team.name}"?\n${allUsers.filter(u=>u.teams?.includes(team.name)).length} anggota akan kehilangan tim ini!`))return;
     showLoading();
     try{
         const affected=allUsers.filter(u=>u.teams?.includes(team.name));
         for(const u of affected){const newTeams=u.teams.filter(t=>t!==team.name),newRoles={...u.team_roles};delete newRoles[team.name];await db.from('users').update({teams:newTeams,team_roles:newRoles}).eq('nim',u.nim);}
         await db.from('teams').delete().eq('id',teamId);await db.from('chats').delete().eq('team_name',team.name);
-        alert(`? Tim "${team.name}" berhasil dihapus!`);closeModal('deleteTeamModal');await loadAllData();renderTables();
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert(`✅ Tim "${team.name}" berhasil dihapus!`);closeModal('deleteTeamModal');await loadAllData();renderTables();
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function adminDeleteUser(){
     const container=document.getElementById('deleteUserList');container.innerHTML='';
@@ -2066,22 +2066,22 @@ async function adminDeleteUser(){
     if(!regularUsers.length){container.innerHTML='<p style="text-align:center;padding:20px;color:var(--text-secondary)">Belum ada user</p>';openModal('deleteUserModal');return;}
     regularUsers.forEach(u=>{
         const div=document.createElement('div');div.style.cssText='background:var(--bg-card);padding:15px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border-color)';
-        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${u.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">NIM: ${u.nim} | Tim: ${(u.teams||[]).join(', ')||'-'} | ${u.points} poin</div></div><button onclick="confirmDeleteUser('${u.nim}')" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">??? Hapus</button>`;
+        div.innerHTML=`<div><div style="font-weight:700;color:var(--text-primary)">${u.name}</div><div style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">NIM: ${u.nim} | Tim: ${(u.teams||[]).join(', ')||'-'} | ${u.points} poin</div></div><button onclick="confirmDeleteUser('${u.nim}')" style="padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">🗑️ Hapus</button>`;
         container.appendChild(div);
     });openModal('deleteUserModal');
 }
 async function confirmDeleteUser(nim){
     const user=allUsers.find(u=>u.nim===nim);
-    if(!confirm(`??? HAPUS AKUN "${user.name}" (NIM: ${user.nim})?`))return;showLoading();
-    try{await db.from('users').delete().eq('nim',nim);allUsers=allUsers.filter(u=>u.nim!==nim);alert(`? Akun "${user.name}" berhasil dihapus!`);closeModal('deleteUserModal');renderTables();}
-    catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+    if(!confirm(`🗑️ HAPUS AKUN "${user.name}" (NIM: ${user.nim})?`))return;showLoading();
+    try{await db.from('users').delete().eq('nim',nim);allUsers=allUsers.filter(u=>u.nim!==nim);alert(`✅ Akun "${user.name}" berhasil dihapus!`);closeModal('deleteUserModal');renderTables();}
+    catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 async function adminDeletePost(){
     const container=document.getElementById('deletePostList');container.innerHTML='';
     if(!allPosts.length){container.innerHTML='<p style="text-align:center;padding:30px;color:var(--text-secondary)">Belum ada postingan</p>';openModal('deletePostModal');return;}
     allPosts.forEach(p=>{
         const div=document.createElement('div');div.style.cssText='background:var(--bg-card);padding:15px;border-radius:10px;margin-bottom:10px;border:1px solid var(--border-color)';
-        div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div style="flex:1"><div style="font-weight:700;color:var(--text-primary)">${p.author_name}</div><div style="font-size:.8rem;color:var(--text-secondary);margin-bottom:8px">${p.author_team}  ${getTimeAgo(p.timestamp)}</div><div style="color:var(--text-primary);font-size:.9rem;line-height:1.5">${p.content?(p.content.length>100?p.content.substring(0,100)+'...':p.content):'<em style="color:var(--text-secondary)">Hanya foto</em>'}</div>${p.image?'<div style="margin-top:6px;font-size:.8rem;color:var(--primary)">??? Ada foto</div>':''}</div><button onclick="confirmDeletePost(${p.id})" style="padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">???</button></div>`;
+        div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div style="flex:1"><div style="font-weight:700;color:var(--text-primary)">${p.author_name}</div><div style="font-size:.8rem;color:var(--text-secondary);margin-bottom:8px">${p.author_team} • ${getTimeAgo(p.timestamp)}</div><div style="color:var(--text-primary);font-size:.9rem;line-height:1.5">${p.content?(p.content.length>100?p.content.substring(0,100)+'...':p.content):'<em style="color:var(--text-secondary)">Hanya foto</em>'}</div>${p.image?'<div style="margin-top:6px;font-size:.8rem;color:var(--primary)">🖼️ Ada foto</div>':''}</div><button onclick="confirmDeletePost(${p.id})" style="padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:var(--danger);color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif">🗑️</button></div>`;
         container.appendChild(div);
     });openModal('deletePostModal');
 }
@@ -2100,15 +2100,15 @@ async function downloadExcelData(){
         const ws2=XLSX.utils.json_to_sheet(teamRows);ws2['!cols']=[{wch:10},{wch:25},{wch:20},{wch:12},{wch:15},{wch:15}];
         XLSX.utils.book_append_sheet(wb,ws2,'Data Tim');
         XLSX.writeFile(wb,`GrupKarya_${new Date().toLocaleDateString('id-ID').replace(/\//g,'-')}.xlsx`);
-        alert('? Data Excel berhasil didownload!\n(2 sheet: Data Mahasiswa & Data Tim)');
-    }catch(e){alert('? Gagal: '+e.message);}finally{hideLoading();}
+        alert('✅ Data Excel berhasil didownload!\n(2 sheet: Data Mahasiswa & Data Tim)');
+    }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
 
 /* ============================================================
    BOOT
 ============================================================ */
 /* ============================================================
-   GAME MODULE  WHAREWOLF
+   GAME MODULE — WHAREWOLF
    Tabel Supabase: ww_rooms, ww_players, ww_messages, ww_actions
    Semua terhapus otomatis setelah game selesai
 ============================================================ */
@@ -2116,32 +2116,32 @@ async function downloadExcelData(){
 /* ----- CONSTANTS ----- */
 const WW_ROLES = {
     werewolf: {
-        name: '?? Serigala',
+        name: '🐺 Serigala',
         desc: 'Malam hari: Pilih korban untuk dieliminasi. Kirim propaganda anonim.',
         team: 'evil'
     },
     villager: {
-        name: '??? Warga Desa',
+        name: '🏘️ Warga Desa',
         desc: 'Tidak punya skill khusus. Kekuatanmu ada di argumentasi siang hari!',
         team: 'good'
     },
     philosopher: {
-        name: '?? Filsafat',
+        name: '📜 Filsafat',
         desc: 'Pagi: Sistem mengeluarkan pernyataan ontologis tentang salah satu serigala.',
         team: 'good'
     },
     poet: {
-        name: '?? Bujangga Puisi',
+        name: '✍️ Bujangga Puisi',
         desc: 'Pagi: Sistem merilis puisi simbolik tentang serigala.',
         team: 'good'
     },
     journalist: {
-        name: '?? Penulis Koran',
+        name: '📰 Penulis Koran',
         desc: 'Pagi: Pilih pemain untuk diwawancarai. Sistem memberi jawaban samar.',
         team: 'good'
     },
     detective: {
-        name: '?? Detektif',
+        name: '🔍 Detektif',
         desc: 'Pagi: Selidiki 1 pemain. Hasilnya berupa kategori samar, bukan nama langsung.',
         team: 'good'
     }
@@ -2160,7 +2160,7 @@ const WW_CLUES_POET = [
     "Ia menyelinap di antara kata-kata,\nbersembunyi dalam metafora gelap.",
     "Di padang sunyi ia berburu,\nmenyamar sebagai penjaga pagi.",
     "Taring tersembunyi di balik senyum,\nbulu halus menutupi cakar tajam.",
-    "Gelapnya bukan malam\nmelainkan jiwa yang memilih diam.",
+    "Gelapnya bukan malam—\nmelainkan jiwa yang memilih diam.",
     "Ia minum dari sumur yang sama,\nnamun menuangkan racun di malam hari.",
 ];
 const WW_CLUES_JOURNALIST = [
@@ -2254,19 +2254,19 @@ function wwShowLobby(){
     document.getElementById('wwGameScreen').style.display='none';
     document.getElementById('wwLobbyContent').innerHTML=`
         <div style="display:flex;flex-direction:column;gap:12px;width:300px">
-            <button onclick="wwCreateRoom()" style="padding:16px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;border:none;border-radius:14px;cursor:pointer;font-weight:800;font-size:1rem;font-family:'Nunito',sans-serif">?? Buat Room Baru</button>
+            <button onclick="wwCreateRoom()" style="padding:16px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;border:none;border-radius:14px;cursor:pointer;font-weight:800;font-size:1rem;font-family:'Nunito',sans-serif">🏠 Buat Room Baru</button>
             <div style="display:flex;gap:8px">
                 <input type="text" id="wwJoinCodeInput" placeholder="Kode Room (4 huruf)" maxlength="4"
                     style="flex:1;padding:14px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:12px;color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;text-transform:uppercase;text-align:center;letter-spacing:4px"
                     oninput="this.value=this.value.toUpperCase()">
                 <button onclick="wwJoinRoom()" style="padding:14px 20px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;cursor:pointer;font-weight:800;font-family:'Nunito',sans-serif">Masuk</button>
             </div>
-            <div style="color:rgba(255,255,255,.4);font-size:.8rem;text-align:center">Butuh 612 pemain untuk memulai</div>
+            <div style="color:rgba(255,255,255,.4);font-size:.8rem;text-align:center">Butuh 6–12 pemain untuk memulai</div>
         </div>`;
 }
 
 /* ============================================================
-   ROOM MANAGEMENT  Supabase
+   ROOM MANAGEMENT — Supabase
 ============================================================ */
 async function wwCreateRoom(){
     showLoading();
@@ -2283,7 +2283,7 @@ async function wwCreateRoom(){
         wwState.isHost = true;
         await wwJoinAsPlayer();
         wwShowWaiting();
-    }catch(e){alert('? Gagal buat room: '+e.message+'\n\nPastikan tabel ww_rooms, ww_players, ww_messages, ww_actions sudah dibuat di Supabase.');}
+    }catch(e){alert('❌ Gagal buat room: '+e.message+'\n\nPastikan tabel ww_rooms, ww_players, ww_messages, ww_actions sudah dibuat di Supabase.');}
     finally{hideLoading();}
 }
 
@@ -2293,16 +2293,16 @@ async function wwJoinRoom(){
     showLoading();
     try{
         const {data:room} = await db.from('ww_rooms').select('*').eq('code',code).single();
-        if(!room){alert('? Room tidak ditemukan!');return;}
-        if(room.game_started){alert('? Permainan sudah dimulai!');return;}
+        if(!room){alert('❌ Room tidak ditemukan!');return;}
+        if(room.game_started){alert('❌ Permainan sudah dimulai!');return;}
         const {data:pls} = await db.from('ww_players').select('*').eq('room_id',room.id);
-        if((pls||[]).length>=12){alert('? Room sudah penuh (maks 12 pemain)!');return;}
+        if((pls||[]).length>=12){alert('❌ Room sudah penuh (maks 12 pemain)!');return;}
         wwState.roomId = room.id;
         wwState.roomCode = code;
         wwState.isHost = room.host_nim === wwState.myNim;
         await wwJoinAsPlayer();
         wwShowWaiting();
-    }catch(e){alert('? Gagal join: '+e.message);}
+    }catch(e){alert('❌ Gagal join: '+e.message);}
     finally{hideLoading();}
 }
 
@@ -2362,9 +2362,9 @@ async function wwPollWaiting(){
         const players = pls||[];
         // Render daftar pemain
         const listEl = document.getElementById('wwWaitingPlayers');
-        listEl.innerHTML = players.map(p=>`<div class="ww-lobby-player ${p.nim===room.host_nim?'host':''}">${p.nim===room.host_nim?'?? ':''} ${p.name}</div>`).join('');
+        listEl.innerHTML = players.map(p=>`<div class="ww-lobby-player ${p.nim===room.host_nim?'host':''}">${p.nim===room.host_nim?'👑 ':''} ${p.name}</div>`).join('');
         const statusEl = document.getElementById('wwWaitingStatus');
-        statusEl.innerHTML = `${players.length} pemain bergabung ${players.length>=6?'<span style="color:#4caf50">? Siap dimulai!</span>':'<span style="color:#ff8a65">(min 6)</span>'}`;
+        statusEl.innerHTML = `${players.length} pemain bergabung ${players.length>=6?'<span style="color:#4caf50">✅ Siap dimulai!</span>':'<span style="color:#ff8a65">(min 6)</span>'}`;
         // Jika game sudah dimulai oleh host, pindah ke game screen
         if(room.game_started){
             clearInterval(wwState.stateInterval);
@@ -2393,8 +2393,8 @@ async function wwHostStartGame(){
             round:1, phase_end_time:phaseEnd, dead_players:[]
         }).eq('id',wwState.roomId);
         // Pesan sistem
-        await wwPostSystemMessage('?? Permainan dimulai! Malam pertama telah tiba. Serigala, pilih korbanmu...');
-    }catch(e){alert('? Gagal mulai: '+e.message);}
+        await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba. Serigala, pilih korbanmu...');
+    }catch(e){alert('❌ Gagal mulai: '+e.message);}
     finally{hideLoading();}
 }
 
@@ -2506,13 +2506,13 @@ function wwBuildMsgEl(m){
     else if(m.type==='propaganda') cls='propaganda';
     else if(m.sender_nim===wwState.myNim) cls='own';
 
-    if(m.type==='propaganda') senderLabel='<div class="msg-sender">?? Pesan Anonim</div>';
+    if(m.type==='propaganda') senderLabel='<div class="msg-sender">📢 Pesan Anonim</div>';
     else if(m.type!=='system'&&m.type!=='clue'&&m.type!=='dead') senderLabel=`<div class="msg-sender">${m.sender_name||'?'}</div>`;
 
     div.className=`ww-msg ${cls}`;
     div.innerHTML=`${senderLabel}<div>${m.content}</div><div class="msg-time">${new Date(m.created_at).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})}</div>`;
 
-    // Keyword scoring  hanya untuk pesan pemain biasa
+    // Keyword scoring — hanya untuk pesan pemain biasa
     if(m.type==='chat'&&m.sender_nim===wwState.myNim){
         const lc=m.content.toLowerCase();
         const hit=WW_TRIGGER_KEYWORDS.filter(kw=>lc.includes(kw)).length;
@@ -2532,10 +2532,10 @@ function wwRenderPhase(){
     const badge = document.getElementById('wwPhaseBadge');
     const round = document.getElementById('wwRoundBadge');
     const phaseLabels = {
-        night: {label:'?? Malam', cls:'phase-night'},
-        morning: {label:'?? Pagi', cls:'phase-morning'},
-        day: {label:'?? Siang - Diskusi', cls:'phase-day'},
-        vote: {label:'??? Voting', cls:'phase-vote'}
+        night: {label:'🌙 Malam', cls:'phase-night'},
+        morning: {label:'🌅 Pagi', cls:'phase-morning'},
+        day: {label:'☀️ Siang - Diskusi', cls:'phase-day'},
+        vote: {label:'🗳️ Voting', cls:'phase-vote'}
     };
     const p = phaseLabels[wwState.phase]||phaseLabels.night;
     badge.innerText = p.label;
@@ -2557,7 +2557,7 @@ function wwRenderPlayerList(){
         const isSelf = p.nim===wwState.myNim;
         const div=document.createElement('div');
         div.className=`ww-player-item ${p.alive?'alive':'dead'} ${isSelf?'self':''}`;
-        div.innerHTML=`${isSelf?'?? ':''}${p.name}${isSelf?' (Anda)':''} ${!p.alive?'??':''}`;
+        div.innerHTML=`${isSelf?'👤 ':''}${p.name}${isSelf?' (Anda)':''} ${!p.alive?'💀':''}`;
         el.appendChild(div);
     });
 }
@@ -2570,7 +2570,7 @@ function wwUpdateScoreDisplay(){
 }
 
 /* ============================================================
-   ACTION PANEL  berdasarkan fase & peran
+   ACTION PANEL — berdasarkan fase & peran
 ============================================================ */
 function wwRenderActionPanel(){
     const panel = document.getElementById('wwActionPanel');
@@ -2586,39 +2586,39 @@ function wwRenderActionPanel(){
     if(phase===WW_PHASE.NIGHT && role==='werewolf'){
         panel.style.display='block';
         const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">?? Pilih korban malam ini:</div>
+        panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🌙 Pilih korban malam ini:</div>
             <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
                 ${alivePlayers.map(p=>`<button class="ww-action-btn night-action" onclick="wwSelectNightTarget('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
             </div>
             <div id="wwNightSelected" style="color:#ef9a9a;font-size:.85rem;margin-bottom:8px"></div>
-            <div style="color:rgba(255,255,255,.5);font-size:.75rem;margin-bottom:6px">?? Kirim propaganda anonim:</div>
+            <div style="color:rgba(255,255,255,.5);font-size:.75rem;margin-bottom:6px">📢 Kirim propaganda anonim:</div>
             <input type="text" id="wwPropInput" class="ww-prop-input" placeholder="Ketik pesan propaganda (maks 100 karakter)..." maxlength="100">
-            <button onclick="wwSendPropaganda()" class="ww-action-btn prop-action" style="margin-top:6px">?? Kirim Propaganda</button>`;
+            <button onclick="wwSendPropaganda()" class="ww-action-btn prop-action" style="margin-top:6px">📤 Kirim Propaganda</button>`;
     }
     else if(phase===WW_PHASE.MORNING){
         if(['philosopher','poet','journalist','detective'].includes(role)&&!wwState.actionUsed){
             panel.style.display='block';
             const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
             let btnHtml='';
-            if(role==='philosopher') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('philosopher')">?? Aktifkan Klue Filsafat</button>`;
-            else if(role==='poet') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('poet')">?? Aktifkan Klue Puisi</button>`;
+            if(role==='philosopher') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('philosopher')">📜 Aktifkan Klue Filsafat</button>`;
+            else if(role==='poet') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('poet')">✍️ Aktifkan Klue Puisi</button>`;
             else if(role==='journalist') btnHtml=`
-                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">?? Pilih pemain untuk diwawancarai:</div>
+                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">📰 Pilih pemain untuk diwawancarai:</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px">
                     ${alivePlayers.map(p=>`<button class="ww-action-btn day-action" onclick="wwUseSkillTarget('journalist','${p.nim}','${p.name}')">${p.name}</button>`).join('')}
                 </div>`;
             else if(role==='detective') btnHtml=`
-                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">?? Selidiki pemain:</div>
+                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">🔍 Selidiki pemain:</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px">
                     ${alivePlayers.map(p=>`<button class="ww-action-btn day-action" onclick="wwUseSkillTarget('detective','${p.nim}','${p.name}')">${p.name}</button>`).join('')}
                 </div>`;
-            panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">?? Aktifkan kekuatanmu pagi ini:</div>${btnHtml}`;
+            panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🌅 Aktifkan kekuatanmu pagi ini:</div>${btnHtml}`;
         }
     }
     else if(phase===WW_PHASE.VOTE){
         panel.style.display='block';
         const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">??? Vote siapa yang dicurigai sebagai serigala?</div>
+        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Vote siapa yang dicurigai sebagai serigala?</div>
             <div style="display:flex;flex-wrap:wrap;gap:6px">
                 ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
             </div>
@@ -2631,13 +2631,13 @@ function wwRenderActionPanel(){
 ============================================================ */
 async function wwSelectNightTarget(nim,name){
     wwState.nightTarget=nim;
-    document.getElementById('wwNightSelected').innerHTML=`?? Target dipilih: <strong>${name}</strong>  Menunggu akhir malam...`;
+    document.getElementById('wwNightSelected').innerHTML=`🎯 Target dipilih: <strong>${name}</strong> — Menunggu akhir malam...`;
     // Simpan aksi ke DB
     await db.from('ww_actions').upsert({
         room_id:wwState.roomId, actor_nim:wwState.myNim,
         action_type:'night_kill', target_nim:nim, round:wwState.round
     },{onConflict:'room_id,actor_nim,round,action_type'});
-    await wwPostSystemMessage(`?? Serigala telah memilih korban... (sistem akan mengumumkan pagi hari)`, 'system', true);
+    await wwPostSystemMessage(`🌙 Serigala telah memilih korban... (sistem akan mengumumkan pagi hari)`, 'system', true);
 }
 
 async function wwUseSkill(role){
@@ -2646,7 +2646,7 @@ async function wwUseSkill(role){
     let clue='';
     if(role==='philosopher') clue=WW_CLUES_PHILOSOPHER[Math.floor(Math.random()*WW_CLUES_PHILOSOPHER.length)];
     else if(role==='poet') clue=WW_CLUES_POET[Math.floor(Math.random()*WW_CLUES_POET.length)];
-    const roleNames={philosopher:'?? Filsafat',poet:'?? Bujangga Puisi'};
+    const roleNames={philosopher:'📜 Filsafat',poet:'✍️ Bujangga Puisi'};
     await wwPostClue(`[${roleNames[role]}]\n\n"${clue}"`);
     await wwAddScoreDB(3,'Klue berhasil diaktifkan (+3 poin)');
     wwState.actionUsed=true;
@@ -2661,10 +2661,10 @@ async function wwUseSkillTarget(role, targetNim, targetName){
     let clue='';
     if(role==='journalist'){
         clue=isWolf ? WW_CLUES_JOURNALIST[Math.floor(Math.random()*WW_CLUES_JOURNALIST.length)] : `"Aku hanya mengamati, bukan berburu. Kepentinganku adalah kebenaran."`;
-        await wwPostClue(`[?? Penulis Koran  Wawancara dengan ${targetName}]\n\n${clue}`);
+        await wwPostClue(`[📰 Penulis Koran — Wawancara dengan ${targetName}]\n\n${clue}`);
     } else if(role==='detective'){
         clue=isWolf ? WW_CLUES_DETECTIVE[Math.floor(Math.random()*WW_CLUES_DETECTIVE.length)] : `"Tidak mencurigakan. Pola perilaku normal."`;
-        await wwPostClue(`[?? Detektif  Penyelidikan terhadap ${targetName}]\n\nHasil analisis: ${clue}`);
+        await wwPostClue(`[🔍 Detektif — Penyelidikan terhadap ${targetName}]\n\nHasil analisis: ${clue}`);
     }
     await wwAddScoreDB(3,'Skill investigasi digunakan (+3 poin)');
     wwRenderActionPanel();
@@ -2685,7 +2685,7 @@ async function wwSendPropaganda(){
 
 async function wwCastVote(targetNim, targetName){
     wwState.votesCast[wwState.myNim]=targetNim;
-    document.getElementById('wwVoteStatus').innerHTML=`? Votemu: <strong>${targetName}</strong>`;
+    document.getElementById('wwVoteStatus').innerHTML=`✅ Votemu: <strong>${targetName}</strong>`;
     await db.from('ww_players').update({vote_target:targetNim}).eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
     // Kalau ini host, cek apakah semua sudah vote
     if(wwState.isHost) await wwCheckVoteComplete();
@@ -2704,18 +2704,18 @@ async function wwProcessVotes(alivePlayers){
     alivePlayers.forEach(p=>{if(p.vote_target)counts[p.vote_target]=(counts[p.vote_target]||0)+1;});
     const maxVotes=Math.max(...Object.values(counts));
     const condemned=Object.keys(counts).find(k=>counts[k]===maxVotes);
-    if(!condemned){await wwPostSystemMessage('?? Tidak ada kesepakatan. Tidak ada yang dieliminasi ronde ini.');await wwAdvancePhase('next_night');return;}
+    if(!condemned){await wwPostSystemMessage('🤷 Tidak ada kesepakatan. Tidak ada yang dieliminasi ronde ini.');await wwAdvancePhase('next_night');return;}
     const condPlayer=alivePlayers.find(p=>p.nim===condemned);
     const isWolf=condPlayer?.role==='werewolf';
     await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',condemned);
-    await wwPostSystemMessage(`??? Hasil voting: **${condPlayer?.name||'?'}** dieliminasi dengan ${maxVotes} suara!\nPerannya adalah: ${WW_ROLES[condPlayer?.role]?.name||'?'}`, 'dead');
+    await wwPostSystemMessage(`🗳️ Hasil voting: **${condPlayer?.name||'?'}** dieliminasi dengan ${maxVotes} suara!\nPerannya adalah: ${WW_ROLES[condPlayer?.role]?.name||'?'}`, 'dead');
     if(isWolf){
         // Berikan skor kepada yang vote ke serigala
         const correctVoters=alivePlayers.filter(p=>p.vote_target===condemned&&p.nim!==condemned);
         for(const v of correctVoters){
             await db.from('ww_players').update({score:(v.score||0)+5}).eq('room_id',wwState.roomId).eq('nim',v.nim);
         }
-        await wwPostSystemMessage(`?? Kalian berhasil menemukan serigala! (+5 poin untuk yang memilih benar)`);
+        await wwPostSystemMessage(`🎉 Kalian berhasil menemukan serigala! (+5 poin untuk yang memilih benar)`);
     }
     // Reset vote_target
     await db.from('ww_players').update({vote_target:null}).eq('room_id',wwState.roomId);
@@ -2729,10 +2729,10 @@ async function wwCheckGameOver(){
     const villagers=alive.filter(p=>p.role!=='werewolf');
     if(wolves.length===0){
         await db.from('ww_rooms').update({game_over:true,winner:'villagers',active:false}).eq('id',wwState.roomId);
-        await wwPostSystemMessage('?? WARGA DESA MENANG! Semua serigala telah ditemukan!','system');
+        await wwPostSystemMessage('🏆 WARGA DESA MENANG! Semua serigala telah ditemukan!','system');
     } else if(wolves.length>=villagers.length){
         await db.from('ww_rooms').update({game_over:true,winner:'werewolves',active:false}).eq('id',wwState.roomId);
-        await wwPostSystemMessage('?? SERIGALA MENANG! Mereka berhasil menguasai desa!','system');
+        await wwPostSystemMessage('🐺 SERIGALA MENANG! Mereka berhasil menguasai desa!','system');
     } else {
         await wwAdvancePhase('next_night');
     }
@@ -2744,7 +2744,7 @@ async function wwAdvancePhase(next){
     const newPhase=phaseMap[next]||WW_PHASE.NIGHT;
     const newRound=next==='next_night'?(wwState.round+1):wwState.round;
     await db.from('ww_rooms').update({phase:newPhase,round:newRound,phase_end_time:phaseEnd}).eq('id',wwState.roomId);
-    const phaseMsg={'next_night':'?? Malam tiba. Serigala memilih korban berikutnya...','morning':'?? Pagi tiba! Gunakan kekuatan spesialmu.','day':'?? Siang hari! Diskusikan klue yang ada dan ungkap siapa serigalanya.','vote':'??? Waktunya voting! Siapa yang kalian curigai sebagai serigala?'};
+    const phaseMsg={'next_night':'🌙 Malam tiba. Serigala memilih korban berikutnya...','morning':'🌅 Pagi tiba! Gunakan kekuatan spesialmu.','day':'☀️ Siang hari! Diskusikan klue yang ada dan ungkap siapa serigalanya.','vote':'🗳️ Waktunya voting! Siapa yang kalian curigai sebagai serigala?'};
     await wwPostSystemMessage(phaseMsg[next]||'Fase baru dimulai.');
 }
 
@@ -2762,8 +2762,8 @@ async function wwOnPhaseTimeout(){
                 const {data:victim}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('nim',kill.target_nim).single();
                 if(victim&&victim.alive){
                     await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',kill.target_nim);
-                    const lastWords=["Maaf, aku tidak bisa menyelesaikan tugasku...","Percayalah pada kalimat terakhirku: kebenaran selalu menang.","Aku pergi, tapi jejakku tetap ada dalam kata-kata.","Jangan biarkan kegelapan memenangkan percakapan.","Cari yang paling diammerekalah yang paling berbahaya."];
-                    await wwPostSystemMessage(`?? Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}"  ${victim.name}`,'dead');
+                    const lastWords=["Maaf, aku tidak bisa menyelesaikan tugasku...","Percayalah pada kalimat terakhirku: kebenaran selalu menang.","Aku pergi, tapi jejakku tetap ada dalam kata-kata.","Jangan biarkan kegelapan memenangkan percakapan.","Cari yang paling diam—merekalah yang paling berbahaya."];
+                    await wwPostSystemMessage(`🌅 Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" — ${victim.name}`,'dead');
                     await wwCheckGameOver();
                     return;
                 }
@@ -2858,18 +2858,18 @@ async function wwShowResult(room){
     const winner=room.winner||'';
     const iWin=(winner==='villagers'&&myTeam==='good')||(winner==='werewolves'&&myTeam==='evil');
 
-    document.getElementById('wwResultTitle').innerHTML=iWin?`<span class="ww-result-win">?? Kamu Menang!</span>`:`<span class="ww-result-lose">?? Kamu Kalah</span>`;
+    document.getElementById('wwResultTitle').innerHTML=iWin?`<span class="ww-result-win">🏆 Kamu Menang!</span>`:`<span class="ww-result-lose">💀 Kamu Kalah</span>`;
     document.getElementById('wwResultBody').innerHTML=`
-        ${winner==='villagers'?'??? Warga Desa berhasil mengungkap semua serigala!':'?? Serigala berhasil menguasai desa!'}<br><br>
+        ${winner==='villagers'?'🏘️ Warga Desa berhasil mengungkap semua serigala!':'🐺 Serigala berhasil menguasai desa!'}<br><br>
         Peranmu: <strong>${WW_ROLES[wwState.myRole]?.name||'?'}</strong><br>
         Poin terkumpul: <strong style="color:#ffd54f">${me?.score||0} poin</strong>`;
 
     // Leaderboard akhir
     const sorted=[...players].sort((a,b)=>(b.score||0)-(a.score||0));
     document.getElementById('wwFinalScores').innerHTML=`
-        <div style="font-weight:700;margin-bottom:12px;color:#fff">?? Skor Akhir</div>
+        <div style="font-weight:700;margin-bottom:12px;color:#fff">📊 Skor Akhir</div>
         ${sorted.map((p,i)=>`<div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,.06);border-radius:8px;margin-bottom:6px;color:#e0e0e0">
-            <span>${i===0?'??':i===1?'??':i===2?'??':'  '} ${p.name} ${p.nim===wwState.myNim?'(Anda)':''}</span>
+            <span>${i===0?'🥇':i===1?'🥈':i===2?'🥉':'  '} ${p.name} ${p.nim===wwState.myNim?'(Anda)':''}</span>
             <span style="color:#ffd54f;font-weight:700">${p.score||0} poin</span>
         </div>`).join('')}`;
 
@@ -2887,7 +2887,7 @@ async function wwEndAndSavePoints(){
             // Tambah ke point_logs user
             const dbUser=allUsers.find(u=>u.nim===wwState.myNim);
             if(dbUser){
-                const newAch=[...(dbUser.achievements||[]),{type:'karya',description:`Game Wharewolf  ${pts} poin`,points:pts,timestamp:Date.now()}];
+                const newAch=[...(dbUser.achievements||[]),{type:'karya',description:`Game Wharewolf — ${pts} poin`,points:pts,timestamp:Date.now()}];
                 const newLog=[...(dbUser.point_logs||[]),{type:'karya',description:'Game Wharewolf',points:pts,timestamp:Date.now()}];
                 await db.from('users').update({points:dbUser.points+pts,achievements:newAch,point_logs:newLog}).eq('nim',wwState.myNim);
                 dbUser.points+=pts;dbUser.achievements=newAch;dbUser.point_logs=newLog;
@@ -2902,7 +2902,7 @@ async function wwEndAndSavePoints(){
                         team.points+=pts;
                     }
                 }
-                alert(`? ${pts} poin berhasil disimpan ke profilmu!`);
+                alert(`✅ ${pts} poin berhasil disimpan ke profilmu!`);
                 renderTables();initChart();
             }
         }
@@ -2920,6 +2920,4 @@ async function wwEndAndSavePoints(){
 window.onload=init;
     </script>
 </body>
-
 </html>
-

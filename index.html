@@ -2386,12 +2386,11 @@ async function wwHostStartGame(){
         for(let i=0;i<players.length;i++){
             await db.from('ww_players').update({role:roles[i]}).eq('id',players[i].id);
         }
-        // Set phase malam, phase_end_time 3 menit
-        const phaseEnd = Date.now()+180000;
+        // Set phase malam, phase_end_time 60 detik
+        const phaseEnd = Date.now()+60000;
         await db.from('ww_rooms').update({
             game_started:true, active:true, phase:WW_PHASE.NIGHT,
-            round:1, phase_end_time:phaseEnd, dead_players:[],
-            skip_votes:0, total_alive:null, game_over:false, winner:null
+            round:1, phase_end_time:phaseEnd, dead_players:[]
         }).eq('id',wwState.roomId);
         // Pesan sistem
         await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba. Serigala, pilih korbanmu...');
@@ -2619,13 +2618,11 @@ function wwRenderActionPanel(){
     else if(phase===WW_PHASE.VOTE){
         panel.style.display='block';
         const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Vote siapa yang kamu curigai sebagai serigala?</div>
+        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Vote siapa yang dicurigai sebagai serigala?</div>
             <div style="display:flex;flex-wrap:wrap;gap:6px">
                 ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
-                <button class="ww-action-btn" onclick="wwCastSkip()" style="background:rgba(100,100,100,.5);color:#ccc;border:1px solid rgba(255,255,255,.2)">⏭️ Skip</button>
             </div>
-            <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">Voting otomatis selesai jika semua pemain sudah memilih</div>
-            <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
+            <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:8px"></div>`;
     }
 }
 
@@ -2640,22 +2637,7 @@ async function wwSelectNightTarget(nim,name){
         room_id:wwState.roomId, actor_nim:wwState.myNim,
         action_type:'night_kill', target_nim:nim, round:wwState.round
     },{onConflict:'room_id,actor_nim,round,action_type'});
-    // Cek apakah semua serigala hidup sudah memilih → auto skip ke pagi
-    if(wwState.isHost){
-        const {data:wolves} = await db.from('ww_players').select('*')
-            .eq('room_id',wwState.roomId).eq('alive',true).eq('role','werewolf');
-        const {data:actions} = await db.from('ww_actions').select('*')
-            .eq('room_id',wwState.roomId).eq('round',wwState.round).eq('action_type','night_kill');
-        const wolfCount = (wolves||[]).length;
-        const actCount  = (actions||[]).length;
-        if(wolfCount>0 && actCount>=wolfCount){
-            // Semua serigala sudah pilih → langsung proses ke pagi
-            await wwPostSystemMessage('🌙 Semua serigala telah memilih korban. Malam berakhir lebih awal!','system');
-            await wwNightProcessKill();
-        } else {
-            await wwPostSystemMessage(`🌙 Serigala telah memilih... (${actCount}/${wolfCount} serigala sudah memilih)`,'system',true);
-        }
-    }
+    await wwPostSystemMessage(`🌙 Serigala telah memilih korban... (sistem akan mengumumkan pagi hari)`, 'system', true);
 }
 
 async function wwUseSkill(role){
@@ -2703,171 +2685,97 @@ async function wwSendPropaganda(){
 
 async function wwCastVote(targetNim, targetName){
     wwState.votesCast[wwState.myNim]=targetNim;
-    const label = targetNim==='__skip__' ? '⏭️ Skip voting' : `<strong>${targetName}</strong>`;
-    document.getElementById('wwVoteStatus').innerHTML=`✅ Pilihanmu: ${label}`;
+    document.getElementById('wwVoteStatus').innerHTML=`✅ Votemu: <strong>${targetName}</strong>`;
     await db.from('ww_players').update({vote_target:targetNim}).eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
     // Kalau ini host, cek apakah semua sudah vote
     if(wwState.isHost) await wwCheckVoteComplete();
-}
-
-async function wwCastSkip(){
-    await wwCastVote('__skip__','Skip');
 }
 
 async function wwCheckVoteComplete(){
     const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('alive',true);
     const alive=pls||[];
     const voted=alive.filter(p=>p.vote_target);
-    // Auto-skip jika semua sudah vote (termasuk skip)
-    if(voted.length>=alive.length){
-        await wwPostSystemMessage(`🗳️ Semua pemain sudah memilih! Memproses hasil voting...`,'system');
-        await wwProcessVotes(alive);
-    }
+    if(voted.length>=alive.length) await wwProcessVotes(alive);
 }
 
 async function wwProcessVotes(alivePlayers){
-    // Hitung vote (abaikan vote 'skip')
+    // Hitung vote
     const counts={};
-    alivePlayers.forEach(p=>{
-        if(p.vote_target && p.vote_target!=='__skip__')
-            counts[p.vote_target]=(counts[p.vote_target]||0)+1;
-    });
-    // Hitung skip votes
-    const skipCount=alivePlayers.filter(p=>p.vote_target==='__skip__').length;
-    const totalVoted=alivePlayers.filter(p=>p.vote_target).length;
-    // Reset vote_target dulu
-    await db.from('ww_players').update({vote_target:null}).eq('room_id',wwState.roomId);
-
-    if(Object.keys(counts).length===0){
-        await wwPostSystemMessage('🤷 Tidak ada yang divote. Ronde berlanjut ke malam berikutnya.');
-        const cont = await wwCheckGameOver();
-        if(cont) await wwAdvancePhase('next_night');
-        return;
-    }
+    alivePlayers.forEach(p=>{if(p.vote_target)counts[p.vote_target]=(counts[p.vote_target]||0)+1;});
     const maxVotes=Math.max(...Object.values(counts));
-    // Cek seri
-    const topCandidates=Object.keys(counts).filter(k=>counts[k]===maxVotes);
-    if(topCandidates.length>1){
-        await wwPostSystemMessage(`🤷 Hasil seri! ${topCandidates.map(n=>alivePlayers.find(p=>p.nim===n)?.name||n).join(' vs ')} mendapat suara sama (${maxVotes}). Tidak ada yang dieliminasi.`);
-        const cont = await wwCheckGameOver();
-        if(cont) await wwAdvancePhase('next_night');
-        return;
-    }
-    const condemned=topCandidates[0];
+    const condemned=Object.keys(counts).find(k=>counts[k]===maxVotes);
+    if(!condemned){await wwPostSystemMessage('🤷 Tidak ada kesepakatan. Tidak ada yang dieliminasi ronde ini.');await wwAdvancePhase('next_night');return;}
     const condPlayer=alivePlayers.find(p=>p.nim===condemned);
     const isWolf=condPlayer?.role==='werewolf';
     await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',condemned);
-    await wwPostSystemMessage(`🗳️ Hasil voting: ${condPlayer?.name||'?'} dieliminasi dengan ${maxVotes} suara!\nPerannya adalah: ${WW_ROLES[condPlayer?.role]?.name||'?'}`, 'dead');
+    await wwPostSystemMessage(`🗳️ Hasil voting: **${condPlayer?.name||'?'}** dieliminasi dengan ${maxVotes} suara!\nPerannya adalah: ${WW_ROLES[condPlayer?.role]?.name||'?'}`, 'dead');
     if(isWolf){
+        // Berikan skor kepada yang vote ke serigala
         const correctVoters=alivePlayers.filter(p=>p.vote_target===condemned&&p.nim!==condemned);
         for(const v of correctVoters){
             await db.from('ww_players').update({score:(v.score||0)+5}).eq('room_id',wwState.roomId).eq('nim',v.nim);
         }
-        await wwPostSystemMessage('🎉 Kalian berhasil menemukan serigala! (+5 poin untuk yang memilih benar)');
+        await wwPostSystemMessage(`🎉 Kalian berhasil menemukan serigala! (+5 poin untuk yang memilih benar)`);
     }
-    const cont = await wwCheckGameOver();
-    if(cont) await wwAdvancePhase('next_night');
+    // Reset vote_target
+    await db.from('ww_players').update({vote_target:null}).eq('room_id',wwState.roomId);
+    await wwCheckGameOver();
 }
 
-// Mengembalikan true jika game belum selesai (lanjut), false jika sudah selesai
 async function wwCheckGameOver(){
     const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-    if(!pls) return false;
     const alive=pls.filter(p=>p.alive);
     const wolves=alive.filter(p=>p.role==='werewolf');
-    const nonWolves=alive.filter(p=>p.role!=='werewolf');
-    // Warga menang: semua serigala terbunuh
+    const villagers=alive.filter(p=>p.role!=='werewolf');
     if(wolves.length===0){
         await db.from('ww_rooms').update({game_over:true,winner:'villagers',active:false}).eq('id',wwState.roomId);
         await wwPostSystemMessage('🏆 WARGA DESA MENANG! Semua serigala telah ditemukan!','system');
-        return false;
-    }
-    // Serigala menang: non-serigala yang tersisa hanya 2 atau kurang
-    if(nonWolves.length<=2){
+    } else if(wolves.length>=villagers.length){
         await db.from('ww_rooms').update({game_over:true,winner:'werewolves',active:false}).eq('id',wwState.roomId);
-        await wwPostSystemMessage('🐺 SERIGALA MENANG! Hanya tersisa 2 warga dan serigala kini berkuasa!','system');
-        return false;
+        await wwPostSystemMessage('🐺 SERIGALA MENANG! Mereka berhasil menguasai desa!','system');
+    } else {
+        await wwAdvancePhase('next_night');
     }
-    return true; // Game masih berlanjut
 }
 
 async function wwAdvancePhase(next){
-    // Timing: malam=3 menit, pagi=1 menit, siang=5 menit, vote=2 menit
-    const timings = {
-        'next_night': 180000,
-        'morning':     60000,
-        'day':        300000,
-        'vote':       120000
-    };
-    const phaseEnd = Date.now() + (timings[next] || 60000);
+    const phaseEnd = Date.now() + (next==='morning'?45000:next==='day'?300000:next==='vote'?90000:60000);
     const phaseMap={'next_night':WW_PHASE.NIGHT,'morning':WW_PHASE.MORNING,'day':WW_PHASE.DAY,'vote':WW_PHASE.VOTE};
     const newPhase=phaseMap[next]||WW_PHASE.NIGHT;
     const newRound=next==='next_night'?(wwState.round+1):wwState.round;
-    await db.from('ww_rooms').update({
-        phase:newPhase,
-        round:newRound,
-        phase_end_time:phaseEnd,
-        skip_votes: 0,
-        total_alive: null
-    }).eq('id',wwState.roomId);
-    const phaseMsg={
-        'next_night':'🌙 Malam tiba (3 menit). Serigala, pilih korbanmu!',
-        'morning':'🌅 Pagi tiba (1 menit)! Role khusus, gunakan kekuatanmu sekarang.',
-        'day':'☀️ Siang hari (5 menit)! Diskusikan klue dan ungkap siapa serigalanya.',
-        'vote':'🗳️ Waktunya voting (2 menit)! Pilih siapa yang kamu curigai. Bisa di-skip jika semua sudah vote.'
-    };
+    await db.from('ww_rooms').update({phase:newPhase,round:newRound,phase_end_time:phaseEnd}).eq('id',wwState.roomId);
+    const phaseMsg={'next_night':'🌙 Malam tiba. Serigala memilih korban berikutnya...','morning':'🌅 Pagi tiba! Gunakan kekuatan spesialmu.','day':'☀️ Siang hari! Diskusikan klue yang ada dan ungkap siapa serigalanya.','vote':'🗳️ Waktunya voting! Siapa yang kalian curigai sebagai serigala?'};
     await wwPostSystemMessage(phaseMsg[next]||'Fase baru dimulai.');
 }
-}
-/* Proses kill malam — dipakai oleh timeout maupun auto-skip */
-async function wwNightProcessKill(){
-    const {data:actions}=await db.from('ww_actions').select('*')
-        .eq('room_id',wwState.roomId).eq('round',wwState.round).eq('action_type','night_kill');
-    if(actions&&actions.length>0){
-        // Pilih target yang paling banyak dipilih (jika >1 serigala)
-        const counts={};
-        actions.forEach(a=>{counts[a.target_nim]=(counts[a.target_nim]||0)+1;});
-        const topTarget=Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0];
-        const {data:victim}=await db.from('ww_players').select('*')
-            .eq('room_id',wwState.roomId).eq('nim',topTarget).single();
-        if(victim&&victim.alive){
-            await db.from('ww_players').update({alive:false})
-                .eq('room_id',wwState.roomId).eq('nim',topTarget);
-            const lastWords=[
-                "Maaf, aku tidak bisa menyelesaikan tugasku...",
-                "Percayalah pada kalimat terakhirku: kebenaran selalu menang.",
-                "Aku pergi, tapi jejakku tetap ada dalam kata-kata.",
-                "Jangan biarkan kegelapan memenangkan percakapan.",
-                "Cari yang paling diam—merekalah yang paling berbahaya."
-            ];
-            await wwPostSystemMessage(
-                `🌅 Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" — ${victim.name}`,
-                'dead'
-            );
-            const alive = await wwCheckGameOver();
-            if(alive) await wwAdvancePhase('morning');
-            return;
-        }
-    }
-    await wwAdvancePhase('morning');
-}
+
 /* Dipanggil oleh host timer saat fase habis */
 async function wwOnPhaseTimeout(){
     if(!wwState.isHost||!wwState.gameActive)return;
     try{
         const {data:room}=await db.from('ww_rooms').select('*').eq('id',wwState.roomId).single();
         if(!room||!room.active||room.game_over)return;
-        // Cegah double-trigger: set phaseEnd ke masa lalu dulu
-        await db.from('ww_rooms').update({phase_end_time: Date.now()-1000}).eq('id',wwState.roomId);
         if(room.phase===WW_PHASE.NIGHT){
-            await wwNightProcessKill();
+            // Proses kill
+            const {data:actions}=await db.from('ww_actions').select('*').eq('room_id',wwState.roomId).eq('round',wwState.round).eq('action_type','night_kill');
+            if(actions&&actions.length>0){
+                const kill=actions[0];
+                const {data:victim}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('nim',kill.target_nim).single();
+                if(victim&&victim.alive){
+                    await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',kill.target_nim);
+                    const lastWords=["Maaf, aku tidak bisa menyelesaikan tugasku...","Percayalah pada kalimat terakhirku: kebenaran selalu menang.","Aku pergi, tapi jejakku tetap ada dalam kata-kata.","Jangan biarkan kegelapan memenangkan percakapan.","Cari yang paling diam—merekalah yang paling berbahaya."];
+                    await wwPostSystemMessage(`🌅 Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" — ${victim.name}`,'dead');
+                    await wwCheckGameOver();
+                    return;
+                }
+            }
+            await wwAdvancePhase('morning');
         } else if(room.phase===WW_PHASE.MORNING){
             await wwAdvancePhase('day');
         } else if(room.phase===WW_PHASE.DAY){
             await wwAdvancePhase('vote');
         } else if(room.phase===WW_PHASE.VOTE){
-            const {data:pls}=await db.from('ww_players').select('*')
-                .eq('room_id',wwState.roomId).eq('alive',true);
+            // Proses vote yang sudah ada
+            const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('alive',true);
             await wwProcessVotes(pls||[]);
         }
     }catch(e){console.error('phase timeout err',e);}
@@ -3013,8 +2921,3 @@ window.onload=init;
     </script>
 </body>
 </html>
-
-
-
-
-

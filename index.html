@@ -2380,24 +2380,20 @@ async function wwHostStartGame(){
     if(players.length>12){alert('Maksimal 12 pemain!');return;}
     showLoading();
     try{
-        // Assign roles
         const roles = wwGenerateRoles(players.length);
         wwState.players = players;
         for(let i=0;i<players.length;i++){
             await db.from('ww_players').update({role:roles[i]}).eq('id',players[i].id);
         }
-        // Set phase malam, phase_end_time 3 menit
         const phaseEnd = Date.now()+180000;
         await db.from('ww_rooms').update({
             game_started:true, active:true, phase:WW_PHASE.NIGHT,
             round:1, phase_end_time:phaseEnd, dead_players:[]
         }).eq('id',wwState.roomId);
-        // Pesan sistem
-        await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba. Serigala, pilih korbanmu...');
+        await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba (3 menit). Serigala, pilih korbanmu...');
     }catch(e){alert('❌ Gagal mulai: '+e.message);}
     finally{hideLoading();}
 }
-
 function wwGenerateRoles(n){
     // Komposisi sesuai jumlah pemain
     const wolves = n>=10?2:1;
@@ -2460,20 +2456,23 @@ async function wwPollGameState(){
         const {data:pls} = await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
         wwState.players = pls||[];
 
-        // Update fase jika berubah
-        if(room.phase !== wwState.phase){
+        // Update fase jika fase ATAU phaseEndTime berubah
+        const phaseChanged = room.phase !== wwState.phase;
+        const timeChanged = room.phase_end_time && room.phase_end_time !== wwState.phaseEndTime;
+        if(phaseChanged || timeChanged){
             wwState.phase = room.phase;
             wwState.round = room.round||1;
             wwState.phaseEndTime = room.phase_end_time;
-            wwState.actionUsed = false;
-            wwState.propagandaSent = false;
-            wwRenderPhase();
+            if(phaseChanged){
+                wwState.actionUsed = false;
+                wwState.propagandaSent = false;
+                wwRenderPhase();
+            }
             wwStartTimer();
         }
         wwRenderPlayerList();
         wwUpdateScoreDisplay();
 
-        // Cek apakah game selesai
         if(room.game_over){
             wwState.gameActive = false;
             wwCleanupIntervals();
@@ -2586,22 +2585,22 @@ function wwRenderActionPanel(){
     if(phase===WW_PHASE.NIGHT && role==='werewolf'){
         panel.style.display='block';
         const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🌙 Pilih korban malam ini:</div>
+        panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🐺 Pilih korban malam ini:</div>
             <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
                 ${alivePlayers.map(p=>`<button class="ww-action-btn night-action" onclick="wwSelectNightTarget('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
             </div>
             <div id="wwNightSelected" style="color:#ef9a9a;font-size:.85rem;margin-bottom:8px"></div>
             <div style="color:rgba(255,255,255,.5);font-size:.75rem;margin-bottom:6px">📢 Kirim propaganda anonim:</div>
             <input type="text" id="wwPropInput" class="ww-prop-input" placeholder="Ketik pesan propaganda (maks 100 karakter)..." maxlength="100">
-            <button onclick="wwSendPropaganda()" class="ww-action-btn prop-action" style="margin-top:6px">📤 Kirim Propaganda</button>`;
+            <button onclick="wwSendPropaganda()" class="ww-action-btn prop-action" style="margin-top:6px">📢 Kirim Propaganda</button>`;
     }
     else if(phase===WW_PHASE.MORNING){
         if(['philosopher','poet','journalist','detective'].includes(role)&&!wwState.actionUsed){
             panel.style.display='block';
             const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
             let btnHtml='';
-            if(role==='philosopher') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('philosopher')">📜 Aktifkan Klue Filsafat</button>`;
-            else if(role==='poet') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('poet')">✍️ Aktifkan Klue Puisi</button>`;
+            if(role==='philosopher') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('philosopher')">🔮 Aktifkan Klue Filsafat</button>`;
+            else if(role==='poet') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('poet')">📜 Aktifkan Klue Puisi</button>`;
             else if(role==='journalist') btnHtml=`
                 <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">📰 Pilih pemain untuk diwawancarai:</div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px">
@@ -2612,13 +2611,37 @@ function wwRenderActionPanel(){
                 <div style="display:flex;flex-wrap:wrap;gap:6px">
                     ${alivePlayers.map(p=>`<button class="ww-action-btn day-action" onclick="wwUseSkillTarget('detective','${p.nim}','${p.name}')">${p.name}</button>`).join('')}
                 </div>`;
-            panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🌅 Aktifkan kekuatanmu pagi ini:</div>${btnHtml}`;
+            panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">⚡ Aktifkan kekuatanmu pagi ini (1 menit):</div>${btnHtml}`;
+        }
+    }
+    else if(phase===WW_PHASE.DAY){
+        // Siang: tampilkan tombol vote sekaligus dengan diskusi
+        panel.style.display='block';
+        const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
+        const sudahVote = wwState.votesCast[wwState.myNim];
+        if(sudahVote){
+            const namaTarget = sudahVote==='__skip__' ? 'Skip' : (wwState.players.find(p=>p.nim===sudahVote)?.name||sudahVote);
+            panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">☀️ Siang — Diskusi & Voting (5 menit)</div>
+                <div style="color:#a5d6a7;font-size:.9rem;padding:8px 12px;background:rgba(76,175,80,.15);border-radius:8px;border:1px solid rgba(76,175,80,.3)">
+                    ✅ Kamu sudah vote: <strong>${namaTarget}</strong>
+                </div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">Menunggu pemain lain voting... Voting otomatis selesai jika semua sudah memilih.</div>
+                <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
+        } else {
+            panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">☀️ Siang — Diskusi & Voting (5 menit)</div>
+                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">Diskusikan di chat lalu pilih siapa yang paling mencurigakan:</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
+                    <button class="ww-action-btn" onclick="wwCastSkip()" style="background:rgba(100,100,100,.5);color:#ccc;border:1px solid rgba(255,255,255,.2)">⏭️ Skip</button>
+                </div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">⚡ Otomatis lanjut jika semua sudah memilih</div>
+                <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
         }
     }
     else if(phase===WW_PHASE.VOTE){
         panel.style.display='block';
         const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Vote siapa yang kamu curigai sebagai serigala?</div>
+        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Waktu voting! Pilih siapa yang kamu curigai:</div>
             <div style="display:flex;flex-wrap:wrap;gap:6px">
                 ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
                 <button class="ww-action-btn" onclick="wwCastSkip()" style="background:rgba(100,100,100,.5);color:#ccc;border:1px solid rgba(255,255,255,.2)">⏭️ Skip</button>
@@ -2701,10 +2724,14 @@ async function wwSendPropaganda(){
 
 async function wwCastVote(targetNim, targetName){
     wwState.votesCast[wwState.myNim]=targetNim;
-    const label = targetNim==='__skip__' ? '⏭️ Skip voting' : `<strong>${targetName}</strong>`;
-    document.getElementById('wwVoteStatus').innerHTML=`✅ Pilihanmu: ${label}`;
     await db.from('ww_players').update({vote_target:targetNim}).eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
-    // Kalau ini host, cek apakah semua sudah vote
+    // Refresh panel agar tampilan berubah jadi "sudah vote"
+    wwRenderActionPanel();
+    const el=document.getElementById('wwVoteStatus');
+    if(el){
+        const label = targetNim==='__skip__' ? '⏭️ Skip' : `<strong>${targetName}</strong>`;
+        el.innerHTML=`✅ Pilihanmu: ${label} — Menunggu pemain lain...`;
+    }
     if(wwState.isHost) await wwCheckVoteComplete();
 }
 
@@ -2716,9 +2743,8 @@ async function wwCheckVoteComplete(){
     const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('alive',true);
     const alive=pls||[];
     const voted=alive.filter(p=>p.vote_target);
-    // Auto-skip jika semua sudah vote (termasuk skip)
     if(voted.length>=alive.length){
-        await wwPostSystemMessage(`🗳️ Semua pemain sudah memilih! Memproses hasil voting...`,'system');
+        await wwPostSystemMessage('🗳️ Semua pemain sudah memilih! Memproses hasil voting...','system');
         await wwProcessVotes(alive);
     }
 }
@@ -2790,10 +2816,9 @@ async function wwCheckGameOver(){
 }
 
 async function wwAdvancePhase(next){
-    // Timing: malam=3 menit, pagi=1 menit, siang=5 menit, vote=2 menit
     const timings = {
-        'next_night': 180000,
-        'morning':     60000,
+        'next_night':  30000,
+        'morning':     30000,
         'day':        300000,
         'vote':       120000
     };
@@ -2807,10 +2832,10 @@ async function wwAdvancePhase(next){
         phase_end_time:phaseEnd
     }).eq('id',wwState.roomId);
     const phaseMsg={
-        'next_night':'🌙 Malam tiba (3 menit). Serigala, pilih korbanmu!',
-        'morning':'🌅 Pagi tiba (1 menit)! Role khusus, gunakan kekuatanmu sekarang.',
-        'day':'☀️ Siang hari (5 menit)! Diskusikan klue dan ungkap siapa serigalanya.',
-        'vote':'🗳️ Waktunya voting (2 menit)! Pilih siapa yang kamu curigai. Bisa di-skip jika semua sudah vote.'
+        'next_night':'🌙 Malam tiba (30 detik). Serigala, pilih korbanmu!',
+        'morning':'🌅 Pagi tiba (30 detik)! Role khusus, gunakan kekuatanmu sekarang.',
+        'day':'☀️ Siang hari (5 menit)! Diskusikan klue & lakukan voting. Otomatis lanjut jika semua sudah vote.',
+        'vote':'🗳️ Waktunya voting! Pilih siapa yang kamu curigai.'
     };
     await wwPostSystemMessage(phaseMsg[next]||'Fase baru dimulai.');
 }
@@ -2852,14 +2877,17 @@ async function wwOnPhaseTimeout(){
     try{
         const {data:room}=await db.from('ww_rooms').select('*').eq('id',wwState.roomId).single();
         if(!room||!room.active||room.game_over)return;
-        // Cegah double-trigger: set phaseEnd ke masa lalu dulu
+        // Cegah double-trigger
         await db.from('ww_rooms').update({phase_end_time: Date.now()-1000}).eq('id',wwState.roomId);
         if(room.phase===WW_PHASE.NIGHT){
             await wwNightProcessKill();
         } else if(room.phase===WW_PHASE.MORNING){
             await wwAdvancePhase('day');
         } else if(room.phase===WW_PHASE.DAY){
-            await wwAdvancePhase('vote');
+            // Siang habis waktu → proses vote langsung (tidak perlu fase VOTE terpisah)
+            const {data:pls}=await db.from('ww_players').select('*')
+                .eq('room_id',wwState.roomId).eq('alive',true);
+            await wwProcessVotes(pls||[]);
         } else if(room.phase===WW_PHASE.VOTE){
             const {data:pls}=await db.from('ww_players').select('*')
                 .eq('room_id',wwState.roomId).eq('alive',true);
@@ -3008,6 +3036,7 @@ window.onload=init;
     </script>
 </body>
 </html>
+
 
 
 

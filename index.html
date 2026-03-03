@@ -2390,8 +2390,7 @@ async function wwHostStartGame(){
         const phaseEnd = Date.now()+180000;
         await db.from('ww_rooms').update({
             game_started:true, active:true, phase:WW_PHASE.NIGHT,
-            round:1, phase_end_time:phaseEnd, dead_players:[],
-            skip_votes:0, total_alive:null, game_over:false, winner:null
+            round:1, phase_end_time:phaseEnd, dead_players:[]
         }).eq('id',wwState.roomId);
         // Pesan sistem
         await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba. Serigala, pilih korbanmu...');
@@ -2805,9 +2804,7 @@ async function wwAdvancePhase(next){
     await db.from('ww_rooms').update({
         phase:newPhase,
         round:newRound,
-        phase_end_time:phaseEnd,
-        skip_votes: 0,
-        total_alive: null
+        phase_end_time:phaseEnd
     }).eq('id',wwState.roomId);
     const phaseMsg={
         'next_night':'🌙 Malam tiba (3 menit). Serigala, pilih korbanmu!',
@@ -3011,6 +3008,7 @@ window.onload=init;
     </script>
 </body>
 </html>
+
 
 
 

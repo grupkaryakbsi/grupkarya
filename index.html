@@ -63,11 +63,8 @@
         .admin-pill{background:linear-gradient(135deg,#dc3545,#c82333)!important;border:2px solid rgba(255,255,255,.5)!important}
         .theme-toggle{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.25);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem;transition:.3s;display:flex;align-items:center;justify-content:center}
         .theme-toggle:hover{background:rgba(255,255,255,.35);transform:rotate(15deg) scale(1.1)}
-        /* Tombol pencarian nav */
         .btn-search-nav{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.25);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:.3s;display:flex;align-items:center;justify-content:center}
         .btn-search-nav:hover{background:rgba(255,255,255,.35);transform:scale(1.1)}
-
-        /* ===== GAME BUTTON & LIST ===== */
         .btn-game-nav{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.25);color:#fff;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.9rem;font-weight:700;transition:.3s;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px}
         .btn-game-nav:hover{background:rgba(255,255,255,.35);transform:translateY(-1px)}
         .game-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;margin-top:20px}
@@ -78,8 +75,6 @@
         .game-card-name{font-size:1.1rem;font-weight:800;color:var(--text-primary);margin-bottom:6px}
         .game-card-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.5}
         .game-card-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.7rem;font-weight:700;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;margin-top:8px}
-
-        /* ===== WEREWOLF GAME STYLES ===== */
         .ww-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a1a;z-index:3000;display:none;flex-direction:column;font-family:'Nunito',sans-serif}
         .ww-header{background:linear-gradient(135deg,#1a0030,#3d0060);padding:15px 25px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid rgba(123,45,139,.5)}
         .ww-title{color:#fff;font-weight:900;font-size:1.3rem;display:flex;align-items:center;gap:10px}
@@ -177,7 +172,6 @@
         .image-preview{max-width:100%;max-height:400px;border-radius:12px}
         .remove-img-btn{position:absolute;top:15px;right:15px;background:var(--danger);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem}
 
-        /* === POST CARD === */
         .post-card{background:var(--bg-card);border-radius:18px;padding:25px;box-shadow:0 4px 20px var(--shadow);margin-bottom:25px;border:1px solid var(--border-color);transition:transform .3s,box-shadow .3s;animation:fadeInUp .5s ease}
         .post-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px var(--shadow)}
         .post-header{display:flex;gap:15px;margin-bottom:20px;justify-content:space-between;align-items:flex-start}
@@ -192,7 +186,6 @@
         .post-action-btn:hover{background:var(--secondary);color:var(--primary)}
         .post-action-btn.liked{color:var(--danger)}
         .post-delete-btn{background:var(--danger);color:#fff;padding:8px 16px;border-radius:20px;font-size:.85rem;border:none;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif}
-        /* Avatar di post — klikable */
         .post-avatar-link{cursor:pointer;transition:transform .2s;flex-shrink:0}
         .post-avatar-link:hover{transform:scale(1.08)}
 
@@ -222,7 +215,6 @@
         table{width:100%;border-collapse:collapse;background:var(--bg-card);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px var(--shadow)}
         th,td{padding:18px;text-align:left;border-bottom:1px solid var(--border-color);color:var(--text-primary)}
         th{background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;font-weight:800}
-        /* Baris leaderboard klikable */
         tr.clickable-row{cursor:pointer;transition:background .2s}
         tr.clickable-row:hover{background:var(--secondary)!important}
 
@@ -255,15 +247,27 @@
         .badge-card{background:var(--bg-main);border:2px solid var(--border-color);border-radius:12px;padding:15px;margin-bottom:12px;display:flex;align-items:center;gap:15px;transition:.3s}
         .badge-card:hover{border-color:var(--primary)}
 
-        /* === SEARCH PANEL === */
         .search-user-item{display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;cursor:pointer;transition:.2s;border:1px solid var(--border-color);margin-bottom:10px;background:var(--bg-card)}
         .search-user-item:hover{background:var(--secondary);border-color:var(--primary)}
         .search-avatar-sm{width:50px;height:50px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;flex-shrink:0}
         .search-avatar-sm img{width:100%;height:100%;object-fit:cover}
 
-        /* === VIEW PROFILE MODAL (read-only) === */
         #viewProfileModal .profile-hero{background:linear-gradient(135deg,#7B2D8B,#4A90D9);color:#fff;padding:40px;text-align:center;border-radius:18px 18px 0 0}
         #viewProfileModal .profile-body{padding:30px}
+
+        /* ===== STYLE BARU: Tabel NIM & Password ===== */
+        .akun-table-wrap{overflow-x:auto;margin-top:15px;border-radius:12px;border:1px solid var(--border-color)}
+        .akun-table{width:100%;border-collapse:collapse;font-size:.9rem}
+        .akun-table th{background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;padding:12px 15px;text-align:left;font-weight:800}
+        .akun-table td{padding:11px 15px;border-bottom:1px solid var(--border-color);color:var(--text-primary);vertical-align:middle}
+        .akun-table tr:last-child td{border-bottom:none}
+        .akun-table tr:hover td{background:var(--secondary)}
+        .pass-hidden{font-family:monospace;letter-spacing:3px;color:var(--text-secondary);cursor:pointer;user-select:none}
+        .pass-visible{font-family:monospace;color:var(--text-primary);cursor:pointer;user-select:all}
+        .btn-reset-pass{padding:6px 14px;background:var(--warning);color:#6c3a00;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.2s}
+        .btn-reset-pass:hover{background:#e0a800;transform:translateY(-1px)}
+        .search-akun-input{width:100%;padding:11px 16px;border:2px solid var(--border-color);background:var(--bg-card);color:var(--text-primary);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.95rem;margin-bottom:15px;transition:.3s}
+        .search-akun-input:focus{border-color:var(--primary);outline:none}
 
         @media(max-width:768px){header h1{font-size:2.2rem}.nav-links{gap:10px;flex-wrap:wrap}.team-grid{grid-template-columns:1fr}.chart-container{height:300px}.modal-content{padding:20px}}
     </style>
@@ -462,6 +466,8 @@
                         <button onclick="adminDeleteTeam()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🗑️ Hapus Tim</button>
                         <button onclick="adminDeleteUser()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">👤 Hapus User</button>
                         <button onclick="adminDeletePost()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🗑️ Hapus Post</button>
+                        <!-- ===== TOMBOL BARU: Manajemen Akun ===== -->
+                        <button onclick="adminKelolaAkun()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🔐 Kelola Akun</button>
                     </div>
                     <button class="btn-full" style="background:rgba(0,0,0,.3);margin-top:25px;border:2px solid rgba(255,255,255,.3)" onclick="processLogout()">🚪 Keluar Admin</button>
                 </div>
@@ -763,7 +769,67 @@
         </div>
     </div>
 
-    <!-- ===== MODAL BARU: CARI PENGGUNA ===== -->
+    <!-- ===== MODAL BARU: KELOLA AKUN (NIM, PASSWORD, RESET) ===== -->
+    <div id="kelolaAkunModal" class="modal-overlay">
+        <div class="modal-content modal-large" style="max-width:800px">
+            <button class="close-btn" onclick="closeModal('kelolaAkunModal')">&times;</button>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">🔐 Kelola Akun User</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:20px">Lihat NIM, password, dan reset password user</p>
+            <div style="background:#fff3cd;border:2px solid var(--warning);border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:.88rem;color:#6c3a00;font-weight:600">
+                ⚠️ <strong>Peringatan:</strong> Data ini bersifat sangat rahasia. Jangan bagikan ke siapapun. Klik password untuk menampilkan/menyembunyikan.
+            </div>
+            <input type="text" class="search-akun-input" id="searchAkunInput"
+                placeholder="🔎 Cari nama atau NIM user..."
+                oninput="filterAkunTable()">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:10px">
+                <span id="akunJumlah" style="font-size:.9rem;color:var(--text-secondary);font-weight:600">Memuat...</span>
+                <button onclick="toggleSemuaPassword()" style="padding:8px 18px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.85rem">👁️ Tampilkan Semua</button>
+            </div>
+            <div class="akun-table-wrap">
+                <table class="akun-table">
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Nama</th>
+                            <th>NIM</th>
+                            <th>Kelas</th>
+                            <th>Tim</th>
+                            <th>Password</th>
+                            <th style="width:110px">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="akunTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL RESET PASSWORD (admin) -->
+    <div id="resetPassModal" class="modal-overlay">
+        <div class="modal-content" style="max-width:440px">
+            <button class="close-btn" onclick="closeModal('resetPassModal')">&times;</button>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--warning)">🔑 Reset Password</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:20px">Atur password baru untuk user ini</p>
+            <div style="background:var(--bg-main);border:2px solid var(--border-color);border-radius:12px;padding:15px;margin-bottom:20px">
+                <div style="font-size:.85rem;color:var(--text-secondary);margin-bottom:4px">User yang direset:</div>
+                <div id="resetPassTarget" style="font-weight:800;color:var(--text-primary);font-size:1.1rem">-</div>
+                <div id="resetPassNim" style="font-size:.85rem;color:var(--text-secondary);margin-top:3px">NIM: -</div>
+            </div>
+            <div class="form-group">
+                <label>Password Baru *</label>
+                <input type="password" id="resetPassInput" placeholder="Minimal 6 karakter" onkeypress="if(event.key==='Enter')submitResetPass()">
+            </div>
+            <div class="form-group">
+                <label>Konfirmasi Password Baru *</label>
+                <input type="password" id="resetPassConfirm" placeholder="Ketik ulang password baru" onkeypress="if(event.key==='Enter')submitResetPass()">
+            </div>
+            <div id="resetPassAlert" style="margin-bottom:10px"></div>
+            <button class="btn-full" style="background:var(--warning);color:#6c3a00;margin-top:0" onclick="submitResetPass()">💾 Simpan Password Baru</button>
+            <button class="btn-full" style="background:var(--gray);margin-top:8px" onclick="closeModal('resetPassModal')">Batal</button>
+        </div>
+    </div>
+
+    <!-- MODAL CARI PENGGUNA -->
     <div id="searchModal" class="modal-overlay">
         <div class="modal-content" style="max-width:600px">
             <button class="close-btn" onclick="closeModal('searchModal')">&times;</button>
@@ -778,7 +844,7 @@
         </div>
     </div>
 
-    <!-- ===== MODAL BARU: LIHAT PROFIL USER (READ-ONLY) ===== -->
+    <!-- MODAL LIHAT PROFIL USER (READ-ONLY) -->
     <div id="viewProfileModal" class="modal-overlay">
         <div class="modal-content" style="max-width:600px;padding:0" id="viewProfileModal">
             <button class="close-btn" onclick="closeModal('viewProfileModal')" style="z-index:10;color:#fff">&times;</button>
@@ -807,7 +873,7 @@
         </div>
     </div>
 
-    <!-- ===== MODAL: LIST MINI GAME ===== -->
+    <!-- MODAL GAME LIST -->
     <div id="gameListModal" class="modal-overlay">
         <div class="modal-content" style="max-width:650px">
             <button class="close-btn" onclick="closeModal('gameListModal')">&times;</button>
@@ -817,10 +883,9 @@
                 <div class="game-card" onclick="openWerewolfGame()">
                     <div class="game-card-icon">🐺</div>
                     <div class="game-card-name">Wharewolf</div>
-                    <div class="game-card-desc">Game role-playing online multiplayer. Temukan siapa serigala di antara kalian melalui analisis bahasa & argumentasi!</div>
+                    <div class="game-card-desc">Game role-playing online multiplayer. Temukan siapa serigala di antara kalian melalui analisis bahasa &amp; argumentasi!</div>
                     <div class="game-card-badge">6–12 Pemain • Multiplayer</div>
                 </div>
-                <!-- Slot game berikutnya -->
                 <div class="game-card" style="opacity:.45;cursor:not-allowed" onclick="alert('Game ini belum tersedia. Segera hadir!')">
                     <div class="game-card-icon">🧩</div>
                     <div class="game-card-name">Word Puzzle</div>
@@ -837,20 +902,15 @@
         </div>
     </div>
 
-    <!-- ===== WEREWOLF GAME OVERLAY (full screen) ===== -->
+    <!-- WEREWOLF OVERLAY -->
     <div id="wwOverlay" class="ww-overlay">
-        <!-- LOBBY SCREEN -->
         <div id="wwLobbyScreen" class="ww-lobby">
             <div style="font-size:4rem;margin-bottom:10px">🐺</div>
             <h2>WHAREWOLF</h2>
             <p style="color:rgba(255,255,255,.65);margin-bottom:25px;max-width:450px">Game role-playing berbasis analisis bahasa. Temukan siapa serigala di antara kalian!</p>
-            <div id="wwLobbyContent">
-                <!-- Akan diisi JS: form buat/join room -->
-            </div>
+            <div id="wwLobbyContent"></div>
             <button onclick="closeWerewolfGame()" style="margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 24px;border-radius:20px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">✕ Keluar</button>
         </div>
-
-        <!-- WAITING ROOM -->
         <div id="wwWaitingScreen" style="display:none;color:#fff;padding:30px;text-align:center;width:100%">
             <div style="max-width:500px;margin:0 auto">
                 <div style="font-size:3rem;margin-bottom:10px">⏳</div>
@@ -865,8 +925,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- GAME SCREEN -->
         <div id="wwGameScreen" style="display:none;width:100%;height:100%;position:relative">
             <div class="ww-header">
                 <div class="ww-title">
@@ -880,7 +938,6 @@
                 </div>
             </div>
             <div class="ww-body">
-                <!-- Sidebar kiri: pemain + peran -->
                 <div class="ww-sidebar">
                     <div id="wwMyRoleCard" class="ww-role-card">
                         <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-bottom:4px">PERANMU</div>
@@ -892,29 +949,16 @@
                     <div style="font-size:.75rem;color:rgba(255,255,255,.4);font-weight:700;margin:10px 0 8px;text-transform:uppercase;letter-spacing:1px">Skormu</div>
                     <div id="wwMyScore" class="ww-score-card">0 poin</div>
                 </div>
-                <!-- Area utama: chat -->
                 <div class="ww-main">
                     <div id="wwChatArea" class="ww-chat"></div>
-                    <!-- Panel aksi berdasarkan fase & peran -->
                     <div id="wwActionPanel" class="ww-action-panel" style="display:none"></div>
-                    <!-- Input chat -->
                     <div id="wwInputArea" class="ww-input-area">
                         <input type="text" id="wwChatInput" class="ww-input" placeholder="💬 Ketik pesanmu..." onkeypress="if(event.key==='Enter')wwSendChat()" maxlength="300">
                         <button onclick="wwSendChat()" class="ww-send-btn">Kirim</button>
                     </div>
-                </div>
-            </div>
-            <!-- Result overlay (muncul di akhir game) -->
-            <div id="wwResultOverlay" style="display:none" class="ww-result-overlay">
-                <div id="wwResultTitle" class="ww-result-title">-</div>
-                <div id="wwResultBody" style="color:rgba(255,255,255,.75);margin-bottom:25px;max-width:500px;line-height:1.7"></div>
-                <div id="wwFinalScores" style="margin-bottom:25px;width:100%;max-width:400px"></div>
-                <button onclick="wwEndAndSavePoints()" style="padding:16px 40px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1.1rem;font-family:'Nunito',sans-serif">✅ Simpan Poin & Keluar</button>
-            </div>
-        </div>
-    </div>
+         luruh JavaScript termasuk fungsi admin kelola akun baru
+text
 
-    <div id="copiedToast" class="copied-toast">✅ Link berhasil disalin!</div>
     <script>
 const SUPABASE_URL = 'https://cixnbqutgnzscmspuxft.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_B-6wORsbqmfoM3kp1mDUBA_SFIuHUak';
@@ -925,6 +969,11 @@ let currentUser=null,currentTheme=localStorage.getItem('gk_theme')||'light',stat
 let uploadedImage=null,uploadedTeamLogo=null,uploadedProfilePhoto=null,currentViewingTeamId=null,chatRefreshInterval=null;
 let allPosts=[],allTeams=[],allUsers=[],allCustomBadges=[],tempRegData={},selectedTeamId=null;
 let currentBadgeDesign={id:null,name:'',emoji:'',photo:null,color:'linear-gradient(135deg,#ffd700,#ff8c00)'};
+
+/* State khusus fitur kelola akun */
+let _akunData=[];          // cache data user untuk tabel akun
+let _semuaPassVisible=false; // toggle semua password
+let _resetTargetNim=null;  // NIM user yang sedang di-reset
 
 const ADMIN={nim:'00000',pass:'admin2026',name:'System Administrator',isAdmin:true,teams:[],team_roles:{},points:0,achievements:[],kelas:'SYSTEM'};
 
@@ -970,7 +1019,6 @@ async function init(){
         if(savedAdmin==='true'){currentUser=ADMIN;}
         else if(savedNim){currentUser=allUsers.find(u=>u.nim===savedNim)||null;}
         applyTheme();updateNavState();updateHomepageUI();renderTables();renderFeed();initChart();
-        // Cek URL param ?team=
         const params=new URLSearchParams(window.location.search);
         if(params.get('team')){const tid=parseInt(params.get('team'));if(tid)openTeamDetail(tid);}
     }catch(e){console.error('Init error:',e);}finally{hideLoading();}
@@ -1148,7 +1196,7 @@ async function finalCreateTeam(){
 }
 
 /* ============================================================
-   LEADERBOARD TABLE — dengan baris klikable
+   LEADERBOARD TABLE
 ============================================================ */
 function renderTables(){
     const sorted=[...allTeams].sort((a,b)=>b.points-a.points);
@@ -1178,9 +1226,7 @@ function renderTables(){
 }
 
 /* ============================================================
-   CHART — FIX: Gunakan data point_logs real dari database
-   Kumpulkan semua point_logs dari semua users,
-   group per hari/bulan, lalu tampilkan sebagai grafik akumulasi
+   CHART
 ============================================================ */
 function initChart(){
     const ctx=document.getElementById('statsChart');
@@ -1213,33 +1259,26 @@ function initChart(){
         }
     });
 }
-
 function getChartData(filter){
-    /* Kumpulkan SEMUA point_logs dari seluruh user */
     const allLogs=[];
     allUsers.forEach(u=>{
         (u.point_logs||[]).forEach(log=>{
             if(log.timestamp)allLogs.push({ts:log.timestamp,points:log.points||0});
         });
     });
-
     const now=Date.now();
     const labels=[],values=[];
-
     if(filter==='weekly'){
-        /* 7 hari terakhir */
         const dayNames=['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
         for(let i=6;i>=0;i--){
             const d=new Date(now);d.setDate(d.getDate()-i);
             const dayStart=new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime();
             const dayEnd=dayStart+86400000;
             labels.push(dayNames[d.getDay()]+' '+d.getDate());
-            /* Hitung poin yang masuk di hari ini (kumulatif sampai akhir hari ini) */
             const cumulative=allLogs.filter(l=>l.ts<=dayEnd).reduce((s,l)=>s+l.points,0);
             values.push(cumulative);
         }
     }else{
-        /* 12 bulan terakhir */
         const monthNames=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
         for(let i=11;i>=0;i--){
             const d=new Date(now);d.setMonth(d.getMonth()-i);
@@ -1251,7 +1290,6 @@ function getChartData(filter){
     }
     return{labels,values};
 }
-
 function changeTimeFilter(filter,event){
     currentTimeFilter=filter;
     document.querySelectorAll('.time-filter-btn').forEach(b=>b.classList.remove('active'));
@@ -1259,7 +1297,7 @@ function changeTimeFilter(filter,event){
 }
 
 /* ============================================================
-   FEED — Foto profil + klik ke profil poster
+   FEED
 ============================================================ */
 function previewImage(event){
     const file=event.target.files[0];if(!file)return;
@@ -1300,8 +1338,6 @@ function createPostCard(post){
     const div=document.createElement('div');div.className='post-card';div.id='post_'+post.id;
     const isLiked=currentUser&&post.likes?.includes(currentUser.nim);
     const canDelete=currentUser?.isAdmin||currentUser?.nim===post.author_nim;
-
-    /* Cari data user poster untuk foto profil */
     const posterUser=allUsers.find(u=>u.nim===post.author_nim);
     let avatarContent='';
     if(posterUser?.profile_photo){
@@ -1309,10 +1345,7 @@ function createPostCard(post){
     }else{
         avatarContent=`<span style="color:#fff;font-weight:700;font-size:1.1rem">${post.author_name.substring(0,2).toUpperCase()}</span>`;
     }
-
-    /* Avatar klikable untuk membuka profil poster */
     const avatarClickHandler=posterUser?`onclick="openViewProfile('${post.author_nim}')" title="Lihat profil ${post.author_name}"`:'';
-
     div.innerHTML=`
         <div class="post-header">
             <div class="post-avatar-link" ${avatarClickHandler}
@@ -1426,7 +1459,7 @@ async function deletePost(postId){
 }
 
 /* ============================================================
-   FITUR BARU: SEARCH MODAL — Cari Pengguna
+   SEARCH MODAL
 ============================================================ */
 function openSearchModal(){
     openModal('searchModal');
@@ -1451,11 +1484,8 @@ function renderSearchResults(users){
         const rank=sorted.findIndex(x=>x.nim===u.nim)+1;
         const teams=(u.teams||[]).join(', ')||'Belum bergabung tim';
         let avContent='';
-        if(u.profile_photo){
-            avContent=`<img src="${u.profile_photo}" style="width:100%;height:100%;object-fit:cover">`;
-        }else{
-            avContent=`<span>${u.name.substring(0,2).toUpperCase()}</span>`;
-        }
+        if(u.profile_photo){avContent=`<img src="${u.profile_photo}" style="width:100%;height:100%;object-fit:cover">`;}
+        else{avContent=`<span>${u.name.substring(0,2).toUpperCase()}</span>`;}
         const item=document.createElement('div');item.className='search-user-item';
         item.onclick=()=>{closeModal('searchModal');openViewProfile(u.nim);};
         item.innerHTML=`
@@ -1474,30 +1504,19 @@ function renderSearchResults(users){
 }
 
 /* ============================================================
-   FITUR BARU: VIEW PROFILE — Lihat profil orang lain (read-only)
+   VIEW PROFILE (read-only)
 ============================================================ */
 function openViewProfile(nim){
     const u=allUsers.find(x=>x.nim===nim);
     if(!u){alert('Profil tidak ditemukan');return;}
-
-    /* Jika ini profil sendiri dan sudah login, buka profil sendiri */
-    if(currentUser&&!currentUser.isAdmin&&currentUser.nim===nim){
-        closeModal('searchModal');openUserProfile();return;
-    }
-
+    if(currentUser&&!currentUser.isAdmin&&currentUser.nim===nim){closeModal('searchModal');openUserProfile();return;}
     const sorted=allUsers.filter(x=>!x.is_admin).sort((a,b)=>b.points-a.points);
     const rank=sorted.findIndex(x=>x.nim===nim)+1;
     const teams=[...new Set(u.teams||[])];
     const rolesText=teams.map(t=>`${t} - ${u.team_roles?.[t]||'Anggota'}`).join('<br>')||'Belum bergabung tim';
-
-    /* Avatar */
     const vpAvatar=document.getElementById('vpAvatar');
-    if(u.profile_photo){
-        vpAvatar.innerHTML=`<img src="${u.profile_photo}" style="width:100%;height:100%;object-fit:cover">`;
-    }else{
-        vpAvatar.innerHTML=`<span id="vpAvatarText">${u.name.substring(0,2).toUpperCase()}</span>`;
-    }
-
+    if(u.profile_photo){vpAvatar.innerHTML=`<img src="${u.profile_photo}" style="width:100%;height:100%;object-fit:cover">`;}
+    else{vpAvatar.innerHTML=`<span id="vpAvatarText">${u.name.substring(0,2).toUpperCase()}</span>`;}
     document.getElementById('vpName').innerText=u.name;
     document.getElementById('vpNim').innerText='NIM: '+u.nim;
     document.getElementById('vpKelas').innerText='Kelas: '+(u.kelas||'-');
@@ -1505,8 +1524,6 @@ function openViewProfile(nim){
     document.getElementById('vpTeamRole').innerHTML=rolesText;
     document.getElementById('vpPoints').innerText=u.points;
     document.getElementById('vpRank').innerText=`#${rank} dari ${sorted.length} peserta`;
-
-    /* Prestasi */
     const achDiv=document.getElementById('vpAchievements');
     if(!u.achievements?.length){
         achDiv.innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi yang dicatat</p>';
@@ -1899,11 +1916,9 @@ async function submitAddPoints(){
     const type=document.getElementById('pointTypeSelect').value,desc=document.getElementById('pointDesc').value.trim();
     if(!teamId||!nim||!type||!desc){alert('Semua field wajib diisi!');return;}showLoading();
     try{
-        /* FIX BUG: Poin lomba sekarang benar 70 */
         const pts=type==='latihan'?30:type==='karya'?50:70;
         const team=allTeams.find(t=>t.id===teamId),member=allUsers.find(u=>u.nim===nim);
         const newAch=[...(member.achievements||[]),{type,description:desc,points:pts,timestamp:Date.now()}];
-        /* Simpan point_log dengan timestamp untuk grafik real-time */
         const newLog=[...(member.point_logs||[]),{type,description:desc,points:pts,timestamp:Date.now()}];
         await db.from('users').update({points:member.points+pts,achievements:newAch,point_logs:newLog}).eq('nim',nim);
         member.points+=pts;member.achievements=newAch;member.point_logs=newLog;
@@ -1912,7 +1927,6 @@ async function submitAddPoints(){
         const newActs=[...(team.activities||[]),`${typeText}: ${desc} - ${member.name} (+${pts} poin) [${new Date().toLocaleDateString('id-ID')}]`];
         await db.from('teams').update({points:team.points+pts,activities:newActs}).eq('id',teamId);
         team.points+=pts;team.activities=newActs;
-        /* Refresh grafik setelah poin ditambah */
         initChart();
         alert(`✅ Berhasil tambah ${pts} poin ke ${member.name}!\nTotal poin: ${member.points}`);closeModal('addPointsModal');renderTables();
     }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
@@ -2105,131 +2119,213 @@ async function downloadExcelData(){
 }
 
 /* ============================================================
-   BOOT
+   ===== FITUR BARU: ADMIN KELOLA AKUN (NIM + PASSWORD + RESET) =====
 ============================================================ */
+
+/**
+ * Buka modal kelola akun. Load data dari DB, render tabel.
+ */
+async function adminKelolaAkun(){
+    showLoading();
+    try{
+        // Ambil data fresh langsung dari DB
+        const{data,error}=await db.from('users').select('nim,name,kelas,teams,team_roles,pass').order('name',{ascending:true});
+        if(error)throw error;
+        _akunData=data||[];
+        _semuaPassVisible=false;
+        document.getElementById('searchAkunInput').value='';
+        renderAkunTable(_akunData);
+        openModal('kelolaAkunModal');
+    }catch(e){
+        alert('❌ Gagal memuat data akun: '+e.message);
+    }finally{hideLoading();}
+}
+
+/**
+ * Render tabel daftar akun user ke dalam modal.
+ * @param {Array} data - array user yang akan ditampilkan
+ */
+function renderAkunTable(data){
+    const tbody=document.getElementById('akunTableBody');
+    const jumlahEl=document.getElementById('akunJumlah');
+    tbody.innerHTML='';
+    jumlahEl.innerText=`${data.length} akun terdaftar`;
+
+    if(!data.length){
+        tbody.innerHTML=`<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--text-secondary)">Tidak ada data akun</td></tr>`;
+        return;
+    }
+
+    data.forEach((u,i)=>{
+        const teams=(u.teams||[]).join(', ')||'-';
+        const passValue=u.pass||'-';
+        const passId=`pass_cell_${i}`;
+        const tr=document.createElement('tr');
+        tr.innerHTML=`
+            <td style="font-weight:700;color:var(--text-secondary)">${i+1}</td>
+            <td style="font-weight:700;color:var(--text-primary)">${u.name}</td>
+            <td style="font-family:monospace;color:var(--primary);font-weight:700">${u.nim}</td>
+            <td style="color:var(--text-secondary)">${u.kelas||'-'}</td>
+            <td style="color:var(--text-secondary);font-size:.85rem">${teams}</td>
+            <td>
+                <span id="${passId}"
+                    class="${_semuaPassVisible?'pass-visible':'pass-hidden'}"
+                    title="Klik untuk tampilkan/sembunyikan"
+                    onclick="toggleSatuPassword('${passId}','${passValue.replace(/'/g,"\\'")}')">
+                    ${_semuaPassVisible?passValue:'••••••'}
+                </span>
+            </td>
+            <td>
+                <button class="btn-reset-pass" onclick="bukaResetPass('${u.nim}','${u.name.replace(/'/g,"\\'")}')">
+                    🔑 Reset
+                </button>
+            </td>`;
+        tbody.appendChild(tr);
+    });
+}
+
+/**
+ * Filter tabel akun berdasarkan input pencarian (nama atau NIM).
+ */
+function filterAkunTable(){
+    const q=document.getElementById('searchAkunInput').value.trim().toLowerCase();
+    if(!q){renderAkunTable(_akunData);return;}
+    const filtered=_akunData.filter(u=>
+        u.name.toLowerCase().includes(q)||
+        u.nim.toLowerCase().includes(q)
+    );
+    renderAkunTable(filtered);
+}
+
+/**
+ * Toggle tampil/sembunyikan password pada satu baris.
+ * @param {string} elId - ID elemen span password
+ * @param {string} passValue - nilai password asli
+ */
+function toggleSatuPassword(elId,passValue){
+    const el=document.getElementById(elId);if(!el)return;
+    const isVisible=el.classList.contains('pass-visible');
+    if(isVisible){
+        el.classList.remove('pass-visible');el.classList.add('pass-hidden');
+        el.innerText='••••••';
+    }else{
+        el.classList.remove('pass-hidden');el.classList.add('pass-visible');
+        el.innerText=passValue;
+    }
+}
+
+/**
+ * Toggle tampil/sembunyikan SEMUA password sekaligus.
+ */
+function toggleSemuaPassword(){
+    _semuaPassVisible=!_semuaPassVisible;
+    const btn=document.querySelector('#kelolaAkunModal button[onclick="toggleSemuaPassword()"]');
+    if(btn)btn.innerText=_semuaPassVisible?'🙈 Sembunyikan Semua':'👁️ Tampilkan Semua';
+    // Re-render dengan state baru
+    const q=document.getElementById('searchAkunInput').value.trim().toLowerCase();
+    const displayed=q?_akunData.filter(u=>u.name.toLowerCase().includes(q)||u.nim.toLowerCase().includes(q)):_akunData;
+    renderAkunTable(displayed);
+}
+
+/**
+ * Buka modal reset password untuk user tertentu.
+ * @param {string} nim - NIM user target
+ * @param {string} namaUser - nama user target
+ */
+function bukaResetPass(nim,namaUser){
+    _resetTargetNim=nim;
+    document.getElementById('resetPassTarget').innerText=namaUser;
+    document.getElementById('resetPassNim').innerText='NIM: '+nim;
+    document.getElementById('resetPassInput').value='';
+    document.getElementById('resetPassConfirm').value='';
+    document.getElementById('resetPassAlert').innerHTML='';
+    openModal('resetPassModal');
+}
+
+/**
+ * Eksekusi reset password — update ke Supabase.
+ */
+async function submitResetPass(){
+    const newPass=document.getElementById('resetPassInput').value;
+    const confirmPass=document.getElementById('resetPassConfirm').value;
+    const alertDiv=document.getElementById('resetPassAlert');
+
+    // Validasi
+    if(!newPass||newPass.length<6){
+        alertDiv.innerHTML='<div class="alert alert-danger">Password minimal 6 karakter!</div>';return;
+    }
+    if(newPass!==confirmPass){
+        alertDiv.innerHTML='<div class="alert alert-danger">Konfirmasi password tidak cocok!</div>';return;
+    }
+    if(!_resetTargetNim){
+        alertDiv.innerHTML='<div class="alert alert-danger">Target user tidak ditemukan!</div>';return;
+    }
+
+    showLoading();
+    try{
+        const{error}=await db.from('users').update({pass:newPass}).eq('nim',_resetTargetNim);
+        if(error)throw error;
+
+        // Update cache lokal _akunData agar tabel langsung ter-refresh
+        const cached=_akunData.find(u=>u.nim===_resetTargetNim);
+        if(cached)cached.pass=newPass;
+
+        // Jika user yang di-reset adalah user yang sedang login, update juga currentUser
+        if(currentUser&&currentUser.nim===_resetTargetNim){
+            currentUser.pass=newPass;
+        }
+
+        alertDiv.innerHTML='<div class="alert alert-success">✅ Password berhasil direset!</div>';
+        document.getElementById('resetPassInput').value='';
+        document.getElementById('resetPassConfirm').value='';
+
+        // Tutup modal reset setelah 1.5 detik, refresh tabel akun
+        setTimeout(()=>{
+            closeModal('resetPassModal');
+            _resetTargetNim=null;
+            // Re-render tabel agar password baru langsung terlihat (jika mode visible)
+            const q=document.getElementById('searchAkunInput').value.trim().toLowerCase();
+            const displayed=q?_akunData.filter(u=>u.name.toLowerCase().includes(q)||u.nim.toLowerCase().includes(q)):_akunData;
+            renderAkunTable(displayed);
+        },1500);
+
+    }catch(e){
+        alertDiv.innerHTML=`<div class="alert alert-danger">❌ Gagal reset: ${e.message}</div>`;
+    }finally{hideLoading();}
+}
+
 /* ============================================================
    GAME MODULE — WHAREWOLF
-   Tabel Supabase: ww_rooms, ww_players, ww_messages, ww_actions
-   Semua terhapus otomatis setelah game selesai
 ============================================================ */
-
-/* ----- CONSTANTS ----- */
 const WW_ROLES = {
-    werewolf: {
-        name: '🐺 Serigala',
-        desc: 'Malam hari: Pilih korban untuk dieliminasi. Kirim propaganda anonim.',
-        team: 'evil'
-    },
-    villager: {
-        name: '🏘️ Warga Desa',
-        desc: 'Tidak punya skill khusus. Kekuatanmu ada di argumentasi siang hari!',
-        team: 'good'
-    },
-    philosopher: {
-        name: '📜 Filsafat',
-        desc: 'Pagi: Sistem mengeluarkan pernyataan ontologis tentang salah satu serigala.',
-        team: 'good'
-    },
-    poet: {
-        name: '✍️ Bujangga Puisi',
-        desc: 'Pagi: Sistem merilis puisi simbolik tentang serigala.',
-        team: 'good'
-    },
-    journalist: {
-        name: '📰 Penulis Koran',
-        desc: 'Pagi: Pilih pemain untuk diwawancarai. Sistem memberi jawaban samar.',
-        team: 'good'
-    },
-    detective: {
-        name: '🔍 Detektif',
-        desc: 'Pagi: Selidiki 1 pemain. Hasilnya berupa kategori samar, bukan nama langsung.',
-        team: 'good'
-    }
+    werewolf:{name:'🐺 Serigala',desc:'Malam hari: Pilih korban untuk dieliminasi. Kirim propaganda anonim.',team:'evil'},
+    villager:{name:'🏘️ Warga Desa',desc:'Tidak punya skill khusus. Kekuatanmu ada di argumentasi siang hari!',team:'good'},
+    philosopher:{name:'📜 Filsafat',desc:'Pagi: Sistem mengeluarkan pernyataan ontologis tentang salah satu serigala.',team:'good'},
+    poet:{name:'✍️ Bujangga Puisi',desc:'Pagi: Sistem merilis puisi simbolik tentang serigala.',team:'good'},
+    journalist:{name:'📰 Penulis Koran',desc:'Pagi: Pilih pemain untuk diwawancarai. Sistem memberi jawaban samar.',team:'good'},
+    detective:{name:'🔍 Detektif',desc:'Pagi: Selidiki 1 pemain. Hasilnya berupa kategori samar, bukan nama langsung.',team:'good'}
 };
+const WW_PHASE={NIGHT:'night',MORNING:'morning',DAY:'day',VOTE:'vote'};
+const WW_CLUES_PHILOSOPHER=["Yang bersembunyi seringkali paling vokal membicarakan kebenaran.","Eksistensi tanpa esensi seringkali menjadi topeng paling sempurna.","Mereka yang paling keras berteriak tentang keadilan, kadang menyembunyikan predatornya.","Bayangan terpanjang datang dari objek yang paling dekat dengan cahaya.","Absurditas sejati bukan pada pembunuh, tapi pada mereka yang tak mau melihat."];
+const WW_CLUES_POET=["Ia menyelinap di antara kata-kata,\nbersembunyi dalam metafora gelap.","Di padang sunyi ia berburu,\nmenyamar sebagai penjaga pagi.","Taring tersembunyi di balik senyum,\nbulu halus menutupi cakar tajam.","Gelapnya bukan malam—\nmelainkan jiwa yang memilih diam.","Ia minum dari sumur yang sama,\nnamun menuangkan racun di malam hari."];
+const WW_CLUES_JOURNALIST=["Aku hanya berburu ketika sunyi, bukan saat ramai.","Malam adalah milikku, siang adalah penyamaranku.","Aku bergaul dengan semua, namun loyalitasku hanya satu.","Kata-kataku adalah senjata yang lebih tajam dari taring.","Aku tersenyum karena tahu sesuatu yang kalian tidak tahu."];
+const WW_CLUES_DETECTIVE=["Berorientasi malam.","Berkaitan dengan bahasa manipulatif.","Cenderung observatif dan predatorik.","Pola bicara defensif saat nama disebut.","Memiliki motif tersembunyi yang kuat."];
+const WW_TRIGGER_KEYWORDS=['serigala','berburu','malam','taring','menyamar','manipulatif','predator','gelap','sembunyi','taktik','analisis','klue','petunjuk','indikasi','mencurigakan','tuduh','terbukti'];
 
-const WW_PHASE = { NIGHT: 'night', MORNING: 'morning', DAY: 'day', VOTE: 'vote' };
+let wwState={roomId:null,roomCode:null,myNim:null,myName:null,myRole:null,isHost:false,players:[],phase:null,round:1,voteTarget:null,nightTarget:null,myScore:0,gameActive:false,actionUsed:false,votesCast:{},chatInterval:null,stateInterval:null,timerInterval:null,phaseEndTime:null,propagandaSent:false};
 
-const WW_CLUES_PHILOSOPHER = [
-    "Yang bersembunyi seringkali paling vokal membicarakan kebenaran.",
-    "Eksistensi tanpa esensi seringkali menjadi topeng paling sempurna.",
-    "Mereka yang paling keras berteriak tentang keadilan, kadang menyembunyikan predatornya.",
-    "Bayangan terpanjang datang dari objek yang paling dekat dengan cahaya.",
-    "Absurditas sejati bukan pada pembunuh, tapi pada mereka yang tak mau melihat.",
-];
-const WW_CLUES_POET = [
-    "Ia menyelinap di antara kata-kata,\nbersembunyi dalam metafora gelap.",
-    "Di padang sunyi ia berburu,\nmenyamar sebagai penjaga pagi.",
-    "Taring tersembunyi di balik senyum,\nbulu halus menutupi cakar tajam.",
-    "Gelapnya bukan malam—\nmelainkan jiwa yang memilih diam.",
-    "Ia minum dari sumur yang sama,\nnamun menuangkan racun di malam hari.",
-];
-const WW_CLUES_JOURNALIST = [
-    "Aku hanya berburu ketika sunyi, bukan saat ramai.",
-    "Malam adalah milikku, siang adalah penyamaranku.",
-    "Aku bergaul dengan semua, namun loyalitasku hanya satu.",
-    "Kata-kataku adalah senjata yang lebih tajam dari taring.",
-    "Aku tersenyum karena tahu sesuatu yang kalian tidak tahu.",
-];
-const WW_CLUES_DETECTIVE = [
-    "Berorientasi malam.",
-    "Berkaitan dengan bahasa manipulatif.",
-    "Cenderung observatif dan predatorik.",
-    "Pola bicara defensif saat nama disebut.",
-    "Memiliki motif tersembunyi yang kuat.",
-];
-
-// Keyword trigger untuk scoring argumen
-const WW_TRIGGER_KEYWORDS = ['serigala','berburu','malam','taring','menyamar','manipulatif','predator','gelap','sembunyi','taktik','analisis','klue','petunjuk','indikasi','mencurigakan','tuduh','terbukti'];
-
-/* ----- STATE ----- */
-let wwState = {
-    roomId: null,
-    roomCode: null,
-    myNim: null,
-    myName: null,
-    myRole: null,
-    isHost: false,
-    players: [],       // [{nim, name, role, alive, score}]
-    phase: null,
-    round: 1,
-    voteTarget: null,
-    nightTarget: null,
-    myScore: 0,
-    gameActive: false,
-    actionUsed: false,  // skill sudah dipakai ronde ini
-    votesCast: {},      // {voter_nim: target_nim}
-    chatInterval: null,
-    stateInterval: null,
-    timerInterval: null,
-    phaseEndTime: null,
-    propagandaSent: false,
-    pendingKeywordCheck: false,
-};
-
-/* ============================================================
-   GAME LIST MODAL
-============================================================ */
 function openGameListModal(){
-    if(!currentUser||currentUser.isAdmin){
-        alert('Silakan login terlebih dahulu untuk memainkan game!');return;
-    }
+    if(!currentUser||currentUser.isAdmin){alert('Silakan login terlebih dahulu untuk memainkan game!');return;}
     openModal('gameListModal');
 }
 function openWerewolfGame(){
     closeModal('gameListModal');
-    wwState.myNim = currentUser.nim;
-    wwState.myName = currentUser.name;
-    wwResetState();
-    document.getElementById('wwOverlay').style.display='flex';
-    wwShowLobby();
+    wwState.myNim=currentUser.nim;wwState.myName=currentUser.name;wwResetState();
+    document.getElementById('wwOverlay').style.display='flex';wwShowLobby();
 }
 function closeWerewolfGame(){
-    if(wwState.gameActive){
-        if(!confirm('Yakin keluar dari permainan yang sedang berlangsung?'))return;
-    }
-    wwCleanupIntervals();
-    document.getElementById('wwOverlay').style.display='none';
-    wwResetState();
+    if(wwState.gameActive){if(!confirm('Yakin keluar dari permainan yang sedang berlangsung?'))return;}
+    wwCleanupIntervals();document.getElementById('wwOverlay').style.display='none';wwResetState();
 }
 function wwResetState(){
     wwState.roomId=null;wwState.roomCode=null;wwState.myRole=null;wwState.isHost=false;
@@ -2244,10 +2340,6 @@ function wwCleanupIntervals(){
     if(wwState.timerInterval)clearInterval(wwState.timerInterval);
     wwState.chatInterval=null;wwState.stateInterval=null;wwState.timerInterval=null;
 }
-
-/* ============================================================
-   LOBBY UI
-============================================================ */
 function wwShowLobby(){
     document.getElementById('wwLobbyScreen').style.display='flex';
     document.getElementById('wwWaitingScreen').style.display='none';
@@ -2264,784 +2356,49 @@ function wwShowLobby(){
             <div style="color:rgba(255,255,255,.4);font-size:.8rem;text-align:center">Butuh 6–12 pemain untuk memulai</div>
         </div>`;
 }
-
-/* ============================================================
-   ROOM MANAGEMENT — Supabase
-============================================================ */
 async function wwCreateRoom(){
     showLoading();
     try{
-        const code = wwGenCode();
-        const {data,error} = await db.from('ww_rooms').insert({
-            code, host_nim: wwState.myNim, phase: WW_PHASE.NIGHT,
-            round: 1, active: false, game_started: false,
-            created_at: Date.now(), phase_end_time: null, dead_players: []
-        }).select().single();
+        const code=wwGenCode();
+        const{data,error}=await db.from('ww_rooms').insert({code,host_nim:wwState.myNim,phase:WW_PHASE.NIGHT,round:1,active:false,game_started:false,created_at:Date.now(),phase_end_time:null,dead_players:[]}).select().single();
         if(error)throw error;
-        wwState.roomId = data.id;
-        wwState.roomCode = code;
-        wwState.isHost = true;
-        await wwJoinAsPlayer();
-        wwShowWaiting();
+        wwState.roomId=data.id;wwState.roomCode=code;wwState.isHost=true;
+        await wwJoinAsPlayer();wwShowWaiting();
     }catch(e){alert('❌ Gagal buat room: '+e.message+'\n\nPastikan tabel ww_rooms, ww_players, ww_messages, ww_actions sudah dibuat di Supabase.');}
     finally{hideLoading();}
 }
-
 async function wwJoinRoom(){
-    const code = (document.getElementById('wwJoinCodeInput')?.value||'').toUpperCase().trim();
+    const code=(document.getElementById('wwJoinCodeInput')?.value||'').toUpperCase().trim();
     if(!code||code.length!==4){alert('Masukkan kode room 4 huruf!');return;}
     showLoading();
     try{
-        const {data:room} = await db.from('ww_rooms').select('*').eq('code',code).single();
+        const{data:room}=await db.from('ww_rooms').select('*').eq('code',code).single();
         if(!room){alert('❌ Room tidak ditemukan!');return;}
         if(room.game_started){alert('❌ Permainan sudah dimulai!');return;}
-        const {data:pls} = await db.from('ww_players').select('*').eq('room_id',room.id);
+        const{data:pls}=await db.from('ww_players').select('*').eq('room_id',room.id);
         if((pls||[]).length>=12){alert('❌ Room sudah penuh (maks 12 pemain)!');return;}
-        wwState.roomId = room.id;
-        wwState.roomCode = code;
-        wwState.isHost = room.host_nim === wwState.myNim;
-        await wwJoinAsPlayer();
-        wwShowWaiting();
-    }catch(e){alert('❌ Gagal join: '+e.message);}
-    finally{hideLoading();}
+        wwState.roomId=room.id;wwState.roomCode=code;wwState.isHost=room.host_nim===wwState.myNim;
+        await wwJoinAsPlayer();wwShowWaiting();
+    }catch(e){alert('❌ Gagal join: '+e.message);}finally{hideLoading();}
 }
-
 async function wwJoinAsPlayer(){
-    // Cek sudah ada belum
-    const {data:existing} = await db.from('ww_players').select('id').eq('room_id',wwState.roomId).eq('nim',wwState.myNim).maybeSingle();
-    if(!existing){
-        await db.from('ww_players').insert({
-            room_id: wwState.roomId, nim: wwState.myNim,
-            name: wwState.myName, role: null, alive: true, score: 0, vote_target: null
-        });
-    }
+    const{data:existing}=await db.from('ww_players').select('id').eq('room_id',wwState.roomId).eq('nim',wwState.myNim).maybeSingle();
+    if(!existing){await db.from('ww_players').insert({room_id:wwState.roomId,nim:wwState.myNim,name:wwState.myName,role:null,alive:true,score:0,vote_target:null});}
 }
-
 async function wwLeaveRoom(){
-    if(!wwState.roomId)return;
-    wwCleanupIntervals();
+    if(!wwState.roomId)return;wwCleanupIntervals();
     try{
         await db.from('ww_players').delete().eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
-        // Jika host dan game belum mulai, hapus room
-        if(wwState.isHost){
-            const {data:pls}=await db.from('ww_players').select('nim').eq('room_id',wwState.roomId);
-            if(!pls||pls.length===0) await wwDeleteRoomData(wwState.roomId);
-        }
-    }catch(e){console.error(e);}
-    wwResetState();
-    wwShowLobby();
-}
-
-async function wwDeleteRoomData(roomId){
-    await Promise.all([
-        db.from('ww_players').delete().eq('room_id',roomId),
-        db.from('ww_messages').delete().eq('room_id',roomId),
-        db.from('ww_actions').delete().eq('room_id',roomId),
-        db.from('ww_rooms').delete().eq('id',roomId)
-    ]);
-}
-
-/* ============================================================
-   WAITING ROOM
-============================================================ */
-function wwShowWaiting(){
-    document.getElementById('wwLobbyScreen').style.display='none';
-    document.getElementById('wwWaitingScreen').style.display='block';
-    document.getElementById('wwGameScreen').style.display='none';
-    document.getElementById('wwRoomCodeDisplay').innerText = wwState.roomCode;
-    document.getElementById('wwStartBtn').style.display = wwState.isHost ? 'inline-block' : 'none';
-    wwPollWaiting();
-    wwState.stateInterval = setInterval(wwPollWaiting, 2000);
-}
-async function wwPollWaiting(){
-    if(!wwState.roomId)return;
-    try{
-        const {data:room} = await db.from('ww_rooms').select('*').eq('id',wwState.roomId).single();
-        if(!room)return;
-        const {data:pls} = await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-        const players = pls||[];
-        // Render daftar pemain
-        const listEl = document.getElementById('wwWaitingPlayers');
-        listEl.innerHTML = players.map(p=>`<div class="ww-lobby-player ${p.nim===room.host_nim?'host':''}">${p.nim===room.host_nim?'👑 ':''} ${p.name}</div>`).join('');
-        const statusEl = document.getElementById('wwWaitingStatus');
-        statusEl.innerHTML = `${players.length} pemain bergabung ${players.length>=6?'<span style="color:#4caf50">✅ Siap dimulai!</span>':'<span style="color:#ff8a65">(min 6)</span>'}`;
-        // Jika game sudah dimulai oleh host, pindah ke game screen
-        if(room.game_started){
-            clearInterval(wwState.stateInterval);
-            await wwEnterGame(room, players);
-        }
-    }catch(e){console.error('poll waiting err',e);}
-}
-
-async function wwHostStartGame(){
-    const {data:pls} = await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-    const players = pls||[];
-    if(players.length<6){alert('Minimal 6 pemain untuk memulai!');return;}
-    if(players.length>12){alert('Maksimal 12 pemain!');return;}
-    showLoading();
-    try{
-        const roles = wwGenerateRoles(players.length);
-        wwState.players = players;
-        for(let i=0;i<players.length;i++){
-            await db.from('ww_players').update({role:roles[i]}).eq('id',players[i].id);
-        }
-        const phaseEnd = Date.now()+180000;
-        await db.from('ww_rooms').update({
-            game_started:true, active:true, phase:WW_PHASE.NIGHT,
-            round:1, phase_end_time:phaseEnd, dead_players:[]
-        }).eq('id',wwState.roomId);
-        await wwPostSystemMessage('🌙 Permainan dimulai! Malam pertama telah tiba (3 menit). Serigala, pilih korbanmu...');
-    }catch(e){alert('❌ Gagal mulai: '+e.message);}
-    finally{hideLoading();}
-}
-function wwGenerateRoles(n){
-    // Komposisi sesuai jumlah pemain
-    const wolves = n>=10?2:1;
-    const specials = ['philosopher','poet','journalist','detective'];
-    const roles = Array(wolves).fill('werewolf');
-    // Tambah special roles (maks 4)
-    const numSpecial = Math.min(4, n - wolves - 1);
-    for(let i=0;i<numSpecial;i++) roles.push(specials[i]);
-    // Sisanya warga
-    while(roles.length<n) roles.push('villager');
-    // Shuffle
-    for(let i=roles.length-1;i>0;i--){
-        const j=Math.floor(Math.random()*(i+1));
-        [roles[i],roles[j]]=[roles[j],roles[i]];
-    }
-    return roles;
-}
-
-function wwGenCode(){
-    const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    return Array(4).fill(0).map(()=>chars[Math.floor(Math.random()*chars.length)]).join('');
-}
-
-/* ============================================================
-   ENTER GAME SCREEN
-============================================================ */
-async function wwEnterGame(room, players){
-    clearInterval(wwState.stateInterval);
-    // Ambil role sendiri
-    const myPlayer = players.find(p=>p.nim===wwState.myNim);
-    if(!myPlayer){alert('Data pemain tidak ditemukan!');return;}
-    wwState.myRole = myPlayer.role;
-    wwState.players = players;
-    wwState.phase = room.phase;
-    wwState.round = room.round||1;
-    wwState.phaseEndTime = room.phase_end_time;
-    wwState.gameActive = true;
-
-    document.getElementById('wwLobbyScreen').style.display='none';
-    document.getElementById('wwWaitingScreen').style.display='none';
-    document.getElementById('wwGameScreen').style.display='block';
-
-    wwRenderRoleCard();
-    wwRenderPhase();
-    // Start polling
-    wwState.chatInterval = setInterval(wwPollChat, 2000);
-    wwState.stateInterval = setInterval(wwPollGameState, 3000);
-    wwStartTimer();
-    await wwPollChat();
-}
-
-/* ============================================================
-   GAME POLLING
-============================================================ */
-async function wwPollGameState(){
-    if(!wwState.roomId||!wwState.gameActive)return;
-    try{
-        const {data:room} = await db.from('ww_rooms').select('*').eq('id',wwState.roomId).single();
-        if(!room||!room.active)return;
-        const {data:pls} = await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-        wwState.players = pls||[];
-
-        // Update fase jika fase ATAU phaseEndTime berubah
-        const phaseChanged = room.phase !== wwState.phase;
-        const timeChanged = room.phase_end_time && room.phase_end_time !== wwState.phaseEndTime;
-        if(phaseChanged || timeChanged){
-            wwState.phase = room.phase;
-            wwState.round = room.round||1;
-            wwState.phaseEndTime = room.phase_end_time;
-            if(phaseChanged){
-                wwState.actionUsed = false;
-                wwState.propagandaSent = false;
-                wwRenderPhase();
-            }
-            wwStartTimer();
-        }
-        wwRenderPlayerList();
-        wwUpdateScoreDisplay();
-
-        if(room.game_over){
-            wwState.gameActive = false;
-            wwCleanupIntervals();
-            wwShowResult(room);
-        }
-    }catch(e){console.error('poll state err',e);}
-}
-
-async function wwPollChat(){
-    if(!wwState.roomId)return;
-    try{
-        const {data:msgs} = await db.from('ww_messages')
-            .select('*').eq('room_id',wwState.roomId)
-            .order('created_at',{ascending:true}).limit(200);
-        const area = document.getElementById('wwChatArea');
-        if(!area)return;
-        const atBottom = area.scrollHeight-area.scrollTop-area.clientHeight < 60;
-        area.innerHTML='';
-        (msgs||[]).forEach(m=>area.appendChild(wwBuildMsgEl(m)));
-        if(atBottom) area.scrollTop=area.scrollHeight;
-    }catch(e){console.error('poll chat err',e);}
-}
-
-function wwBuildMsgEl(m){
-    const div=document.createElement('div');
-    let cls='other',senderLabel='';
-    if(m.type==='system') cls='system';
-    else if(m.type==='clue') cls='clue';
-    else if(m.type==='dead') cls='dead-announce';
-    else if(m.type==='propaganda') cls='propaganda';
-    else if(m.sender_nim===wwState.myNim) cls='own';
-
-    if(m.type==='propaganda') senderLabel='<div class="msg-sender">📢 Pesan Anonim</div>';
-    else if(m.type!=='system'&&m.type!=='clue'&&m.type!=='dead') senderLabel=`<div class="msg-sender">${m.sender_name||'?'}</div>`;
-
-    div.className=`ww-msg ${cls}`;
-    div.innerHTML=`${senderLabel}<div>${m.content}</div><div class="msg-time">${new Date(m.created_at).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})}</div>`;
-
-    // Keyword scoring — hanya untuk pesan pemain biasa
-    if(m.type==='chat'&&m.sender_nim===wwState.myNim){
-        const lc=m.content.toLowerCase();
-        const hit=WW_TRIGGER_KEYWORDS.filter(kw=>lc.includes(kw)).length;
-        if(hit>0&&!m.scored){
-            wwAddScore(2,'Argumen analitis (+2 poin)');
-            // Mark scored agar tidak double
-            db.from('ww_messages').update({scored:true}).eq('id',m.id).then(()=>{});
-        }
-    }
-    return div;
-}
-
-/* ============================================================
-   PHASE RENDER
-============================================================ */
-function wwRenderPhase(){
-    const badge = document.getElementById('wwPhaseBadge');
-    const round = document.getElementById('wwRoundBadge');
-    const phaseLabels = {
-        night: {label:'🌙 Malam', cls:'phase-night'},
-        morning: {label:'🌅 Pagi', cls:'phase-morning'},
-        day: {label:'☀️ Siang - Diskusi', cls:'phase-day'},
-        vote: {label:'🗳️ Voting', cls:'phase-vote'}
-    };
-    const p = phaseLabels[wwState.phase]||phaseLabels.night;
-    badge.innerText = p.label;
-    badge.className = `ww-phase-badge ${p.cls} ww-phase-active`;
-    round.innerText = `Ronde ${wwState.round}`;
-    wwRenderActionPanel();
-}
-
-function wwRenderRoleCard(){
-    const role = WW_ROLES[wwState.myRole]||{name:'?',desc:'?'};
-    document.getElementById('wwMyRoleName').innerText = role.name;
-    document.getElementById('wwMyRoleDesc').innerText = role.desc;
-}
-
-function wwRenderPlayerList(){
-    const el = document.getElementById('wwPlayerList');if(!el)return;
-    el.innerHTML='';
-    wwState.players.forEach(p=>{
-        const isSelf = p.nim===wwState.myNim;
-        const div=document.createElement('div');
-        div.className=`ww-player-item ${p.alive?'alive':'dead'} ${isSelf?'self':''}`;
-        div.innerHTML=`${isSelf?'👤 ':''}${p.name}${isSelf?' (Anda)':''} ${!p.alive?'💀':''}`;
-        el.appendChild(div);
-    });
-}
-
-function wwUpdateScoreDisplay(){
-    const me = wwState.players.find(p=>p.nim===wwState.myNim);
-    if(me) wwState.myScore = me.score||0;
-    const el=document.getElementById('wwMyScore');
-    if(el) el.innerHTML=`<span style="color:#ffd54f;font-weight:700">${wwState.myScore}</span> poin terkumpul`;
-}
-
-/* ============================================================
-   ACTION PANEL — berdasarkan fase & peran
-============================================================ */
-function wwRenderActionPanel(){
-    const panel = document.getElementById('wwActionPanel');
-    if(!panel)return;
-    panel.style.display='none';
-    panel.innerHTML='';
-    const myAlive = wwState.players.find(p=>p.nim===wwState.myNim);
-    if(!myAlive||!myAlive.alive) return;
-
-    const phase = wwState.phase;
-    const role = wwState.myRole;
-
-    if(phase===WW_PHASE.NIGHT && role==='werewolf'){
-        panel.style.display='block';
-        const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">🐺 Pilih korban malam ini:</div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
-                ${alivePlayers.map(p=>`<button class="ww-action-btn night-action" onclick="wwSelectNightTarget('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
+        if(wwState.isHost){const{data:pls}=await db.from('ww_players').select('nim').eq('room_id',wwState.roomId);if(!pls||pls.length===0)await wwDeleteRoomData(wwState.room       </div>
             </div>
-            <div id="wwNightSelected" style="color:#ef9a9a;font-size:.85rem;margin-bottom:8px"></div>
-            <div style="color:rgba(255,255,255,.5);font-size:.75rem;margin-bottom:6px">📢 Kirim propaganda anonim:</div>
-            <input type="text" id="wwPropInput" class="ww-prop-input" placeholder="Ketik pesan propaganda (maks 100 karakter)..." maxlength="100">
-            <button onclick="wwSendPropaganda()" class="ww-action-btn prop-action" style="margin-top:6px">📢 Kirim Propaganda</button>`;
-    }
-    else if(phase===WW_PHASE.MORNING){
-        if(['philosopher','poet','journalist','detective'].includes(role)&&!wwState.actionUsed){
-            panel.style.display='block';
-            const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-            let btnHtml='';
-            if(role==='philosopher') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('philosopher')">🔮 Aktifkan Klue Filsafat</button>`;
-            else if(role==='poet') btnHtml=`<button class="ww-action-btn day-action" onclick="wwUseSkill('poet')">📜 Aktifkan Klue Puisi</button>`;
-            else if(role==='journalist') btnHtml=`
-                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">📰 Pilih pemain untuk diwawancarai:</div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px">
-                    ${alivePlayers.map(p=>`<button class="ww-action-btn day-action" onclick="wwUseSkillTarget('journalist','${p.nim}','${p.name}')">${p.name}</button>`).join('')}
-                </div>`;
-            else if(role==='detective') btnHtml=`
-                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:6px">🔍 Selidiki pemain:</div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px">
-                    ${alivePlayers.map(p=>`<button class="ww-action-btn day-action" onclick="wwUseSkillTarget('detective','${p.nim}','${p.name}')">${p.name}</button>`).join('')}
-                </div>`;
-            panel.innerHTML=`<div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">⚡ Aktifkan kekuatanmu pagi ini (1 menit):</div>${btnHtml}`;
-        }
-    }
-    else if(phase===WW_PHASE.DAY){
-        // Siang: tampilkan tombol vote sekaligus dengan diskusi
-        panel.style.display='block';
-        const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        const sudahVote = wwState.votesCast[wwState.myNim];
-        if(sudahVote){
-            const namaTarget = sudahVote==='__skip__' ? 'Skip' : (wwState.players.find(p=>p.nim===sudahVote)?.name||sudahVote);
-            panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">☀️ Siang — Diskusi & Voting (5 menit)</div>
-                <div style="color:#a5d6a7;font-size:.9rem;padding:8px 12px;background:rgba(76,175,80,.15);border-radius:8px;border:1px solid rgba(76,175,80,.3)">
-                    ✅ Kamu sudah vote: <strong>${namaTarget}</strong>
-                </div>
-                <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">Menunggu pemain lain voting... Voting otomatis selesai jika semua sudah memilih.</div>
-                <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
-        } else {
-            panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">☀️ Siang — Diskusi & Voting (5 menit)</div>
-                <div style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:8px">Diskusikan di chat lalu pilih siapa yang paling mencurigakan:</div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px">
-                    ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
-                    <button class="ww-action-btn" onclick="wwCastSkip()" style="background:rgba(100,100,100,.5);color:#ccc;border:1px solid rgba(255,255,255,.2)">⏭️ Skip</button>
-                </div>
-                <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">⚡ Otomatis lanjut jika semua sudah memilih</div>
-                <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
-        }
-    }
-    else if(phase===WW_PHASE.VOTE){
-        panel.style.display='block';
-        const alivePlayers = wwState.players.filter(p=>p.alive&&p.nim!==wwState.myNim);
-        panel.innerHTML=`<div style="color:rgba(255,255,255,.7);font-weight:700;font-size:.85rem;margin-bottom:8px">🗳️ Waktu voting! Pilih siapa yang kamu curigai:</div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px">
-                ${alivePlayers.map(p=>`<button class="ww-action-btn vote-action" onclick="wwCastVote('${p.nim}','${p.name}')">${p.name}</button>`).join('')}
-                <button class="ww-action-btn" onclick="wwCastSkip()" style="background:rgba(100,100,100,.5);color:#ccc;border:1px solid rgba(255,255,255,.2)">⏭️ Skip</button>
+            <div id="wwResultOverlay" style="display:none" class="ww-result-overlay">
+                <div id="wwResultTitle" class="ww-result-title">-</div>
+                <div id="wwResultBody" style="color:rgba(255,255,255,.75);margin-bottom:25px;max-width:500px;line-height:1.7"></div>
+                <div id="wwFinalScores" style="margin-bottom:25px;width:100%;max-width:400px"></div>
+                <button onclick="wwEndAndSavePoints()" style="padding:16px 40px;background:linear-gradient(135deg,#4caf50,#2e7d32);color:#fff;border:none;border-radius:25px;cursor:pointer;font-weight:800;font-size:1.1rem;font-family:'Nunito',sans-serif">✅ Simpan Poin &amp; Keluar</button>
             </div>
-            <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px">Voting otomatis selesai jika semua pemain sudah memilih</div>
-            <div id="wwVoteStatus" style="color:#ef9a9a;font-size:.8rem;margin-top:6px"></div>`;
-    }
-}
+        </div>
+    </div>
 
-/* ============================================================
-   ACTIONS
-============================================================ */
-async function wwSelectNightTarget(nim,name){
-    wwState.nightTarget=nim;
-    document.getElementById('wwNightSelected').innerHTML=`🎯 Target dipilih: <strong>${name}</strong> — Menunggu akhir malam...`;
-    // Simpan aksi ke DB
-    await db.from('ww_actions').upsert({
-        room_id:wwState.roomId, actor_nim:wwState.myNim,
-        action_type:'night_kill', target_nim:nim, round:wwState.round
-    },{onConflict:'room_id,actor_nim,round,action_type'});
-    // Cek apakah semua serigala hidup sudah memilih → auto skip ke pagi
-    if(wwState.isHost){
-        const {data:wolves} = await db.from('ww_players').select('*')
-            .eq('room_id',wwState.roomId).eq('alive',true).eq('role','werewolf');
-        const {data:actions} = await db.from('ww_actions').select('*')
-            .eq('room_id',wwState.roomId).eq('round',wwState.round).eq('action_type','night_kill');
-        const wolfCount = (wolves||[]).length;
-        const actCount  = (actions||[]).length;
-        if(wolfCount>0 && actCount>=wolfCount){
-            // Semua serigala sudah pilih → langsung proses ke pagi
-            await wwPostSystemMessage('🌙 Semua serigala telah memilih korban. Malam berakhir lebih awal!','system');
-            await wwNightProcessKill();
-        } else {
-            await wwPostSystemMessage(`🌙 Serigala telah memilih... (${actCount}/${wolfCount} serigala sudah memilih)`,'system',true);
-        }
-    }
-}
-async function wwUseSkill(role){
-    if(wwState.actionUsed)return;
-    wwState.actionUsed=true;
-    let clue='';
-    if(role==='philosopher') clue=WW_CLUES_PHILOSOPHER[Math.floor(Math.random()*WW_CLUES_PHILOSOPHER.length)];
-    else if(role==='poet') clue=WW_CLUES_POET[Math.floor(Math.random()*WW_CLUES_POET.length)];
-    const roleNames={philosopher:'📜 Filsafat',poet:'✍️ Bujangga Puisi'};
-    await wwPostClue(`[${roleNames[role]}]\n\n"${clue}"`);
-    await wwAddScoreDB(3,'Klue berhasil diaktifkan (+3 poin)');
-    wwState.actionUsed=true;
-    wwRenderActionPanel();
-}
-
-async function wwUseSkillTarget(role, targetNim, targetName){
-    if(wwState.actionUsed)return;
-    wwState.actionUsed=true;
-    const targetPlayer = wwState.players.find(p=>p.nim===targetNim);
-    const isWolf = targetPlayer?.role==='werewolf';
-    let clue='';
-    if(role==='journalist'){
-        clue=isWolf ? WW_CLUES_JOURNALIST[Math.floor(Math.random()*WW_CLUES_JOURNALIST.length)] : `"Aku hanya mengamati, bukan berburu. Kepentinganku adalah kebenaran."`;
-        await wwPostClue(`[📰 Penulis Koran — Wawancara dengan ${targetName}]\n\n${clue}`);
-    } else if(role==='detective'){
-        clue=isWolf ? WW_CLUES_DETECTIVE[Math.floor(Math.random()*WW_CLUES_DETECTIVE.length)] : `"Tidak mencurigakan. Pola perilaku normal."`;
-        await wwPostClue(`[🔍 Detektif — Penyelidikan terhadap ${targetName}]\n\nHasil analisis: ${clue}`);
-    }
-    await wwAddScoreDB(3,'Skill investigasi digunakan (+3 poin)');
-    wwRenderActionPanel();
-}
-
-async function wwSendPropaganda(){
-    if(wwState.propagandaSent){alert('Sudah mengirim propaganda ronde ini!');return;}
-    const input=document.getElementById('wwPropInput');
-    const text=(input?.value||'').trim();
-    if(!text){alert('Tulis pesan propaganda dulu!');return;}
-    wwState.propagandaSent=true;
-    await db.from('ww_messages').insert({
-        room_id:wwState.roomId, sender_nim:'anon', sender_name:'Anonim',
-        content:text, type:'propaganda', created_at:Date.now(), scored:false
-    });
-    if(input)input.value='';
-}
-
-async function wwCastVote(targetNim, targetName){
-    wwState.votesCast[wwState.myNim]=targetNim;
-    await db.from('ww_players').update({vote_target:targetNim}).eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
-    // Refresh panel agar tampilan berubah jadi "sudah vote"
-    wwRenderActionPanel();
-    const el=document.getElementById('wwVoteStatus');
-    if(el){
-        const label = targetNim==='__skip__' ? '⏭️ Skip' : `<strong>${targetName}</strong>`;
-        el.innerHTML=`✅ Pilihanmu: ${label} — Menunggu pemain lain...`;
-    }
-    if(wwState.isHost) await wwCheckVoteComplete();
-}
-
-async function wwCastSkip(){
-    await wwCastVote('__skip__','Skip');
-}
-
-async function wwCheckVoteComplete(){
-    const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId).eq('alive',true);
-    const alive=pls||[];
-    const voted=alive.filter(p=>p.vote_target);
-    if(voted.length>=alive.length){
-        await wwPostSystemMessage('🗳️ Semua pemain sudah memilih! Memproses hasil voting...','system');
-        await wwProcessVotes(alive);
-    }
-}
-
-async function wwProcessVotes(alivePlayers){
-    // Hitung vote (abaikan vote 'skip')
-    const counts={};
-    alivePlayers.forEach(p=>{
-        if(p.vote_target && p.vote_target!=='__skip__')
-            counts[p.vote_target]=(counts[p.vote_target]||0)+1;
-    });
-    // Hitung skip votes
-    const skipCount=alivePlayers.filter(p=>p.vote_target==='__skip__').length;
-    const totalVoted=alivePlayers.filter(p=>p.vote_target).length;
-    // Reset vote_target dulu
-    await db.from('ww_players').update({vote_target:null}).eq('room_id',wwState.roomId);
-
-    if(Object.keys(counts).length===0){
-        await wwPostSystemMessage('🤷 Tidak ada yang divote. Ronde berlanjut ke malam berikutnya.');
-        const cont = await wwCheckGameOver();
-        if(cont) await wwAdvancePhase('next_night');
-        return;
-    }
-    const maxVotes=Math.max(...Object.values(counts));
-    // Cek seri
-    const topCandidates=Object.keys(counts).filter(k=>counts[k]===maxVotes);
-    if(topCandidates.length>1){
-        await wwPostSystemMessage(`🤷 Hasil seri! ${topCandidates.map(n=>alivePlayers.find(p=>p.nim===n)?.name||n).join(' vs ')} mendapat suara sama (${maxVotes}). Tidak ada yang dieliminasi.`);
-        const cont = await wwCheckGameOver();
-        if(cont) await wwAdvancePhase('next_night');
-        return;
-    }
-    const condemned=topCandidates[0];
-    const condPlayer=alivePlayers.find(p=>p.nim===condemned);
-    const isWolf=condPlayer?.role==='werewolf';
-    await db.from('ww_players').update({alive:false}).eq('room_id',wwState.roomId).eq('nim',condemned);
-    await wwPostSystemMessage(`🗳️ Hasil voting: ${condPlayer?.name||'?'} dieliminasi dengan ${maxVotes} suara!\nPerannya adalah: ${WW_ROLES[condPlayer?.role]?.name||'?'}`, 'dead');
-    if(isWolf){
-        const correctVoters=alivePlayers.filter(p=>p.vote_target===condemned&&p.nim!==condemned);
-        for(const v of correctVoters){
-            await db.from('ww_players').update({score:(v.score||0)+5}).eq('room_id',wwState.roomId).eq('nim',v.nim);
-        }
-        await wwPostSystemMessage('🎉 Kalian berhasil menemukan serigala! (+5 poin untuk yang memilih benar)');
-    }
-    const cont = await wwCheckGameOver();
-    if(cont) await wwAdvancePhase('next_night');
-}
-
-// Mengembalikan true jika game belum selesai (lanjut), false jika sudah selesai
-async function wwCheckGameOver(){
-    const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-    if(!pls) return false;
-    const alive=pls.filter(p=>p.alive);
-    const wolves=alive.filter(p=>p.role==='werewolf');
-    const nonWolves=alive.filter(p=>p.role!=='werewolf');
-    // Warga menang: semua serigala terbunuh
-    if(wolves.length===0){
-        await db.from('ww_rooms').update({game_over:true,winner:'villagers',active:false}).eq('id',wwState.roomId);
-        await wwPostSystemMessage('🏆 WARGA DESA MENANG! Semua serigala telah ditemukan!','system');
-        return false;
-    }
-    // Serigala menang: non-serigala yang tersisa hanya 2 atau kurang
-    if(nonWolves.length<=2){
-        await db.from('ww_rooms').update({game_over:true,winner:'werewolves',active:false}).eq('id',wwState.roomId);
-        await wwPostSystemMessage('🐺 SERIGALA MENANG! Hanya tersisa 2 warga dan serigala kini berkuasa!','system');
-        return false;
-    }
-    return true; // Game masih berlanjut
-}
-
-async function wwAdvancePhase(next){
-    const timings = {
-        'next_night':  30000,
-        'morning':     30000,
-        'day':        300000,
-        'vote':       120000
-    };
-    const phaseEnd = Date.now() + (timings[next] || 60000);
-    const phaseMap={'next_night':WW_PHASE.NIGHT,'morning':WW_PHASE.MORNING,'day':WW_PHASE.DAY,'vote':WW_PHASE.VOTE};
-    const newPhase=phaseMap[next]||WW_PHASE.NIGHT;
-    const newRound=next==='next_night'?(wwState.round+1):wwState.round;
-    await db.from('ww_rooms').update({
-        phase:newPhase,
-        round:newRound,
-        phase_end_time:phaseEnd
-    }).eq('id',wwState.roomId);
-    const phaseMsg={
-        'next_night':'🌙 Malam tiba (30 detik). Serigala, pilih korbanmu!',
-        'morning':'🌅 Pagi tiba (30 detik)! Role khusus, gunakan kekuatanmu sekarang.',
-        'day':'☀️ Siang hari (5 menit)! Diskusikan klue & lakukan voting. Otomatis lanjut jika semua sudah vote.',
-        'vote':'🗳️ Waktunya voting! Pilih siapa yang kamu curigai.'
-    };
-    await wwPostSystemMessage(phaseMsg[next]||'Fase baru dimulai.');
-}
-/* Proses kill malam — dipakai oleh timeout maupun auto-skip */
-async function wwNightProcessKill(){
-    const {data:actions}=await db.from('ww_actions').select('*')
-        .eq('room_id',wwState.roomId).eq('round',wwState.round).eq('action_type','night_kill');
-    if(actions&&actions.length>0){
-        // Pilih target yang paling banyak dipilih (jika >1 serigala)
-        const counts={};
-        actions.forEach(a=>{counts[a.target_nim]=(counts[a.target_nim]||0)+1;});
-        const topTarget=Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0];
-        const {data:victim}=await db.from('ww_players').select('*')
-            .eq('room_id',wwState.roomId).eq('nim',topTarget).single();
-        if(victim&&victim.alive){
-            await db.from('ww_players').update({alive:false})
-                .eq('room_id',wwState.roomId).eq('nim',topTarget);
-            const lastWords=[
-                "Maaf, aku tidak bisa menyelesaikan tugasku...",
-                "Percayalah pada kalimat terakhirku: kebenaran selalu menang.",
-                "Aku pergi, tapi jejakku tetap ada dalam kata-kata.",
-                "Jangan biarkan kegelapan memenangkan percakapan.",
-                "Cari yang paling diam—merekalah yang paling berbahaya."
-            ];
-            await wwPostSystemMessage(
-                `🌅 Pagi tiba... ${victim.name} ditemukan tidak sadarkan diri.\n\n"${lastWords[Math.floor(Math.random()*lastWords.length)]}" — ${victim.name}`,
-                'dead'
-            );
-            const alive = await wwCheckGameOver();
-            if(alive) await wwAdvancePhase('morning');
-            return;
-        }
-    }
-    await wwAdvancePhase('morning');
-}
-/* Dipanggil oleh host timer saat fase habis */
-async function wwOnPhaseTimeout(){
-    if(!wwState.isHost||!wwState.gameActive)return;
-    try{
-        const {data:room}=await db.from('ww_rooms').select('*').eq('id',wwState.roomId).single();
-        if(!room||!room.active||room.game_over)return;
-        // Cegah double-trigger
-        await db.from('ww_rooms').update({phase_end_time: Date.now()-1000}).eq('id',wwState.roomId);
-        if(room.phase===WW_PHASE.NIGHT){
-            await wwNightProcessKill();
-        } else if(room.phase===WW_PHASE.MORNING){
-            await wwAdvancePhase('day');
-        } else if(room.phase===WW_PHASE.DAY){
-            // Siang habis waktu → proses vote langsung (tidak perlu fase VOTE terpisah)
-            const {data:pls}=await db.from('ww_players').select('*')
-                .eq('room_id',wwState.roomId).eq('alive',true);
-            await wwProcessVotes(pls||[]);
-        } else if(room.phase===WW_PHASE.VOTE){
-            const {data:pls}=await db.from('ww_players').select('*')
-                .eq('room_id',wwState.roomId).eq('alive',true);
-            await wwProcessVotes(pls||[]);
-        }
-    }catch(e){console.error('phase timeout err',e);}
-}
-
-/* ============================================================
-   TIMER
-============================================================ */
-function wwStartTimer(){
-    if(wwState.timerInterval) clearInterval(wwState.timerInterval);
-    wwState.timerInterval = setInterval(async ()=>{
-        const el=document.getElementById('wwTimerDisplay');
-        if(!el||!wwState.phaseEndTime)return;
-        const remaining = Math.max(0, wwState.phaseEndTime - Date.now());
-        const m=Math.floor(remaining/60000),s=Math.floor((remaining%60000)/1000);
-        el.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-        if(remaining<=0&&wwState.isHost) await wwOnPhaseTimeout();
-    },1000);
-}
-
-/* ============================================================
-   CHAT
-============================================================ */
-async function wwSendChat(){
-    if(!wwState.gameActive)return;
-    const input=document.getElementById('wwChatInput');
-    const text=(input?.value||'').trim();
-    if(!text)return;
-    // Cek apakah pemain masih hidup
-    const me=wwState.players.find(p=>p.nim===wwState.myNim);
-    if(!me?.alive){alert('Pemain yang sudah mati tidak bisa chat!');return;}
-    // Hanya bisa chat saat siang
-    if(wwState.phase===WW_PHASE.NIGHT&&wwState.myRole!=='werewolf'){
-        alert('Pemain non-serigala tidak bisa bicara di malam hari!');return;
-    }
-    await db.from('ww_messages').insert({
-        room_id:wwState.roomId, sender_nim:wwState.myNim, sender_name:wwState.myName,
-        content:text, type:'chat', created_at:Date.now(), scored:false
-    });
-    if(input) input.value='';
-}
-
-async function wwPostSystemMessage(content, type='system', skipRefresh=false){
-    await db.from('ww_messages').insert({
-        room_id:wwState.roomId, sender_nim:'system', sender_name:'Sistem',
-        content, type, created_at:Date.now(), scored:false
-    });
-    if(!skipRefresh) await wwPollChat();
-}
-async function wwPostClue(content){
-    await db.from('ww_messages').insert({
-        room_id:wwState.roomId, sender_nim:'system', sender_name:'Sistem',
-        content, type:'clue', created_at:Date.now(), scored:false
-    });
-    await wwPollChat();
-}
-
-/* ============================================================
-   SCORING
-============================================================ */
-async function wwAddScore(pts, reason){
-    const me=wwState.players.find(p=>p.nim===wwState.myNim);if(!me)return;
-    const newScore=(me.score||0)+pts;
-    await db.from('ww_players').update({score:newScore}).eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
-    wwState.myScore=newScore;
-    wwUpdateScoreDisplay();
-}
-async function wwAddScoreDB(pts, reason){
-    await wwAddScore(pts, reason);
-}
-
-/* ============================================================
-   RESULT & SAVE POINTS
-============================================================ */
-async function wwShowResult(room){
-    const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-    const players=pls||[];
-    const me=players.find(p=>p.nim===wwState.myNim);
-    const myTeam=WW_ROLES[wwState.myRole]?.team||'good';
-    const winner=room.winner||'';
-    const iWin=(winner==='villagers'&&myTeam==='good')||(winner==='werewolves'&&myTeam==='evil');
-
-    document.getElementById('wwResultTitle').innerHTML=iWin?`<span class="ww-result-win">🏆 Kamu Menang!</span>`:`<span class="ww-result-lose">💀 Kamu Kalah</span>`;
-    document.getElementById('wwResultBody').innerHTML=`
-        ${winner==='villagers'?'🏘️ Warga Desa berhasil mengungkap semua serigala!':'🐺 Serigala berhasil menguasai desa!'}<br><br>
-        Peranmu: <strong>${WW_ROLES[wwState.myRole]?.name||'?'}</strong><br>
-        Poin terkumpul: <strong style="color:#ffd54f">${me?.score||0} poin</strong>`;
-
-    // Leaderboard akhir
-    const sorted=[...players].sort((a,b)=>(b.score||0)-(a.score||0));
-    document.getElementById('wwFinalScores').innerHTML=`
-        <div style="font-weight:700;margin-bottom:12px;color:#fff">📊 Skor Akhir</div>
-        ${sorted.map((p,i)=>`<div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,.06);border-radius:8px;margin-bottom:6px;color:#e0e0e0">
-            <span>${i===0?'🥇':i===1?'🥈':i===2?'🥉':'  '} ${p.name} ${p.nim===wwState.myNim?'(Anda)':''}</span>
-            <span style="color:#ffd54f;font-weight:700">${p.score||0} poin</span>
-        </div>`).join('')}`;
-
-    document.getElementById('wwResultOverlay').style.display='flex';
-}
-
-async function wwEndAndSavePoints(){
-    showLoading();
-    try{
-        const {data:pls}=await db.from('ww_players').select('*').eq('room_id',wwState.roomId);
-        const me=(pls||[]).find(p=>p.nim===wwState.myNim);
-        const pts=me?.score||0;
-
-        if(pts>0&&currentUser&&!currentUser.isAdmin){
-            // Tambah ke point_logs user
-            const dbUser=allUsers.find(u=>u.nim===wwState.myNim);
-            if(dbUser){
-                const newAch=[...(dbUser.achievements||[]),{type:'karya',description:`Game Wharewolf — ${pts} poin`,points:pts,timestamp:Date.now()}];
-                const newLog=[...(dbUser.point_logs||[]),{type:'karya',description:'Game Wharewolf',points:pts,timestamp:Date.now()}];
-                await db.from('users').update({points:dbUser.points+pts,achievements:newAch,point_logs:newLog}).eq('nim',wwState.myNim);
-                dbUser.points+=pts;dbUser.achievements=newAch;dbUser.point_logs=newLog;
-                if(currentUser.nim===wwState.myNim){currentUser.points+=pts;currentUser.achievements=newAch;}
-                // Update team juga
-                if(dbUser.teams?.length){
-                    const teamName=dbUser.teams[0];
-                    const team=allTeams.find(t=>t.name===teamName);
-                    if(team){
-                        const newActs=[...(team.activities||[]),`Game Wharewolf: ${dbUser.name} (+${pts} poin) [${new Date().toLocaleDateString('id-ID')}]`];
-                        await db.from('teams').update({points:team.points+pts,activities:newActs}).eq('name',teamName);
-                        team.points+=pts;
-                    }
-                }
-                alert(`✅ ${pts} poin berhasil disimpan ke profilmu!`);
-                renderTables();initChart();
-            }
-        }
-        // Hapus data game dari Supabase (bersihkan DB)
-        if(wwState.isHost) await wwDeleteRoomData(wwState.roomId);
-        else await db.from('ww_players').delete().eq('room_id',wwState.roomId).eq('nim',wwState.myNim);
-    }catch(e){console.error('save points err',e);}
-    finally{hideLoading();}
-    wwCleanupIntervals();
-    wwResetState();
-    document.getElementById('wwOverlay').style.display='none';
-    document.getElementById('wwResultOverlay').style.display='none';
-}
-
-window.onload=init;
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
+    <div id="copiedToast" class="copied-toast">✅ Link berhasil disalin!</div>
+    

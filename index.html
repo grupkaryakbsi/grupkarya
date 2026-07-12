@@ -270,6 +270,129 @@
         .search-akun-input:focus{border-color:var(--primary);outline:none}
 
         @media(max-width:768px){header h1{font-size:2.2rem}.nav-links{gap:10px;flex-wrap:wrap}.team-grid{grid-template-columns:1fr}.chart-container{height:300px}.modal-content{padding:20px}}
+
+        /* === NOTIFIKASI === */
+        #navUser{display:flex !important;align-items:center;gap:14px}
+        .btn-notif-nav{position:relative;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.3rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s}
+        .btn-notif-nav:hover{background:rgba(255,255,255,.28);transform:translateY(-1px)}
+        .notif-badge{position:absolute;top:2px;right:2px;background:#E8395A;color:#fff;font-size:.65rem;font-weight:800;min-width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 4px;box-shadow:0 0 0 2px var(--primary)}
+        .notif-panel{display:none;position:fixed;top:70px;right:5%;width:360px;max-width:92vw;max-height:70vh;background:var(--bg-card);border:2px solid var(--border-color);border-radius:16px;box-shadow:0 20px 50px rgba(45,27,61,.25);z-index:1500;overflow:hidden;flex-direction:column;animation:fadeInUp .25s ease}
+        .notif-panel.open{display:flex}
+        .notif-panel-header{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;font-weight:800}
+        .notif-markall-btn{background:rgba(255,255,255,.2);color:#fff;border:none;padding:6px 12px;border-radius:20px;font-size:.75rem;font-weight:700;cursor:pointer;transition:.3s}
+        .notif-markall-btn:hover{background:rgba(255,255,255,.35)}
+        .notif-list{overflow-y:auto;padding:8px}
+        .notif-empty{padding:40px 20px;text-align:center;color:var(--text-secondary);font-weight:600}
+        .notif-item{display:flex;gap:12px;padding:12px;border-radius:12px;cursor:pointer;transition:.2s;margin-bottom:4px}
+        .notif-item:hover{background:var(--secondary)}
+        .notif-item.unread{background:var(--secondary)}
+        .notif-item.unread::before{content:'';width:8px;height:8px;border-radius:50%;background:#E8395A;flex-shrink:0;margin-top:6px}
+        .notif-item-icon{font-size:1.4rem;flex-shrink:0}
+        .notif-item-title{font-weight:800;color:var(--text-primary);font-size:.9rem}
+        .notif-item-msg{color:var(--text-secondary);font-size:.82rem;margin-top:2px}
+        .notif-item-time{color:var(--text-secondary);font-size:.72rem;margin-top:4px}
+
+        /* === PAPAN TUGAS === */
+        .task-board-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+        .add-task-form{background:var(--bg-main);border:2px dashed var(--border-color);border-radius:14px;padding:16px;margin-bottom:18px;display:flex;flex-direction:column;gap:10px}
+        .add-task-form input,.add-task-form textarea{padding:10px 14px;border:2px solid var(--border-color);background:var(--bg-card);color:var(--text-primary);border-radius:10px;font-family:'Nunito',sans-serif;resize:vertical}
+        .task-board{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .task-column{background:var(--bg-main);border-radius:14px;padding:14px;min-height:120px}
+        .task-column-title{font-weight:800;color:var(--primary);margin-bottom:12px;font-size:.9rem}
+        .task-column-body{display:flex;flex-direction:column;gap:10px;min-height:60px}
+        .task-card{background:var(--bg-card);border:2px solid var(--border-color);border-radius:12px;padding:12px;box-shadow:0 2px 8px var(--shadow)}
+        .task-card-title{font-weight:800;color:var(--text-primary);font-size:.88rem;margin-bottom:4px}
+        .task-card-desc{color:var(--text-secondary);font-size:.78rem;margin-bottom:8px}
+        .task-card-footer{display:flex;justify-content:space-between;align-items:center;gap:6px}
+        .task-card-author{color:var(--text-secondary);font-size:.7rem}
+        .task-card-actions{display:flex;gap:4px}
+        .task-card-actions button{background:var(--secondary);border:none;color:var(--primary);width:26px;height:26px;border-radius:8px;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center}
+        .task-card-actions button:hover{background:var(--primary);color:#fff}
+        .task-empty{color:var(--text-secondary);font-size:.8rem;text-align:center;padding:16px 0;opacity:.6}
+
+        /* === KALENDER ACARA === */
+        .event-card{display:flex;gap:14px;background:var(--bg-card);border:2px solid var(--border-color);border-radius:12px;padding:14px;margin-bottom:10px;align-items:center}
+        .event-card.past{opacity:.5}
+        .event-date-badge{flex-shrink:0;width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#7B2D8B,#E8395A);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800}
+        .event-date-badge .event-day{font-size:1.3rem;line-height:1}
+        .event-date-badge .event-month{font-size:.62rem;text-transform:uppercase;letter-spacing:.5px}
+        .event-card-title{font-weight:800;color:var(--text-primary)}
+        .event-card-desc{color:var(--text-secondary);font-size:.82rem;margin-top:2px}
+        .event-card-meta{color:var(--text-secondary);font-size:.72rem;margin-top:4px}
+        .event-card-del{margin-left:auto;background:var(--secondary);border:none;color:var(--danger);width:30px;height:30px;border-radius:8px;cursor:pointer;flex-shrink:0}
+        .events-empty{color:var(--text-secondary);font-size:.85rem;text-align:center;padding:30px 0;opacity:.7}
+
+        /* === SEASON LEADERBOARD === */
+        .season-countdown-banner{background:linear-gradient(135deg,#FFD700,#E8395A,#7B2D8B);background-size:200% 200%;animation:seasonGradientShift 6s ease infinite;border-radius:18px;padding:22px 26px;margin-bottom:30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;box-shadow:0 10px 30px rgba(232,57,90,.3)}
+        @keyframes seasonGradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        .season-countdown-name{color:#fff;font-weight:900;font-size:1.3rem;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+        .season-countdown-timer{color:#fff;font-weight:900;font-size:1.8rem;font-variant-numeric:tabular-nums;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+        .season-countdown-sub{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700;letter-spacing:.5px}
+        .season-reward-item{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:2px solid var(--border-color);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+        .season-reward-preview{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:3px solid var(--border-color);background:var(--bg-main);overflow:hidden}
+        .season-reward-preview img{width:100%;height:100%;object-fit:cover}
+        .season-reward-info{flex:1}
+        .season-reward-info b{color:var(--text-primary);font-size:.88rem}
+        .season-reward-info div{color:var(--text-secondary);font-size:.72rem;margin-top:2px}
+        .season-reward-del{background:var(--secondary);border:none;color:var(--danger);width:28px;height:28px;border-radius:8px;cursor:pointer;flex-shrink:0}
+        .name-rainbow{background:linear-gradient(90deg,#ff0000,#ff9900,#33cc33,#3399ff,#9933ff,#ff0000);background-size:400% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nameRainbowShift 3s linear infinite;font-weight:900}
+        @keyframes nameRainbowShift{0%{background-position:0% 50%}100%{background-position:400% 50%}}
+        .reward-pin-icon{display:inline-flex;align-items:center;justify-content:center;height:1em;width:1em;vertical-align:-0.15em;margin-left:4px}
+        .reward-pin-icon img{width:100%;height:100%;object-fit:contain}
+
+        /* === SEASON: LIST REWARD PUBLIK (di countdown) === */
+        .reward-showcase-wrap{margin-bottom:30px}
+        .reward-showcase-title{color:#fff;font-weight:800;font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+        .reward-showcase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+        .reward-showcase-card{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center;backdrop-filter:blur(6px)}
+        .reward-showcase-avatar-wrap{position:relative;width:56px;height:56px;flex-shrink:0}
+        .reward-showcase-avatar{width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;overflow:hidden;border:2px solid rgba(255,255,255,.3)}
+        .reward-showcase-avatar img{width:100%;height:100%;object-fit:contain}
+        .reward-showcase-border-img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:148%;height:148%;pointer-events:none;object-fit:contain}
+        .reward-showcase-info{flex:1;min-width:0}
+        .reward-showcase-rank{color:var(--gold);font-weight:800;font-size:.7rem;letter-spacing:.4px;text-transform:uppercase;margin-bottom:3px}
+        .reward-showcase-label{color:#fff;font-weight:800;font-size:.95rem;margin-bottom:4px}
+        .reward-showcase-name-example{font-size:.82rem;font-weight:700;color:rgba(255,255,255,.6)}
+
+        /* === SEASON: RIWAYAT (ADMIN, semua season termasuk yang lama) === */
+        .season-history-item{display:flex;align-items:center;gap:12px;background:var(--bg-main);border:2px solid var(--border-color);border-radius:12px;padding:12px 14px;margin-bottom:8px;flex-wrap:wrap}
+        .season-history-item.is-current{border-color:var(--primary)}
+        .season-history-status{flex-shrink:0;font-size:.68rem;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+        .season-history-status.st-active{background:rgba(40,167,69,.15);color:var(--success)}
+        .season-history-status.st-ended{background:rgba(108,117,125,.18);color:var(--gray)}
+        .season-history-status.st-processing{background:rgba(255,193,7,.2);color:#a3790a}
+        .season-history-status.st-reverted{background:rgba(220,53,69,.12);color:var(--danger)}
+        .season-history-body{flex:1;min-width:150px}
+        .season-history-body b{color:var(--text-primary);font-size:.9rem}
+        .season-history-body div{color:var(--text-secondary);font-size:.74rem;margin-top:2px}
+        .season-history-undo-btn{flex-shrink:0;background:linear-gradient(135deg,#dc3545,#a71d2a);color:#fff;border:none;padding:8px 14px;border-radius:10px;font-weight:700;font-size:.78rem;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap}
+
+        /* === SEASON: RIWAYAT DI PROFIL & PANEL TIM === */
+        .profile-season-item{display:flex;align-items:center;gap:12px;background:var(--bg-main);border-radius:12px;padding:12px 14px;margin-bottom:8px;border-left:4px solid var(--gold)}
+        .profile-season-pin{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:var(--bg-card);border:2px solid var(--border-color);overflow:hidden}
+        .profile-season-pin img{width:100%;height:100%;object-fit:contain}
+        .profile-season-info{flex:1;min-width:0}
+        .profile-season-info b{color:var(--text-primary);font-size:.86rem}
+        .profile-season-info div{color:var(--text-secondary);font-size:.74rem;margin-top:2px}
+        .profile-season-points{flex-shrink:0;text-align:right}
+        .profile-season-points b{color:var(--success);font-size:1rem;display:block}
+        .profile-season-points span{color:var(--text-secondary);font-size:.68rem}
+
+        /* === MAINTENANCE MODE === */
+        .maintenance-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1600;background:linear-gradient(135deg,#1a0a25,#2d1b35,#4A1860);align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+        .maintenance-box{max-width:520px;width:100%;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:50px 35px;backdrop-filter:blur(10px)}
+        .maintenance-logo{height:70px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+        .maintenance-icon{font-size:3.2rem;margin-bottom:8px;display:inline-block;animation:maintenanceSwing 2.5s ease-in-out infinite}
+        @keyframes maintenanceSwing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+        .maintenance-box h1{color:#fff;font-size:1.6rem;font-weight:900;margin-bottom:14px}
+        .maintenance-box p{color:rgba(255,255,255,.82);font-size:.95rem;line-height:1.65;margin-bottom:22px;white-space:pre-line}
+        .maintenance-timer{font-size:1.5rem;font-weight:900;color:#FFD700;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.08);border-radius:14px;padding:14px;margin-bottom:22px}
+        .maintenance-timer-label{font-size:.7rem;color:rgba(255,255,255,.6);font-weight:700;letter-spacing:.5px;margin-bottom:6px;text-transform:uppercase}
+        .maintenance-upcoming{background:rgba(123,45,139,.28);border:1px solid rgba(232,57,90,.35);border-radius:16px;padding:18px;text-align:left}
+        .maintenance-upcoming h4{color:#fff;font-size:.92rem;margin-bottom:8px}
+        .maintenance-upcoming p{color:rgba(255,255,255,.88);font-size:.85rem;margin:0;white-space:pre-line}
+        .maintenance-admin-badge{display:none;position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#dc3545,#a71d2a);color:#fff;padding:12px 18px;border-radius:14px;font-weight:800;font-size:.85rem;cursor:pointer;z-index:3000;box-shadow:0 10px 30px rgba(220,53,69,.4);align-items:center;gap:8px}
+        @media(max-width:768px){.notif-panel{top:64px;right:3%;left:3%;width:auto}.task-board{grid-template-columns:1fr}.season-countdown-banner{flex-direction:column;text-align:center}.season-countdown-banner>div:last-child{text-align:center}.maintenance-box{padding:35px 22px}}
     </style>
 </head>
 <body>
@@ -295,12 +418,26 @@
                 <button onclick="openRegisterModal()" class="btn-nav">✨ Daftar</button>
             </div>
             <div id="navUser" style="display:none">
+                <button class="btn-notif-nav" id="notifBellBtn" onclick="openNotifPanel()" title="Notifikasi">
+                    🔔<span id="notifBadge" class="notif-badge" style="display:none">0</span>
+                </button>
                 <div class="user-pill" id="userPillBtn" onclick="openUserProfile()">
                     MODE <span id="navUserName">User</span>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- NOTIFICATION PANEL -->
+    <div id="notifPanel" class="notif-panel">
+        <div class="notif-panel-header">
+            <span>🔔 Notifikasi</span>
+            <button class="notif-markall-btn" onclick="markAllNotifRead()">Tandai semua dibaca</button>
+        </div>
+        <div id="notifList" class="notif-list">
+            <div class="notif-empty">Belum ada notifikasi.</div>
+        </div>
+    </div>
 
     <header id="home">
         <img src="https://i.imgur.com/wz811e4.png" alt="Grup Karya Logo"
@@ -355,6 +492,17 @@
 
     <section id="leaderboard" style="background:linear-gradient(135deg,#1a0a25,#0f0a15);padding-top:80px;padding-bottom:80px;max-width:100%">
         <div style="max-width:1400px;margin:0 auto;padding:0 5%">
+            <div id="seasonCountdownBanner" class="season-countdown-banner" style="display:none">
+                <div>
+                    <div class="season-countdown-sub">🏆 SEASON BERJALAN</div>
+                    <div class="season-countdown-name" id="seasonCountdownName">Season 1</div>
+                </div>
+                <div style="text-align:right">
+                    <div class="season-countdown-timer" id="seasonCountdownTimer">--</div>
+                    <div class="season-countdown-sub">sampai season berakhir</div>
+                </div>
+            </div>
+            <div id="seasonRewardShowcase" class="reward-showcase-wrap" style="display:none"></div>
             <h2 class="section-title" style="color:#fff">🏆 Klasemen Tim</h2>
             <div style="overflow-x:auto">
                 <table><thead><tr><th>Rank</th><th>Tim</th><th>Fokus</th><th>Lencana</th><th>Poin</th></tr></thead>
@@ -468,6 +616,10 @@
                         <button onclick="adminDeletePost()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🗑️ Hapus Post</button>
                         <!-- ===== TOMBOL BARU: Manajemen Akun ===== -->
                         <button onclick="adminKelolaAkun()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🔐 Kelola Akun</button>
+                        <!-- ===== TOMBOL BARU: Kelola Season ===== -->
+                        <button onclick="openKelolaSeason()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🏆 Kelola Season</button>
+                        <!-- ===== TOMBOL BARU: Mode Maintenance ===== -->
+                        <button onclick="openKelolaMaintenance()" style="background:#fff;color:#dc3545;padding:15px;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🔧 Mode Maintenance</button>
                     </div>
                     <button class="btn-full" style="background:rgba(0,0,0,.3);margin-top:25px;border:2px solid rgba(255,255,255,.3)" onclick="processLogout()">🚪 Keluar Admin</button>
                 </div>
@@ -475,8 +627,11 @@
             <!-- CV PROFILE -->
             <div id="cvProfileSection" style="background:var(--bg-card)">
                 <div style="background:linear-gradient(135deg,#7B2D8B,#4A90D9);color:#fff;padding:40px;text-align:center">
-                    <div id="cvAvatar" style="width:120px;height:120px;border-radius:50%;border:5px solid #fff;margin:0 auto 20px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:900;overflow:hidden">
-                        <span id="cvAvatarText">A</span>
+                    <div style="position:relative;width:120px;margin:0 auto 20px">
+                        <div id="cvAvatar" style="width:120px;height:120px;border-radius:50%;border:5px solid #fff;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:900;overflow:hidden">
+                            <span id="cvAvatarText">A</span>
+                        </div>
+                        <img id="cvAvatarBorderImg" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:148%;height:148%;pointer-events:none;object-fit:contain">
                     </div>
                     <div id="cvName" style="font-size:2.5rem;font-weight:900;margin-bottom:10px">User</div>
                     <div id="cvTitle" style="font-size:1.1rem;opacity:.9;margin-bottom:5px">-</div>
@@ -501,11 +656,19 @@
                         </div>
                         <div id="cvAchievements"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi</p></div>
                     </div>
+                    <div style="margin-bottom:30px;padding-bottom:30px;border-bottom:2px solid var(--border-color)">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:20px;display:flex;align-items:center;gap:10px">
+                            <span style="width:4px;height:25px;background:linear-gradient(135deg,#7B2D8B,#E8395A);border-radius:2px;display:inline-block"></span>
+                            🎖️ Riwayat Season
+                        </div>
+                        <div id="cvSeasonHistory"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum pernah mengikuti season</p></div>
+                    </div>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
                         <button class="btn-full" style="margin-top:0;background:var(--gray)" onclick="downloadCV()">📄 Download CV</button>
                         <button class="btn-full" style="margin-top:0;background:var(--purple)" onclick="openEditProfile()">✏️ Edit Profil</button>
                     </div>
                     <button class="btn-full" style="margin-top:12px" onclick="openMyTeamPage()">👥 Laman Tim Saya</button>
+                    <button class="btn-full" style="margin-top:12px;background:var(--purple)" onclick="sharePortfolio()">🔗 Bagikan Portofolio</button>
                     <button class="btn-full" style="background:var(--danger);margin-top:12px" onclick="processLogout()">🚪 Keluar</button>
                 </div>
             </div>
@@ -567,9 +730,11 @@
                 <button class="tab-btn" onclick="switchTeamTab('members')">👥 Anggota</button>
                 <button class="tab-btn" onclick="switchTeamTab('activities')">📜 Log</button>
                 <button class="tab-btn" onclick="switchTeamTab('chat')">💬 Chat</button>
+                <button class="tab-btn" onclick="switchTeamTab('tugas')">📋 Tugas</button>
+                <button class="tab-btn" onclick="switchTeamTab('acara')">🗓️ Acara</button>
                 <button class="tab-btn" id="manageTab" onclick="switchTeamTab('manage')" style="display:none">⚙️ Kelola</button>
             </div>
-            <div id="tabInfo" style="display:block"><h4 style="color:var(--primary);margin-bottom:10px">🗺️ Arah Pengembangan</h4><p id="detailDev" style="color:var(--text-primary)">-</p></div>
+            <div id="tabInfo" style="display:block"><h4 style="color:var(--primary);margin-bottom:10px">🗺️ Arah Pengembangan</h4><p id="detailDev" style="color:var(--text-primary)">-</p><h4 style="color:var(--primary);margin:22px 0 10px">🎖️ Riwayat Season Tim</h4><div id="teamSeasonHistory"><p style="color:var(--text-secondary);text-align:center;padding:16px 0">Belum pernah mengikuti season</p></div></div>
             <div id="tabMembers" style="display:none"><h4 style="color:var(--primary);margin-bottom:10px">👥 Daftar Anggota</h4><div id="membersList"></div></div>
             <div id="tabActivities" style="display:none">
                 <h4 style="color:var(--primary);margin-bottom:10px">📜 Riwayat Kegiatan</h4>
@@ -587,6 +752,50 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="tabTugas" style="display:none">
+                <div class="task-board-header">
+                    <h4 style="color:var(--primary);margin:0">📋 Papan Tugas</h4>
+                    <button class="btn-icon" style="padding:8px 16px;width:auto" onclick="openAddTaskForm()">➕ Tambah Tugas</button>
+                </div>
+                <div id="addTaskForm" class="add-task-form" style="display:none">
+                    <input type="text" id="newTaskTitle" placeholder="Judul tugas...">
+                    <textarea id="newTaskDesc" placeholder="Deskripsi (opsional)" rows="2"></textarea>
+                    <div style="display:flex;gap:10px">
+                        <button class="btn-icon" style="background:var(--success);width:auto" onclick="submitNewTask()">✅ Simpan</button>
+                        <button class="btn-icon" style="background:var(--gray);width:auto" onclick="document.getElementById('addTaskForm').style.display='none'">Batal</button>
+                    </div>
+                </div>
+                <div class="task-board">
+                    <div class="task-column">
+                        <div class="task-column-title">📥 To Do</div>
+                        <div id="taskColTodo" class="task-column-body"></div>
+                    </div>
+                    <div class="task-column">
+                        <div class="task-column-title">🔧 Progress</div>
+                        <div id="taskColProgress" class="task-column-body"></div>
+                    </div>
+                    <div class="task-column">
+                        <div class="task-column-title">✅ Selesai</div>
+                        <div id="taskColDone" class="task-column-body"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="tabAcara" style="display:none">
+                <div class="task-board-header">
+                    <h4 style="color:var(--primary);margin:0">🗓️ Kalender Kegiatan</h4>
+                    <button class="btn-icon" style="padding:8px 16px;width:auto" onclick="openAddEventForm()">➕ Tambah Acara</button>
+                </div>
+                <div id="addEventForm" class="add-task-form" style="display:none">
+                    <input type="text" id="newEventTitle" placeholder="Judul acara...">
+                    <input type="date" id="newEventDate">
+                    <textarea id="newEventDesc" placeholder="Detail (opsional)" rows="2"></textarea>
+                    <div style="display:flex;gap:10px">
+                        <button class="btn-icon" style="background:var(--success);width:auto" onclick="submitNewEvent()">✅ Simpan</button>
+                        <button class="btn-icon" style="background:var(--gray);width:auto" onclick="document.getElementById('addEventForm').style.display='none'">Batal</button>
+                    </div>
+                </div>
+                <div id="eventsList"></div>
             </div>
             <div id="tabManage" style="display:none">
                 <div style="padding:20px;background:var(--bg-main);border:2px dashed var(--warning);border-radius:12px">
@@ -742,6 +951,70 @@
         </div>
     </div>
 
+    <!-- ADMIN: KELOLA SEASON -->
+    <div id="kelolaSeasonModal" class="modal-overlay">
+        <div class="modal-content modal-large" style="max-width:700px">
+            <button class="close-btn" onclick="closeModal('kelolaSeasonModal')">&times;</button>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">🏆 Kelola Season</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:20px">Atur periode leaderboard & reward peringkat</p>
+
+            <div id="seasonCurrentInfo" style="background:var(--bg-main);border-radius:14px;padding:16px;margin-bottom:20px;font-size:.9rem;color:var(--text-secondary)">Memuat...</div>
+
+            <h4 style="color:var(--text-primary);margin-bottom:12px">📅 Pengaturan Season</h4>
+            <div class="form-group"><label>Nama Season</label><input type="text" id="seasonNameInput" placeholder="Contoh: Season 1 2026"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+                <div class="form-group"><label>Mulai</label><input type="datetime-local" id="seasonStartInput"></div>
+                <div class="form-group"><label>Berakhir</label><input type="datetime-local" id="seasonEndInput"></div>
+            </div>
+            <button class="btn-full" style="margin-top:0" onclick="submitSeasonSettings()">💾 Simpan Pengaturan Season</button>
+            <div id="seasonActionButtons" style="margin-top:10px"></div>
+
+            <h4 style="color:var(--text-primary);margin:25px 0 12px">📜 Riwayat Season</h4>
+            <p style="font-size:.8rem;color:var(--text-secondary);margin:-10px 0 12px">Semua season yang pernah dibuat ada di sini, bukan cuma yang terbaru. Kalau butuh membatalkan season lama karena salah hitung atau salah reward, cari season-nya di sini lalu klik "Tarik Kembali" — poin, prestasi, dan reward season itu akan ditambahkan kembali tanpa mengganggu season yang lebih baru.</p>
+            <div id="seasonHistoryList" style="margin-bottom:10px">Memuat riwayat...</div>
+
+            <h4 style="color:var(--text-primary);margin:25px 0 12px">🎁 Desain Reward per Peringkat</h4>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+                <div class="form-group"><label>Berlaku Untuk</label><select id="rewardScopeInput"><option value="individual">Individu</option><option value="team">Tim</option></select></div>
+                <div class="form-group"><label>Label Reward</label><input type="text" id="rewardLabelInput" placeholder="Contoh: Juara 1"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+                <div class="form-group"><label>Peringkat Dari</label><input type="number" id="rewardRankFromInput" min="1" placeholder="1"></div>
+                <div class="form-group"><label>Peringkat Sampai</label><input type="number" id="rewardRankToInput" min="1" placeholder="1"></div>
+            </div>
+            <div class="form-group"><label>Link Gambar Border (opsional)</label><input type="text" id="rewardBorderUrlInput" placeholder="Link dari Imgur, dsb — kosongkan jika tidak pakai border"></div>
+            <div class="form-group"><label>Link Gambar Pin PNG (opsional, alternatif dari emoji)</label><input type="text" id="rewardPinUrlInput" placeholder="Link dari Imgur, dsb — kosongkan kalau pakai emoji aja"></div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:15px;align-items:end">
+                <div class="form-group"><label>Emoji Pin (dipakai kalau link PNG kosong)</label><input type="text" id="rewardPinEmojiInput" placeholder="Contoh: 🏆"></div>
+                <div class="form-group"><label>Warna Nama</label><input type="color" id="rewardColorInput" value="#FFD700" style="width:56px;height:52px;padding:4px;cursor:pointer"></div>
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;margin:-8px 0 18px;font-size:.85rem;color:var(--text-secondary);cursor:pointer">
+                <input type="checkbox" id="rewardRainbowInput" style="width:auto"> ✨ Pakai efek warna-warni animasi (menggantikan warna solid di atas)
+            </label>
+            <button class="btn-icon" style="width:100%" onclick="submitSeasonReward()">➕ Tambah Reward Ini</button>
+
+            <h4 style="color:var(--text-primary);margin:25px 0 12px">📋 Reward Season Ini</h4>
+            <div id="seasonRewardsList" style="color:var(--text-secondary);font-size:.85rem">Belum ada season aktif.</div>
+        </div>
+    </div>
+
+    <!-- ADMIN: KELOLA MAINTENANCE -->
+    <div id="kelolaMaintenanceModal" class="modal-overlay">
+        <div class="modal-content" style="max-width:600px">
+            <button class="close-btn" onclick="closeModal('kelolaMaintenanceModal')">&times;</button>
+            <h2 style="text-align:center;margin-bottom:5px;color:var(--primary)">🔧 Mode Maintenance</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:20px">Tutup sementara website buat pengunjung biasa — admin tetap bisa akses normal</p>
+            <label style="display:flex;align-items:center;gap:10px;background:var(--bg-main);padding:16px;border-radius:14px;margin-bottom:20px;cursor:pointer;font-weight:800;color:var(--text-primary)">
+                <input type="checkbox" id="maintActiveToggle" style="width:22px;height:22px;cursor:pointer"> Aktifkan Mode Maintenance
+            </label>
+            <div class="form-group"><label>Judul</label><input type="text" id="maintTitleInput" placeholder="Contoh: Sedang Dalam Perawatan"></div>
+            <div class="form-group"><label>Pesan buat pengunjung</label><textarea id="maintMessageInput" rows="3" placeholder="Contoh: Kami sedang upgrade sistem biar makin oke. Mohon tunggu sebentar ya!"></textarea></div>
+            <div class="form-group"><label>Perkiraan selesai (opsional, buat countdown)</label><input type="datetime-local" id="maintEndInput"></div>
+            <div class="form-group"><label>Info update/fitur yang akan datang (opsional)</label><textarea id="maintUpcomingInput" rows="3" placeholder="Contoh: Fitur baru: Quiz Sastra, Chat pribadi antar anggota..."></textarea></div>
+            <button class="btn-full" style="margin-top:0" onclick="submitMaintenanceSettings()">💾 Simpan Pengaturan</button>
+        </div>
+    </div>
+
     <!-- ADMIN: HAPUS TIM -->
     <div id="deleteTeamModal" class="modal-overlay">
         <div class="modal-content">
@@ -849,8 +1122,11 @@
         <div class="modal-content" style="max-width:600px;padding:0" id="viewProfileModal">
             <button class="close-btn" onclick="closeModal('viewProfileModal')" style="z-index:10;color:#fff">&times;</button>
             <div class="profile-hero">
-                <div id="vpAvatar" style="width:110px;height:110px;border-radius:50%;border:4px solid #fff;margin:0 auto 18px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:2.8rem;font-weight:900;overflow:hidden">
-                    <span id="vpAvatarText">A</span>
+                <div style="position:relative;width:110px;margin:0 auto 18px">
+                    <div id="vpAvatar" style="width:110px;height:110px;border-radius:50%;border:4px solid #fff;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:2.8rem;font-weight:900;overflow:hidden">
+                        <span id="vpAvatarText">A</span>
+                    </div>
+                    <img id="vpAvatarBorderImg" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:148%;height:148%;pointer-events:none;object-fit:contain">
                 </div>
                 <div id="vpName" style="font-size:2rem;font-weight:900;margin-bottom:8px">-</div>
                 <div id="vpTitle" style="font-size:1rem;opacity:.85;margin-bottom:5px">-</div>
@@ -868,6 +1144,10 @@
                 <div>
                     <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">🏆 Riwayat Prestasi</div>
                     <div id="vpAchievements"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi</p></div>
+                </div>
+                <div style="margin-top:25px;padding-top:25px;border-top:2px solid var(--border-color)">
+                    <div style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:15px">🎖️ Riwayat Season</div>
+                    <div id="vpSeasonHistory"><p style="color:var(--text-secondary);text-align:center;padding:20px">Belum pernah mengikuti season</p></div>
                 </div>
             </div>
         </div>
@@ -976,6 +1256,10 @@ const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let currentUser=null,currentTheme=localStorage.getItem('gk_theme')||'light',statsChart=null,currentTimeFilter='weekly';
 let uploadedImage=null,uploadedTeamLogo=null,uploadedProfilePhoto=null,currentViewingTeamId=null,chatRefreshInterval=null;
+let notifPollInterval=null,allNotifications=[],currentTeamTasks=[];
+let currentSeason=null,seasonCountdownInterval=null;
+let equippedRewardsMap={};
+let siteSettings=null,maintenanceCountdownInterval=null,maintenancePollInterval=null;
 let allPosts=[],allTeams=[],allUsers=[],allCustomBadges=[],tempRegData={},selectedTeamId=null;
 let currentBadgeDesign={id:null,name:'',emoji:'',photo:null,color:'linear-gradient(135deg,#ffd700,#ff8c00)'};
 let _akunData=[],_semuaPassVisible=false,_resetTargetNim=null;
@@ -1020,9 +1304,12 @@ async function init(){
         const savedNim=localStorage.getItem('gk_nim'),savedAdmin=localStorage.getItem('gk_admin');
         if(savedAdmin==='true'){currentUser=ADMIN;}
         else if(savedNim){currentUser=allUsers.find(u=>u.nim===savedNim)||null;}
-        applyTheme();updateNavState();updateHomepageUI();renderTables();renderFeed();initChart();
+        applyTheme();updateNavState();updateHomepageUI();renderTables();renderFeed();initChart();loadCurrentSeason();loadEquippedRewards().then(renderTables);loadSiteSettings();
+        if(maintenancePollInterval)clearInterval(maintenancePollInterval);
+        maintenancePollInterval=setInterval(loadSiteSettings,30000);
         const params=new URLSearchParams(window.location.search);
         if(params.get('team')){const tid=parseInt(params.get('team'));if(tid)openTeamDetail(tid);}
+        if(params.get('portofolio'))openViewProfile(params.get('portofolio'));
     }catch(e){console.error('Init error:',e);}
     finally{hideLoading();}
 }
@@ -1097,7 +1384,9 @@ function updateNavState(){
         document.getElementById('navGuest').style.display='none';document.getElementById('navUser').style.display='block';
         document.getElementById('navUserName').innerText=currentUser.isAdmin?'⚙️ ADMIN':currentUser.name.split(' ')[0];
         document.getElementById('userPillBtn').className=currentUser.isAdmin?'user-pill admin-pill':'user-pill';
-    }else{document.getElementById('navGuest').style.display='flex';document.getElementById('navUser').style.display='none';}
+        if(currentUser.isAdmin)stopNotifPolling();else startNotifPolling();
+    }else{document.getElementById('navGuest').style.display='flex';document.getElementById('navUser').style.display='none';stopNotifPolling();}
+    applyMaintenanceMode();
 }
 function updateHomepageUI(){
     const create=document.getElementById('createPostSection'),prompt=document.getElementById('loginPromptSection');
@@ -1197,7 +1486,7 @@ function renderTables(){
         const badges=(t.badges||[]).map(b=>getBadgeIcon(b)).join('')||'<span style="color:var(--text-secondary)">-</span>';
         const tr=document.createElement('tr');
         tr.className='clickable-row';
-        tr.innerHTML=`<td><b>${medal}</b></td><td><b>${t.name}</b></td><td style="color:var(--text-secondary)">${t.focus}</td><td><div style="display:flex;flex-wrap:wrap;gap:3px">${badges}</div></td><td><b style="color:var(--success)">${t.points}</b></td>`;
+        tr.innerHTML=`<td><b>${medal}</b></td><td><b>${rewardNameHTML(t.name,t.name)}${rewardPinHTML(t.name)}</b></td><td style="color:var(--text-secondary)">${t.focus}</td><td><div style="display:flex;flex-wrap:wrap;gap:3px">${badges}</div></td><td><b style="color:var(--success)">${t.points}</b></td>`;
         tr.onclick=()=>openTeamDetail(t.id);
         teamBody.appendChild(tr);
     });
@@ -1207,7 +1496,7 @@ function renderTables(){
         const roles=(u.teams||[]).map(t=>`${t} (${u.team_roles?.[t]||'Anggota'})`).join(', ')||'-';
         const tr=document.createElement('tr');
         tr.className='clickable-row';
-        tr.innerHTML=`<td>${u.name}</td><td style="color:var(--text-secondary)">${teams}</td><td style="font-size:.85rem;color:var(--text-secondary)">${roles}</td><td><b style="color:var(--success)">${u.points}</b></td>`;
+        tr.innerHTML=`<td>${rewardNameHTML(u.nim,u.name)}${rewardPinHTML(u.nim)}</td><td style="color:var(--text-secondary)">${teams}</td><td style="font-size:.85rem;color:var(--text-secondary)">${roles}</td><td><b style="color:var(--success)">${u.points}</b></td>`;
         tr.onclick=()=>openViewProfile(u.nim);
         indBody.appendChild(tr);
     });
@@ -1328,6 +1617,7 @@ async function toggleLike(postId){
     const btn=document.querySelector(`#post_${postId} .post-action-btn`);
     btn.className='post-action-btn'+(isLiked?' liked':'');
     btn.innerHTML=`${isLiked?'❤️':'🤍'} <span id="likeCount_${postId}">${likes.length}</span> Suka`;
+    if(isLiked)createNotification(post.author_nim,'like','Postingan disukai',`${currentUser.name} menyukai postinganmu`,null,postId);
 }
 function toggleComments(postId){
     const s=document.getElementById('comments_'+postId);
@@ -1356,6 +1646,7 @@ async function addComment(postId){
     comments.push({authorNim:currentUser.nim,authorName:currentUser.name,text,timestamp:Date.now(),replies:[]});
     await db.from('posts').update({comments}).eq('id',postId);post.comments=comments;input.value='';
     renderComments(postId);document.getElementById('commentCount_'+postId).innerText=comments.length;
+    createNotification(post.author_nim,'comment','Komentar baru',`${currentUser.name}: "${text.substring(0,60)}"`,null,postId);
 }
 async function addReply(postId,ci){
     if(!currentUser||currentUser.isAdmin)return;
@@ -1399,13 +1690,15 @@ function openViewProfile(nim){
     const rolesText=teams.map(t=>`${t} - ${u.team_roles?.[t]||'Anggota'}`).join('<br>')||'Belum bergabung tim';
     const vpAvatar=document.getElementById('vpAvatar');
     vpAvatar.innerHTML=u.profile_photo?`<img src="${u.profile_photo}" style="width:100%;height:100%;object-fit:cover">`:`<span id="vpAvatarText">${u.name.substring(0,2).toUpperCase()}</span>`;
-    document.getElementById('vpName').innerText=u.name;
+    document.getElementById('vpName').innerHTML=rewardNameHTML(u.nim,u.name)+rewardPinHTML(u.nim);
+    applyAvatarBorder('vpAvatarBorderImg',u.nim);
     document.getElementById('vpNim').innerText='NIM: '+u.nim;
     document.getElementById('vpKelas').innerText='Kelas: '+(u.kelas||'-');
     document.getElementById('vpTitle').innerHTML=rolesText;
     document.getElementById('vpTeamRole').innerHTML=rolesText;
     document.getElementById('vpPoints').innerText=u.points;
     document.getElementById('vpRank').innerText=`#${rank} dari ${sorted.length} peserta`;
+    renderEntitySeasonHistory(u.nim,'individual','vpSeasonHistory');
     const achDiv=document.getElementById('vpAchievements');
     if(!u.achievements?.length){achDiv.innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi yang dicatat</p>';}
     else{
@@ -1440,15 +1733,15 @@ async function openTeamDetail(teamId){
     logoEl.innerHTML=team.logo?`<img src="${team.logo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`:`<span>${team.logo_text}</span>`;
     if(isLeader){logoEl.style.cssText='width:120px;height:120px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 15px;font-weight:700;overflow:hidden;cursor:pointer;border:4px solid var(--gold);box-shadow:0 0 20px rgba(255,215,0,.35)';logoEl.title='⚙️ Klik untuk pengaturan tim';logoEl.onclick=openTeamSettings;}
     else{logoEl.style.cssText='width:120px;height:120px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 15px;font-weight:700;overflow:hidden';logoEl.onclick=null;}
-    document.getElementById('detailName').innerText=team.name;document.getElementById('detailFocus').innerText=team.focus;
+    document.getElementById('detailName').innerHTML=rewardNameHTML(team.name,team.name)+rewardPinHTML(team.name);document.getElementById('detailFocus').innerText=team.focus;
     document.getElementById('detailRank').innerText=rank;document.getElementById('detailPoints').innerText=team.points;
     document.getElementById('detailVisi').innerText=team.visi||'Belum ada visi misi.';document.getElementById('detailDev').innerText=team.dev||'-';
     document.getElementById('detailMemberCount').innerText=`${members.length} anggota`;
     document.getElementById('detailBadges').innerHTML=(team.badges||[]).map(b=>getBadgeIcon(b)).join('')||'';
     document.getElementById('chatTeamName').innerText=team.name;
     document.getElementById('manageTab').style.display=isLeader?'block':'none';
-    renderTeamMembers(team.name);renderActivityLog(team);updateJoinButton(team);
-    ['tabInfo','tabMembers','tabActivities','tabChat','tabManage'].forEach(id=>document.getElementById(id).style.display='none');
+    renderTeamMembers(team.name);renderActivityLog(team);updateJoinButton(team);renderEntitySeasonHistory(team.name,'team','teamSeasonHistory');
+    ['tabInfo','tabMembers','tabActivities','tabChat','tabTugas','tabAcara','tabManage'].forEach(id=>document.getElementById(id).style.display='none');
     document.getElementById('tabInfo').style.display='block';
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.querySelectorAll('.tab-btn')[0].classList.add('active');
@@ -1497,7 +1790,7 @@ function renderTeamMembers(teamName){
     members.forEach(m=>{
         const role=m.team_roles?.[teamName]||'Anggota';
         const isSelf=currentUser&&m.nim===currentUser.nim?' <span style="color:var(--primary);font-size:.85rem">(Anda)</span>':'';
-        c.innerHTML+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px dotted var(--border-color)"><div><span style="color:var(--text-primary);font-weight:600">${m.name}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim} • ${m.points} poin</div></div><span class="${role==='Ketua'?'role-ketua':'role-anggota'}">${role}</span></div>`;
+        c.innerHTML+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px dotted var(--border-color)"><div><span style="color:var(--text-primary);font-weight:600">${rewardNameHTML(m.nim,m.name)}${rewardPinHTML(m.nim)}</span>${isSelf}<div style="font-size:.8rem;color:var(--text-secondary);margin-top:2px">NIM: ${m.nim} • ${m.points} poin</div></div><span class="${role==='Ketua'?'role-ketua':'role-anggota'}">${role}</span></div>`;
     });
 }
 function renderActivityLog(team){
@@ -1509,11 +1802,11 @@ function renderActivityLog(team){
     });
 }
 function switchTeamTab(tab){
-    const tabMap={info:'tabInfo',members:'tabMembers',activities:'tabActivities',chat:'tabChat',manage:'tabManage'};
+    const tabMap={info:'tabInfo',members:'tabMembers',activities:'tabActivities',chat:'tabChat',tugas:'tabTugas',acara:'tabAcara',manage:'tabManage'};
     Object.values(tabMap).forEach(id=>document.getElementById(id).style.display='none');
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     const el=document.getElementById(tabMap[tab]);if(el)el.style.display='block';
-    const idx=['info','members','activities','chat','manage'].indexOf(tab);
+    const idx=['info','members','activities','chat','tugas','acara','manage'].indexOf(tab);
     const btns=document.querySelectorAll('.tab-btn');if(btns[idx])btns[idx].classList.add('active');
     if(chatRefreshInterval){clearInterval(chatRefreshInterval);chatRefreshInterval=null;}
     if(tab==='chat'){
@@ -1523,6 +1816,8 @@ function switchTeamTab(tab){
         document.getElementById('chatAccessGranted').style.display=isMember?'block':'none';
         if(isMember){loadChatMessages(team.name);chatRefreshInterval=setInterval(()=>loadChatMessages(team.name,true),3000);}
     }else if(tab==='manage'){loadManageInterface();}
+    else if(tab==='tugas'){const team=allTeams.find(t=>t.id===currentViewingTeamId);if(team)loadTasks(team.name);}
+    else if(tab==='acara'){const team=allTeams.find(t=>t.id===currentViewingTeamId);if(team)loadEvents(team.name);}
 }
 async function loadChatMessages(teamName,silent=false){
     const{data}=await db.from('chats').select('*').eq('team_name',teamName).order('timestamp',{ascending:true}).limit(100);
@@ -1549,6 +1844,7 @@ async function sendMessage(){
     input.value='';
     await db.from('chats').insert({team_name:team.name,nim:currentUser.nim,sender:currentUser.name,message:text,timestamp:Date.now()});
     loadChatMessages(team.name);
+    notifyTeam(team.name,'chat','Pesan baru di chat tim',`${currentUser.name}: ${text.substring(0,60)}`,null,currentUser.nim);
 }
 function shareTeamLink(){
     const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
@@ -1661,11 +1957,12 @@ function openUserProfile(){
 }
 function renderCVProfile(){
     document.getElementById('cvAvatar').innerHTML=currentUser.profile_photo?`<img src="${currentUser.profile_photo}" style="width:100%;height:100%;object-fit:cover">`:`<span id="cvAvatarText">${currentUser.name.substring(0,2).toUpperCase()}</span>`;
-    document.getElementById('cvName').innerText=currentUser.name;document.getElementById('cvNim').innerText='NIM: '+currentUser.nim;document.getElementById('cvKelas').innerText='Kelas: '+(currentUser.kelas||'-');
+    document.getElementById('cvName').innerHTML=rewardNameHTML(currentUser.nim,currentUser.name)+rewardPinHTML(currentUser.nim);applyAvatarBorder('cvAvatarBorderImg',currentUser.nim);document.getElementById('cvNim').innerText='NIM: '+currentUser.nim;document.getElementById('cvKelas').innerText='Kelas: '+(currentUser.kelas||'-');
     const teams=[...new Set(currentUser.teams||[])],roles=teams.map(t=>`${t} - ${currentUser.team_roles?.[t]||'Anggota'}`).join('<br>')||'-';
     document.getElementById('cvTitle').innerHTML=roles;document.getElementById('cvTeamRole').innerHTML=roles;document.getElementById('cvPoints').innerText=currentUser.points;
     const sorted=allUsers.filter(u=>!u.is_admin).sort((a,b)=>b.points-a.points),rank=sorted.findIndex(u=>u.nim===currentUser.nim)+1;
     document.getElementById('cvRank').innerText=`#${rank} dari ${sorted.length} peserta`;
+    renderEntitySeasonHistory(currentUser.nim,'individual','cvSeasonHistory');
     const achDiv=document.getElementById('cvAchievements');
     if(!currentUser.achievements?.length){achDiv.innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:20px">Belum ada prestasi yang dicatat</p>';}
     else{achDiv.innerHTML='';[...currentUser.achievements].reverse().forEach(a=>{const cls=a.type==='latihan'?'point-latihan':a.type==='karya'?'point-karya':'point-lomba';const pts=a.type==='latihan'?'+30':a.type==='karya'?'+50':'+70';achDiv.innerHTML+=`<div style="background:var(--bg-main);padding:14px;border-radius:10px;margin-bottom:10px;border-left:4px solid var(--success)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:8px"><span class="point-badge ${cls}">${a.type} ${pts} poin</span><span style="font-size:.8rem;color:var(--text-secondary)">${new Date(a.timestamp).toLocaleDateString('id-ID')}</span></div><div style="font-size:.9rem;color:var(--text-primary)">${a.description}</div></div>`;});}
@@ -1744,6 +2041,7 @@ async function submitAddPoints(){
         const newActs=[...(team.activities||[]),`${typeText}: ${desc} - ${member.name} (+${pts} poin) [${new Date().toLocaleDateString('id-ID')}]`];
         await db.from('teams').update({points:team.points+pts,activities:newActs}).eq('id',teamId);
         team.points+=pts;team.activities=newActs;
+        createNotification(member.nim,'points','Poin diterima!',`+${pts} poin: ${desc}`,team.name,null);
         initChart();alert(`✅ Berhasil tambah ${pts} poin ke ${member.name}!\nTotal poin: ${member.points}`);closeModal('addPointsModal');renderTables();
     }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
@@ -1770,6 +2068,7 @@ async function submitAddBadge(){
     try{
         const newBadges=[...(team.available_badges||[]),badge];
         await db.from('teams').update({available_badges:newBadges}).eq('id',teamId);team.available_badges=newBadges;
+        notifyTeam(team.name,'badge','Lencana baru!','Tim kamu baru saja dapat lencana baru 🏅',null,null);
         alert(`✅ Lencana berhasil dikirim ke tim ${team.name}!`);closeModal('addBadgeModal');await loadAllData();
     }catch(e){alert('❌ Gagal: '+e.message);}finally{hideLoading();}
 }
@@ -2087,6 +2386,7 @@ async function wwCreateRoom(){
         }).select().single();
         if(error)throw error;
         wwState.roomId=data.id;wwState.roomCode=code;wwState.isHost=true;
+        if(currentUser&&!currentUser.isAdmin)(currentUser.teams||[]).forEach(tn=>notifyTeam(tn,'game','Room Wharewolf dibuka!',`${currentUser.name} buka room ${code} - yuk gabung!`,null,currentUser.nim));
         await wwJoinAsPlayer();wwShowWaiting();
     }catch(e){alert('❌ Gagal buat room: '+e.message+'\n\nPastikan tabel ww_rooms, ww_players, ww_messages, ww_actions sudah dibuat di Supabase.');}
     finally{hideLoading();}
@@ -2586,8 +2886,611 @@ async function wwEndAndSavePoints(){
     document.getElementById('wwResultOverlay').style.display='none';
 }
 
+/* ============ PAPAN TUGAS ============ */
+async function loadTasks(teamName){
+    const{data}=await db.from('tasks').select('*').eq('team_name',teamName).order('created_at',{ascending:true});
+    currentTeamTasks=data||[];renderTaskBoard();
+}
+function renderTaskBoard(){
+    const cols={todo:document.getElementById('taskColTodo'),progress:document.getElementById('taskColProgress'),done:document.getElementById('taskColDone')};
+    Object.values(cols).forEach(c=>c.innerHTML='');
+    const grouped={todo:[],progress:[],done:[]};
+    currentTeamTasks.forEach(t=>{(grouped[t.status]||grouped.todo).push(t);});
+    Object.keys(grouped).forEach(status=>{
+        if(!grouped[status].length){cols[status].innerHTML='<div class="task-empty">Kosong</div>';return;}
+        grouped[status].forEach(t=>{
+            const canManage=currentUser&&(currentUser.isAdmin||t.created_by_nim===currentUser.nim||currentUser.team_roles?.[t.team_name]==='Ketua');
+            const nextBtn=status==='todo'?`<button onclick="updateTaskStatus(${t.id},'progress')" title="Mulai kerjakan">▶️</button>`:status==='progress'?`<button onclick="updateTaskStatus(${t.id},'done')" title="Tandai selesai">✅</button><button onclick="updateTaskStatus(${t.id},'todo')" title="Kembalikan ke To Do">↩️</button>`:`<button onclick="updateTaskStatus(${t.id},'progress')" title="Buka lagi">↩️</button>`;
+            const delBtn=canManage?`<button onclick="deleteTask(${t.id})" title="Hapus">🗑️</button>`:'';
+            const div=document.createElement('div');div.className='task-card';
+            div.innerHTML=`<div class="task-card-title">${t.title}</div>${t.description?`<div class="task-card-desc">${t.description}</div>`:''}<div class="task-card-footer"><span class="task-card-author">👤 ${t.created_by_name}</span><div class="task-card-actions">${nextBtn}${delBtn}</div></div>`;
+            cols[status].appendChild(div);
+        });
+    });
+}
+function openAddTaskForm(){
+    if(!currentUser||currentUser.isAdmin){alert('Login untuk menambah tugas!');return;}
+    document.getElementById('addTaskForm').style.display='block';
+    document.getElementById('newTaskTitle').value='';document.getElementById('newTaskDesc').value='';
+    document.getElementById('newTaskTitle').focus();
+}
+async function submitNewTask(){
+    if(!currentUser||currentUser.isAdmin)return;
+    const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
+    if(!currentUser.teams?.includes(team.name)){alert('Hanya anggota tim yang bisa menambah tugas!');return;}
+    const title=document.getElementById('newTaskTitle').value.trim();
+    const desc=document.getElementById('newTaskDesc').value.trim();
+    if(!title){alert('Judul tugas wajib diisi!');return;}
+    showLoading();
+    try{
+        await db.from('tasks').insert({team_name:team.name,title,description:desc||null,status:'todo',created_by_nim:currentUser.nim,created_by_name:currentUser.name});
+        document.getElementById('addTaskForm').style.display='none';
+        await loadTasks(team.name);
+    }catch(e){alert('❌ Gagal tambah tugas: '+e.message);}finally{hideLoading();}
+}
+async function updateTaskStatus(taskId,newStatus){
+    const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
+    await db.from('tasks').update({status:newStatus,updated_at:new Date().toISOString()}).eq('id',taskId);
+    await loadTasks(team.name);
+}
+async function deleteTask(taskId){
+    if(!confirm('Hapus tugas ini?'))return;
+    const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
+    await db.from('tasks').delete().eq('id',taskId);
+    await loadTasks(team.name);
+}
+
+/* ============ NOTIFIKASI ============ */
+async function loadNotifications(){
+    if(!currentUser||currentUser.isAdmin)return;
+    const{data}=await db.from('notifications').select('*').eq('recipient_nim',currentUser.nim).order('created_at',{ascending:false}).limit(30);
+    allNotifications=data||[];renderNotifBadge();
+    if(document.getElementById('notifPanel')?.classList.contains('open'))renderNotifList();
+}
+function renderNotifBadge(){
+    const unread=allNotifications.filter(n=>!n.is_read).length,badge=document.getElementById('notifBadge');
+    if(!badge)return;
+    if(unread>0){badge.style.display='flex';badge.innerText=unread>9?'9+':unread;}else{badge.style.display='none';}
+}
+function renderNotifList(){
+    const list=document.getElementById('notifList');
+    if(!allNotifications.length){list.innerHTML='<div class="notif-empty">Belum ada notifikasi.</div>';return;}
+    const iconMap={like:'❤️',comment:'💬',points:'⭐',badge:'🏅',chat:'💬',game:'🐺',event:'🗓️'};
+    list.innerHTML='';
+    allNotifications.forEach(n=>{
+        const div=document.createElement('div');div.className='notif-item'+(n.is_read?'':' unread');
+        div.onclick=()=>markNotifRead(n.id);
+        div.innerHTML=`<div class="notif-item-icon">${iconMap[n.type]||'🔔'}</div><div><div class="notif-item-title">${n.title}</div>${n.message?`<div class="notif-item-msg">${n.message}</div>`:''}<div class="notif-item-time">${getTimeAgo(new Date(n.created_at).getTime())}</div></div>`;
+        list.appendChild(div);
+    });
+}
+function openNotifPanel(){
+    const panel=document.getElementById('notifPanel');
+    const willOpen=!panel.classList.contains('open');
+    panel.classList.toggle('open');
+    if(willOpen){renderNotifList();loadNotifications();}
+}
+document.addEventListener('click',function(e){
+    const panel=document.getElementById('notifPanel'),bell=document.getElementById('notifBellBtn');
+    if(panel&&panel.classList.contains('open')&&!panel.contains(e.target)&&!bell?.contains(e.target)){panel.classList.remove('open');}
+});
+async function markNotifRead(id){
+    const n=allNotifications.find(x=>x.id===id);if(!n||n.is_read)return;
+    n.is_read=true;renderNotifBadge();renderNotifList();
+    await db.from('notifications').update({is_read:true}).eq('id',id);
+}
+async function markAllNotifRead(){
+    const unreadIds=allNotifications.filter(n=>!n.is_read).map(n=>n.id);if(!unreadIds.length)return;
+    allNotifications.forEach(n=>n.is_read=true);renderNotifBadge();renderNotifList();
+    await db.from('notifications').update({is_read:true}).in('id',unreadIds);
+}
+function startNotifPolling(){
+    loadNotifications();
+    if(notifPollInterval)clearInterval(notifPollInterval);
+    notifPollInterval=setInterval(loadNotifications,15000);
+}
+function stopNotifPolling(){
+    if(notifPollInterval){clearInterval(notifPollInterval);notifPollInterval=null;}
+    allNotifications=[];renderNotifBadge();
+}
+async function createNotification(recipientNim,type,title,message,teamName,refId){
+    if(!recipientNim||recipientNim===currentUser?.nim)return;
+    try{await db.from('notifications').insert({recipient_nim:recipientNim,type,title,message:message||null,team_name:teamName||null,ref_id:refId!=null?String(refId):null});}catch(e){console.error('Gagal kirim notifikasi:',e);}
+}
+async function notifyTeam(teamName,type,title,message,refId,excludeNim){
+    const members=allUsers.filter(u=>u.teams?.includes(teamName)&&u.nim!==excludeNim);
+    for(const m of members){await createNotification(m.nim,type,title,message,teamName,refId);}
+}
+
+function sharePortfolio(){
+    if(!currentUser||currentUser.isAdmin)return;
+    const link=window.location.href.split('?')[0]+'?portofolio='+currentUser.nim;
+    navigator.clipboard.writeText(link).then(()=>{const toast=document.getElementById('copiedToast');toast.style.display='block';setTimeout(()=>toast.style.display='none',2500);}).catch(()=>alert('Link portofolio:\n'+link));
+}
+
+/* ============ KALENDER ACARA ============ */
+async function loadEvents(teamName){
+    const{data}=await db.from('events').select('*').eq('team_name',teamName).order('event_date',{ascending:true});
+    renderEventsList(data||[],teamName);
+}
+function daysUntil(dateStr){
+    const diff=Math.ceil((new Date(dateStr+'T00:00:00')-new Date(new Date().toDateString()))/86400000);
+    if(diff===0)return' • 🔴 Hari ini!';if(diff===1)return' • Besok';return` • ${diff} hari lagi`;
+}
+function renderEventsList(events,teamName){
+    const c=document.getElementById('eventsList');
+    if(!events.length){c.innerHTML='<div class="events-empty">Belum ada acara terjadwal.</div>';return;}
+    const todayStr=new Date().toISOString().slice(0,10);
+    const bulan=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+    c.innerHTML='';
+    events.forEach(ev=>{
+        const d=new Date(ev.event_date+'T00:00:00');
+        const isPast=ev.event_date<todayStr;
+        const canDelete=currentUser&&(currentUser.isAdmin||ev.created_by_nim===currentUser.nim||currentUser.team_roles?.[teamName]==='Ketua');
+        const div=document.createElement('div');div.className='event-card'+(isPast?' past':'');
+        div.innerHTML=`<div class="event-date-badge"><span class="event-day">${d.getDate()}</span><span class="event-month">${bulan[d.getMonth()]}</span></div><div style="flex:1"><div class="event-card-title">${ev.title}</div>${ev.description?`<div class="event-card-desc">${ev.description}</div>`:''}<div class="event-card-meta">👤 ${ev.created_by_name}${isPast?' • Sudah lewat':daysUntil(ev.event_date)}</div></div>${canDelete?`<button class="event-card-del" onclick="deleteEvent(${ev.id},'${teamName}')" title="Hapus">🗑️</button>`:''}`;
+        c.appendChild(div);
+    });
+}
+function openAddEventForm(){
+    if(!currentUser||currentUser.isAdmin){alert('Login untuk menambah acara!');return;}
+    document.getElementById('addEventForm').style.display='block';
+    document.getElementById('newEventTitle').value='';document.getElementById('newEventDesc').value='';
+    document.getElementById('newEventDate').value='';document.getElementById('newEventDate').min=new Date().toISOString().slice(0,10);
+    document.getElementById('newEventTitle').focus();
+}
+async function submitNewEvent(){
+    if(!currentUser||currentUser.isAdmin)return;
+    const team=allTeams.find(t=>t.id===currentViewingTeamId);if(!team)return;
+    if(!currentUser.teams?.includes(team.name)){alert('Hanya anggota tim yang bisa menambah acara!');return;}
+    const title=document.getElementById('newEventTitle').value.trim();
+    const date=document.getElementById('newEventDate').value;
+    const desc=document.getElementById('newEventDesc').value.trim();
+    if(!title||!date){alert('Judul dan tanggal acara wajib diisi!');return;}
+    showLoading();
+    try{
+        await db.from('events').insert({team_name:team.name,title,description:desc||null,event_date:date,created_by_nim:currentUser.nim,created_by_name:currentUser.name});
+        document.getElementById('addEventForm').style.display='none';
+        await loadEvents(team.name);
+        notifyTeam(team.name,'event','Acara baru dijadwalkan',`${title} - ${new Date(date+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'long'})}`,null,currentUser.nim);
+    }catch(e){alert('❌ Gagal tambah acara: '+e.message);}finally{hideLoading();}
+}
+async function deleteEvent(eventId,teamName){
+    if(!confirm('Hapus acara ini?'))return;
+    await db.from('events').delete().eq('id',eventId);
+    await loadEvents(teamName);
+}
+
+/* ============ SEASON LEADERBOARD (Part A: setup & countdown) ============ */
+async function loadCurrentSeason(){
+    const{data}=await db.from('seasons').select('*').order('created_at',{ascending:false}).limit(1);
+    currentSeason=(data&&data[0])||null;
+    renderSeasonCountdown();
+    if(currentSeason&&currentSeason.status==='active'&&new Date(currentSeason.end_date).getTime()<=Date.now()){
+        await processSeasonEnd(currentSeason.id,true);
+    }
+}
+function renderSeasonCountdown(){
+    const banner=document.getElementById('seasonCountdownBanner');
+    const showcase=document.getElementById('seasonRewardShowcase');
+    if(seasonCountdownInterval){clearInterval(seasonCountdownInterval);seasonCountdownInterval=null;}
+    if(!currentSeason||currentSeason.status==='ended'){banner.style.display='none';showcase.style.display='none';return;}
+    banner.style.display='flex';
+    document.getElementById('seasonCountdownName').innerText=currentSeason.name;
+    loadPublicSeasonRewards();
+    const tick=()=>{
+        const diff=new Date(currentSeason.end_date).getTime()-Date.now();
+        const timerEl=document.getElementById('seasonCountdownTimer');if(!timerEl)return;
+        if(diff<=0){timerEl.innerText='⏳ Menunggu diproses...';return;}
+        const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+        timerEl.innerText=`${d}h ${h}j ${m}m ${s}d`;
+    };
+    tick();seasonCountdownInterval=setInterval(tick,1000);
+}
+async function loadPublicSeasonRewards(){
+    const wrap=document.getElementById('seasonRewardShowcase');if(!wrap||!currentSeason)return;
+    const{data:rewards}=await db.from('season_rewards').select('*').eq('season_id',currentSeason.id).order('rank_from',{ascending:true});
+    if(!rewards||!rewards.length){wrap.style.display='none';wrap.innerHTML='';return;}
+    wrap.style.display='block';
+    wrap.innerHTML='<div class="reward-showcase-title">🎁 List Reward Season Ini</div><div class="reward-showcase-grid" id="rewardShowcaseGrid"></div>';
+    const grid=document.getElementById('rewardShowcaseGrid');
+    rewards.forEach(r=>{
+        const pinInner=r.pin_url?`<img src="${r.pin_url}">`:(r.badge_emoji||'🏅');
+        const borderImg=r.border_url?`<img class="reward-showcase-border-img" src="${r.border_url}">`:'';
+        const nameStyle=r.name_color==='rainbow'?'class="reward-showcase-name-example name-rainbow"':`class="reward-showcase-name-example" style="color:${r.name_color||'inherit'}"`;
+        const rankText=r.rank_to>r.rank_from?`Peringkat ${r.rank_from}–${r.rank_to}`:`Peringkat ${r.rank_from}`;
+        const card=document.createElement('div');card.className='reward-showcase-card';
+        card.innerHTML=`<div class="reward-showcase-avatar-wrap"><div class="reward-showcase-avatar">${pinInner}</div>${borderImg}</div><div class="reward-showcase-info"><div class="reward-showcase-rank">${rankText} • ${r.scope==='individual'?'Individu':'Tim'}</div><div class="reward-showcase-label">${r.label}</div><div ${nameStyle}>Contoh Nama Pengguna</div></div>`;
+        grid.appendChild(card);
+    });
+}
+function toLocalInputValue(iso){
+    const d=new Date(iso);const pad=n=>String(n).padStart(2,'0');
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+function openKelolaSeason(){
+    openModal('kelolaSeasonModal');
+    populateSeasonForm();
+    if(currentSeason)loadSeasonRewardsAdmin(currentSeason.id);else renderSeasonRewardsList([]);
+    renderSeasonHistoryAdmin();
+}
+async function renderSeasonHistoryAdmin(){
+    const c=document.getElementById('seasonHistoryList');if(!c)return;
+    const{data:seasonsList}=await db.from('seasons').select('*').order('created_at',{ascending:false});
+    if(!seasonsList||!seasonsList.length){c.innerHTML='<p style="color:var(--text-secondary);font-size:.85rem">Belum ada season yang pernah dibuat.</p>';return;}
+    const{data:allResults}=await db.from('season_results').select('id,season_id');
+    const countBySeasonId={};(allResults||[]).forEach(r=>{countBySeasonId[r.season_id]=(countBySeasonId[r.season_id]||0)+1;});
+    c.innerHTML='';
+    const statusMap={active:['st-active','🟢 Aktif'],processing:['st-processing','🟡 Diproses'],ended:['st-ended','⚪ Berakhir'],reverted:['st-reverted','↩️ Ditarik Kembali']};
+    seasonsList.forEach((s,idx)=>{
+        const isLatest=idx===0;
+        const[statusClass,statusLabel]=statusMap[s.status]||['st-ended',s.status];
+        const dateRange=`${new Date(s.start_date).toLocaleDateString('id-ID')} – ${new Date(s.end_date).toLocaleDateString('id-ID')}`;
+        const resultCount=countBySeasonId[s.id]||0;
+        const resultInfo=`<div style="font-size:.7rem;margin-top:3px;font-weight:700;color:${resultCount>0?'var(--success)':'var(--danger)'}">${resultCount>0?`✓ ${resultCount} catatan hasil tersimpan`:'⚠️ 0 catatan hasil (kemungkinan rusak/gagal diproses)'}</div>`;
+        let actionHtml;
+        if(isLatest){
+            actionHtml='<span style="font-size:.72rem;color:var(--text-secondary);flex-shrink:0">Dikelola di atas ⬆️</span>';
+        }else{
+            const delBtn=`<button class="season-history-undo-btn" style="background:var(--gray)" onclick="forceDeleteSeason(${s.id})">🗑️ Hapus Paksa</button>`;
+            actionHtml=`<div style="display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0">${delBtn}</div>`;
+        }
+        const div=document.createElement('div');
+        div.className='season-history-item'+(isLatest?' is-current':'');
+        div.innerHTML=`<span class="season-history-status ${statusClass}">${statusLabel}</span><div class="season-history-body"><b>${s.name}</b>${isLatest?' <span style="color:var(--primary);font-size:.72rem">(season saat ini)</span>':''}<div>${dateRange}</div>${resultInfo}</div>${actionHtml}`;
+        c.appendChild(div);
+    });
+}
+async function forceDeleteSeason(seasonId){
+    if(!currentUser?.isAdmin)return;
+    showLoading();
+    const{data:results}=await db.from('season_results').select('id').eq('season_id',seasonId);
+    hideLoading();
+    const resultIds=(results||[]).map(r=>r.id);
+    const warn1=resultIds.length>0
+        ?`⚠️ Season ini punya ${resultIds.length} catatan hasil tersimpan. Kalau dihapus paksa, catatan itu HILANG PERMANEN dan nggak bisa dipulihkan lewat "Tarik Kembali" lagi.\n\nKalau poin dari season ini masih perlu dipulihkan, batalkan sekarang dan pakai "Tarik Kembali" dulu.\n\nTetap lanjut hapus paksa?`
+        :`Season ini tidak punya catatan hasil tersimpan (kemungkinan rusak/gagal saat diproses) — aman dihapus, tidak ada poin yang bisa dipulihkan dari sini.\n\nLanjutkan hapus?`;
+    if(!confirm(warn1))return;
+    if(!confirm('Konfirmasi sekali lagi: season ini beserta reward & catatan hasilnya akan dihapus PERMANEN dan TIDAK BISA dibatalkan. Yakin lanjut?'))return;
+    showLoading();
+    try{
+        if(resultIds.length)await db.from('equipped_rewards').delete().in('season_result_id',resultIds);
+        await db.from('season_results').delete().eq('season_id',seasonId);
+        await db.from('season_rewards').delete().eq('season_id',seasonId);
+        await db.from('seasons').delete().eq('id',seasonId);
+        if(currentSeason&&currentSeason.id===seasonId){currentSeason=null;await loadCurrentSeason();populateSeasonForm();}
+        await loadAllData();await loadEquippedRewards();renderTables();initChart();await renderSeasonHistoryAdmin();
+        alert('✅ Season berhasil dihapus permanen. Kalau ada pin/border yang masih nempel di profil orang lain, itu sekarang sudah ikut tercabut juga.');
+    }catch(e){alert('❌ Gagal hapus season: '+e.message);}finally{hideLoading();}
+}
+function populateSeasonForm(){
+    const info=document.getElementById('seasonCurrentInfo');
+    const actions=document.getElementById('seasonActionButtons');
+    if(!currentSeason){
+        info.innerHTML='Belum ada season yang diatur. Isi form di bawah untuk membuat Season 1 — poin yang ada sekarang akan jadi titik awal Season 1.';
+        document.getElementById('seasonNameInput').value='';document.getElementById('seasonStartInput').value=toLocalInputValue(new Date().toISOString());document.getElementById('seasonEndInput').value='';
+        actions.innerHTML='';
+        return;
+    }
+    const statusLabel=currentSeason.status==='active'?'🟢 Aktif':currentSeason.status==='processing'?'🟡 Sedang diproses':'⚪ Berakhir';
+    info.innerHTML=`<b style="color:var(--text-primary)">${currentSeason.name}</b> — ${statusLabel}<br>${new Date(currentSeason.start_date).toLocaleString('id-ID')} s/d ${new Date(currentSeason.end_date).toLocaleString('id-ID')}`;
+    document.getElementById('seasonNameInput').value=currentSeason.name;
+    document.getElementById('seasonStartInput').value=toLocalInputValue(currentSeason.start_date);
+    document.getElementById('seasonEndInput').value=toLocalInputValue(currentSeason.end_date);
+    if(currentSeason.status==='active'){
+        actions.innerHTML=`<button class="btn-icon" style="width:100%;background:linear-gradient(135deg,#28a745,#1e7e34);margin-bottom:8px" onclick="manualProcessSeason()">⏩ Proses Season Sekarang (sebelum waktunya)</button><button class="btn-icon" style="width:100%;background:linear-gradient(135deg,#dc3545,#a71d2a)" onclick="cancelActiveSeason(${currentSeason.id})">🗑️ Batalkan Season Ini</button><p style="font-size:.78rem;color:var(--text-secondary);margin-top:8px">"Batalkan" menghapus season & reward yang sudah diatur sepenuhnya — belum ada poin yang berubah jadi aman dibatalkan kapan saja selama masih aktif.</p>`;
+    }else if(currentSeason.status==='ended'){
+        actions.innerHTML=`<button class="btn-icon" style="width:100%;background:linear-gradient(135deg,#dc3545,#a71d2a)" onclick="undoSeasonEnd(${currentSeason.id})">↩️ Tarik Kembali Season Ini (undo)</button><p style="font-size:.78rem;color:var(--text-secondary);margin-top:8px">Ini mengembalikan poin semua user & tim seperti sebelum diproses, dan mencabut reward yang sudah dibagikan. Setelah ditarik, kamu bisa perbaiki pengaturan/reward lalu proses ulang.</p>`;
+    }else{
+        actions.innerHTML=`<button class="btn-icon" style="width:100%;background:var(--gray)" onclick="manualProcessSeason()">🔄 Coba Proses Ulang</button><p style="font-size:.78rem;color:var(--text-secondary);margin-top:8px">Status "sedang diproses" yang nyangkut biasanya berarti proses sebelumnya gagal di tengah jalan. Aman diklik ulang.</p>`;
+    }
+}
+async function manualProcessSeason(){
+    if(!currentSeason)return;
+    if(!confirm(`Proses Season "${currentSeason.name}" SEKARANG? Semua poin individu & tim akan direset ke 0, dan reward akan dibagikan berdasarkan peringkat saat ini juga.`))return;
+    showLoading();
+    const ok=await processSeasonEnd(currentSeason.id,false);
+    hideLoading();
+    if(ok){populateSeasonForm();loadSeasonRewardsAdmin(currentSeason.id);renderSeasonHistoryAdmin();}
+}
+async function submitSeasonSettings(){
+    if(!currentUser?.isAdmin)return;
+    const name=document.getElementById('seasonNameInput').value.trim();
+    const start=document.getElementById('seasonStartInput').value;
+    const end=document.getElementById('seasonEndInput').value;
+    if(!name||!start||!end){alert('Nama, tanggal mulai, dan tanggal berakhir wajib diisi!');return;}
+    if(new Date(end)<=new Date(start)){alert('Tanggal berakhir harus setelah tanggal mulai!');return;}
+    showLoading();
+    try{
+        if(currentSeason&&currentSeason.status!=='ended'){
+            await db.from('seasons').update({name,start_date:new Date(start).toISOString(),end_date:new Date(end).toISOString()}).eq('id',currentSeason.id);
+        }else{
+            await db.from('seasons').insert({name,start_date:new Date(start).toISOString(),end_date:new Date(end).toISOString(),status:'active'});
+        }
+        await loadCurrentSeason();populateSeasonForm();
+        if(currentSeason)loadSeasonRewardsAdmin(currentSeason.id);
+        renderSeasonHistoryAdmin();
+        alert('✅ Pengaturan season disimpan!');
+    }catch(e){alert('❌ Gagal simpan season: '+e.message);}finally{hideLoading();}
+}
+async function loadSeasonRewardsAdmin(seasonId){
+    const{data}=await db.from('season_rewards').select('*').eq('season_id',seasonId).order('rank_from',{ascending:true});
+    renderSeasonRewardsList(data||[]);
+}
+function renderSeasonRewardsList(rewards){
+    const c=document.getElementById('seasonRewardsList');
+    if(!rewards.length){c.innerHTML='Belum ada reward diatur untuk season ini.';return;}
+    c.innerHTML='';
+    rewards.forEach(r=>{
+        const div=document.createElement('div');div.className='season-reward-item';
+        const previewStyle=r.border_url?`style="background-image:url('${r.border_url}');background-size:cover;background-position:center"`:'';
+        const pinInner=r.pin_url?`<img src="${r.pin_url}" style="width:65%;height:65%;object-fit:contain">`:(r.badge_emoji||'');
+        const labelStyle=r.name_color==='rainbow'?'class="name-rainbow"':`style="color:${r.name_color||'inherit'}"`;
+        div.innerHTML=`<div class="season-reward-preview" ${previewStyle}>${pinInner}</div><div class="season-reward-info"><b ${labelStyle}>${r.label}</b><div>${r.scope==='individual'?'Individu':'Tim'} • Peringkat ${r.rank_from}${r.rank_to>r.rank_from?'-'+r.rank_to:''}</div></div><button class="season-reward-del" onclick="deleteSeasonReward(${r.id})" title="Hapus">🗑️</button>`;
+        c.appendChild(div);
+    });
+}
+async function submitSeasonReward(){
+    if(!currentUser?.isAdmin||!currentSeason){alert('Atur season dulu sebelum menambah reward!');return;}
+    const scope=document.getElementById('rewardScopeInput').value;
+    const label=document.getElementById('rewardLabelInput').value.trim();
+    const rankFrom=parseInt(document.getElementById('rewardRankFromInput').value);
+    const rankTo=parseInt(document.getElementById('rewardRankToInput').value)||rankFrom;
+    const borderUrl=document.getElementById('rewardBorderUrlInput').value.trim();
+    const pinUrl=document.getElementById('rewardPinUrlInput').value.trim();
+    const pinEmoji=document.getElementById('rewardPinEmojiInput').value.trim();
+    const isRainbow=document.getElementById('rewardRainbowInput').checked;
+    const color=isRainbow?'rainbow':document.getElementById('rewardColorInput').value;
+    if(!label||!rankFrom){alert('Label dan peringkat "dari" wajib diisi!');return;}
+    showLoading();
+    try{
+        await db.from('season_rewards').insert({season_id:currentSeason.id,scope,rank_from:rankFrom,rank_to:rankTo,label,border_url:borderUrl||null,name_color:color,badge_emoji:pinEmoji||null,pin_url:pinUrl||null});
+        document.getElementById('rewardLabelInput').value='';document.getElementById('rewardRankFromInput').value='';document.getElementById('rewardRankToInput').value='';document.getElementById('rewardBorderUrlInput').value='';document.getElementById('rewardPinUrlInput').value='';document.getElementById('rewardPinEmojiInput').value='';document.getElementById('rewardRainbowInput').checked=false;
+        await loadSeasonRewardsAdmin(currentSeason.id);
+    }catch(e){alert('❌ Gagal tambah reward: '+e.message);}finally{hideLoading();}
+}
+async function deleteSeasonReward(id){
+    if(!confirm('Hapus reward ini?'))return;
+    await db.from('season_rewards').delete().eq('id',id);
+    if(currentSeason)await loadSeasonRewardsAdmin(currentSeason.id);
+}
+
+/* ============ SEASON: mesin proses & undo ============ */
+async function processSeasonEnd(seasonId,silent){
+    const{data:claimed}=await db.from('seasons').update({status:'processing'}).eq('id',seasonId).eq('status','active').select();
+    if(!claimed||!claimed.length)return false;
+    try{
+        const{data:rewards}=await db.from('season_rewards').select('*').eq('season_id',seasonId);
+        const sortedUsers=allUsers.filter(u=>!u.is_admin).sort((a,b)=>(b.points||0)-(a.points||0));
+        const indivResults=sortedUsers.map((u,i)=>{
+            const rank=i+1;
+            const reward=(rewards||[]).find(r=>r.scope==='individual'&&rank>=r.rank_from&&rank<=r.rank_to);
+            return{season_id:seasonId,scope:'individual',entity_key:u.nim,entity_name:u.name,final_points:u.points||0,final_rank:rank,reward_id:reward?reward.id:null,final_achievements:u.achievements||[],final_point_logs:u.point_logs||[]};
+        });
+        const sortedTeams=[...allTeams].sort((a,b)=>(b.points||0)-(a.points||0));
+        const teamResults=sortedTeams.map((t,i)=>{
+            const rank=i+1;
+            const reward=(rewards||[]).find(r=>r.scope==='team'&&rank>=r.rank_from&&rank<=r.rank_to);
+            return{season_id:seasonId,scope:'team',entity_key:t.name,entity_name:t.name,final_points:t.points||0,final_rank:rank,reward_id:reward?reward.id:null,final_activities:t.activities||[]};
+        });
+        let indivInserted=[],teamInserted=[];
+        if(indivResults.length){
+            const{data,error}=await db.from('season_results').insert(indivResults).select();
+            if(error)throw new Error('Gagal simpan catatan hasil individu (season_results): '+error.message+' — kemungkinan ada kolom yang belum ada di tabel. Poin BELUM direset, aman dicoba lagi setelah tabel diperbaiki.');
+            indivInserted=data||[];
+        }
+        if(teamResults.length){
+            const{data,error}=await db.from('season_results').insert(teamResults).select();
+            if(error)throw new Error('Gagal simpan catatan hasil tim (season_results): '+error.message+' — kemungkinan ada kolom yang belum ada di tabel. Poin BELUM direset, aman dicoba lagi setelah tabel diperbaiki.');
+            teamInserted=data||[];
+        }
+        const newEquips=[...indivInserted,...teamInserted].filter(r=>r.reward_id).map(r=>({entity_key:r.entity_key,scope:r.scope,season_result_id:r.id,updated_at:new Date().toISOString()}));
+        if(newEquips.length)await db.from('equipped_rewards').upsert(newEquips,{onConflict:'entity_key'});
+        await db.from('users').update({points:0,achievements:[],point_logs:[]}).eq('is_admin',false);
+        await db.from('teams').update({points:0,activities:[]}).gte('id',0);
+        await db.from('seasons').update({status:'ended'}).eq('id',seasonId);
+        await loadAllData();await loadCurrentSeason();await loadEquippedRewards();renderTables();initChart();
+        if(!silent)alert(`✅ Season "${claimed[0].name}" berhasil diproses!\n${indivResults.length} individu & ${teamResults.length} tim dapat catatan hasil, reward sudah dibagikan & langsung terpasang, poin sudah direset.`);
+        return true;
+    }catch(e){
+        console.error('Gagal proses season:',e);
+        await db.from('seasons').update({status:'active'}).eq('id',seasonId);
+        if(!silent)alert('❌ Gagal proses season: '+e.message+'\nStatus dikembalikan ke aktif, coba lagi lewat "Kelola Season".');
+        return false;
+    }
+}
+async function undoSeasonEnd(seasonId){
+    if(!currentUser?.isAdmin)return;
+    const{data:allSeasons}=await db.from('seasons').select('*').order('created_at',{ascending:false});
+    const isLatestSeason=!!(allSeasons&&allSeasons.length&&allSeasons[0].id===seasonId);
+    if(!isLatestSeason){
+        alert('⚠️ Season ini BUKAN season paling akhir yang diproses, jadi tidak bisa ditarik kembali dengan aman — soalnya bisa bentrok/dobel sama season yang sudah diproses setelahnya.\n\nKalau season ini memang salah/rusak dan ingin dibersihkan, pakai tombol "🗑️ Hapus Paksa" di Riwayat Season (ini tidak mengubah poin siapa pun, cuma menghapus catatannya).');
+        return;
+    }
+    if(!confirm('Yakin mau tarik kembali season ini?\n\nPoin, prestasi, dan log kegiatan akan DIKEMBALIKAN PERSIS seperti sebelum season ini diproses (bukan ditambahkan ke poin sekarang), dan reward yang sudah dibagikan akan dicabut.'))return;
+    showLoading();
+    try{
+        const{data:results}=await db.from('season_results').select('*').eq('season_id',seasonId);
+        if(!results||!results.length){alert('Tidak ada catatan hasil untuk season ini, tidak ada yang bisa ditarik. Kalau season ini tetap ingin dibersihkan, pakai "🗑️ Hapus Paksa".');hideLoading();return;}
+        for(const r of results.filter(r=>r.scope==='individual')){
+            await db.from('users').update({points:r.final_points||0,achievements:r.final_achievements||[],point_logs:r.final_point_logs||[]}).eq('nim',r.entity_key);
+        }
+        for(const r of results.filter(r=>r.scope==='team')){
+            await db.from('teams').update({points:r.final_points||0,activities:r.final_activities||[]}).eq('name',r.entity_key);
+        }
+        const resultIds=results.map(r=>r.id);
+        if(resultIds.length)await db.from('equipped_rewards').delete().in('season_result_id',resultIds);
+        await db.from('season_results').delete().eq('season_id',seasonId);
+        await db.from('seasons').update({status:'active'}).eq('id',seasonId);
+        await loadAllData();await loadCurrentSeason();await loadEquippedRewards();renderTables();initChart();populateSeasonForm();await renderSeasonHistoryAdmin();
+        alert('✅ Season berhasil ditarik kembali. Poin, prestasi & log kegiatan sudah dikembalikan persis seperti sebelum diproses, reward sudah dicabut. Season aktif lagi, bisa diperbaiki lalu diproses ulang kapan pun siap.');
+    }catch(e){alert('❌ Gagal menarik season: '+e.message);}finally{hideLoading();}
+}
+
+/* ============ SEASON: tampilan reward (border/pin/nama berwarna) ============ */
+async function loadEquippedRewards(){
+    const{data:equips}=await db.from('equipped_rewards').select('*');
+    if(!equips||!equips.length){equippedRewardsMap={};return;}
+    const resultIds=[...new Set(equips.map(e=>e.season_result_id))];
+    const{data:results}=await db.from('season_results').select('*').in('id',resultIds);
+    const rewardIds=[...new Set((results||[]).map(r=>r.reward_id).filter(Boolean))];
+    const{data:rewards}=rewardIds.length?await db.from('season_rewards').select('*').in('id',rewardIds):{data:[]};
+    const resultById={};(results||[]).forEach(r=>resultById[r.id]=r);
+    const rewardById={};(rewards||[]).forEach(r=>rewardById[r.id]=r);
+    const map={};
+    equips.forEach(e=>{
+        const res=resultById[e.season_result_id];if(!res)return;
+        const rew=res.reward_id?rewardById[res.reward_id]:null;if(!rew)return;
+        map[e.entity_key]={border_url:rew.border_url,pin_url:rew.pin_url,badge_emoji:rew.badge_emoji,name_color:rew.name_color,label:rew.label};
+    });
+    equippedRewardsMap=map;
+}
+function rewardNameHTML(entityKey,displayName){
+    const rw=equippedRewardsMap[entityKey];
+    if(!rw||!rw.name_color)return displayName;
+    if(rw.name_color==='rainbow')return `<span class="name-rainbow" title="${rw.label}">${displayName}</span>`;
+    return `<span style="color:${rw.name_color};font-weight:900" title="${rw.label}">${displayName}</span>`;
+}
+function rewardPinHTML(entityKey){
+    const rw=equippedRewardsMap[entityKey];if(!rw)return'';
+    if(rw.pin_url)return `<span class="reward-pin-icon" title="${rw.label}"><img src="${rw.pin_url}"></span>`;
+    if(rw.badge_emoji)return `<span class="reward-pin-icon" title="${rw.label}">${rw.badge_emoji}</span>`;
+    return'';
+}
+function applyAvatarBorder(imgElId,entityKey){
+    const el=document.getElementById(imgElId);if(!el)return;
+    const rw=equippedRewardsMap[entityKey];
+    if(rw&&rw.border_url){el.src=rw.border_url;el.style.display='block';el.title=rw.label||'';}
+    else{el.style.display='none';el.removeAttribute('src');}
+}
+async function renderEntitySeasonHistory(entityKey,scope,containerId){
+    const c=document.getElementById(containerId);if(!c)return;
+    const{data:results}=await db.from('season_results').select('*').eq('entity_key',entityKey).eq('scope',scope).order('id',{ascending:false});
+    if(!results||!results.length){c.innerHTML='<p style="color:var(--text-secondary);text-align:center;padding:20px">Belum pernah mengikuti season</p>';return;}
+    const seasonIds=[...new Set(results.map(r=>r.season_id))];
+    const{data:seasonsData}=await db.from('seasons').select('id,name').in('id',seasonIds);
+    const seasonNameById={};(seasonsData||[]).forEach(s=>seasonNameById[s.id]=s.name);
+    const rewardIds=[...new Set(results.map(r=>r.reward_id).filter(Boolean))];
+    const{data:rewardsData}=rewardIds.length?await db.from('season_rewards').select('*').in('id',rewardIds):{data:[]};
+    const rewardById={};(rewardsData||[]).forEach(r=>rewardById[r.id]=r);
+    c.innerHTML='';
+    results.forEach(r=>{
+        const rw=r.reward_id?rewardById[r.reward_id]:null;
+        const pinHtml=rw?(rw.pin_url?`<img src="${rw.pin_url}">`:(rw.badge_emoji||'🏅')):'—';
+        const rewardText=rw?rw.label:'Tidak dapat reward';
+        c.innerHTML+=`<div class="profile-season-item"><div class="profile-season-pin">${pinHtml}</div><div class="profile-season-info"><b>${seasonNameById[r.season_id]||'Season #'+r.season_id}</b><div>Peringkat #${r.final_rank} • ${rewardText}</div></div><div class="profile-season-points"><b>${r.final_points}</b><span>poin</span></div></div>`;
+    });
+}
+
+async function cancelActiveSeason(seasonId){
+    if(!currentUser?.isAdmin)return;
+    if(!confirm('Yakin mau batalkan season ini?\n\nSeason dan semua desain reward yang sudah diatur untuk season ini akan DIHAPUS PERMANEN. Poin saat ini TIDAK berubah (belum pernah direset/diproses).'))return;
+    showLoading();
+    try{
+        await db.from('season_rewards').delete().eq('season_id',seasonId);
+        await db.from('seasons').delete().eq('id',seasonId);
+        currentSeason=null;
+        await loadCurrentSeason();populateSeasonForm();renderSeasonRewardsList([]);renderSeasonHistoryAdmin();
+        alert('✅ Season dibatalkan. Kamu bisa atur season baru kapan pun siap.');
+    }catch(e){alert('❌ Gagal batalkan season: '+e.message);}finally{hideLoading();}
+}
+
+/* ============ MAINTENANCE MODE ============ */
+async function loadSiteSettings(){
+    const{data}=await db.from('site_settings').select('*').eq('id',1).limit(1);
+    siteSettings=(data&&data[0])||null;
+    applyMaintenanceMode();
+}
+function applyMaintenanceMode(){
+    const overlay=document.getElementById('maintenanceOverlay');
+    const badge=document.getElementById('maintenanceAdminBadge');
+    if(!overlay)return;
+    const isOn=siteSettings&&siteSettings.maintenance_active;
+    const isAdmin=currentUser&&currentUser.isAdmin;
+    if(isOn&&isAdmin){
+        overlay.style.display='none';document.body.style.overflow='';
+        badge.style.display='flex';
+        if(maintenanceCountdownInterval){clearInterval(maintenanceCountdownInterval);maintenanceCountdownInterval=null;}
+        return;
+    }
+    badge.style.display='none';
+    if(isOn){
+        overlay.style.display='flex';document.body.style.overflow='hidden';
+        document.getElementById('maintenanceTitle').innerText=siteSettings.maintenance_title||'Sedang Dalam Perawatan';
+        document.getElementById('maintenanceMessage').innerText=siteSettings.maintenance_message||'Kami sedang melakukan perbaikan untuk pengalaman yang lebih baik. Mohon tunggu sebentar ya!';
+        const upEl=document.getElementById('maintenanceUpcoming');
+        if(siteSettings.upcoming_features){upEl.style.display='block';document.getElementById('maintenanceUpcomingText').innerText=siteSettings.upcoming_features;}
+        else{upEl.style.display='none';}
+        renderMaintenanceCountdown();
+    }else{
+        overlay.style.display='none';document.body.style.overflow='';
+        if(maintenanceCountdownInterval){clearInterval(maintenanceCountdownInterval);maintenanceCountdownInterval=null;}
+    }
+}
+function renderMaintenanceCountdown(){
+    const wrap=document.getElementById('maintenanceTimer');
+    if(maintenanceCountdownInterval){clearInterval(maintenanceCountdownInterval);maintenanceCountdownInterval=null;}
+    if(!siteSettings.maintenance_end_time){wrap.style.display='none';return;}
+    wrap.style.display='block';
+    const textEl=document.getElementById('maintenanceTimerText');
+    const tick=()=>{
+        const diff=new Date(siteSettings.maintenance_end_time).getTime()-Date.now();
+        if(diff<=0){textEl.innerText='Sebentar lagi selesai...';return;}
+        const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+        textEl.innerText=`${d}h ${h}j ${m}m ${s}d`;
+    };
+    tick();maintenanceCountdownInterval=setInterval(tick,1000);
+}
+async function openKelolaMaintenance(){
+    openModal('kelolaMaintenanceModal');
+    const{data}=await db.from('site_settings').select('*').eq('id',1).limit(1);
+    const s=(data&&data[0])||{};
+    document.getElementById('maintActiveToggle').checked=!!s.maintenance_active;
+    document.getElementById('maintTitleInput').value=s.maintenance_title||'';
+    document.getElementById('maintMessageInput').value=s.maintenance_message||'';
+    document.getElementById('maintUpcomingInput').value=s.upcoming_features||'';
+    document.getElementById('maintEndInput').value=s.maintenance_end_time?toLocalInputValue(s.maintenance_end_time):'';
+}
+async function submitMaintenanceSettings(){
+    if(!currentUser?.isAdmin)return;
+    const active=document.getElementById('maintActiveToggle').checked;
+    const title=document.getElementById('maintTitleInput').value.trim();
+    const message=document.getElementById('maintMessageInput').value.trim();
+    const upcoming=document.getElementById('maintUpcomingInput').value.trim();
+    const endVal=document.getElementById('maintEndInput').value;
+    if(active&&!confirm('Aktifkan mode maintenance sekarang?\n\nSemua pengunjung (selain admin) akan langsung melihat halaman perawatan, bukan website normal.'))return;
+    showLoading();
+    try{
+        await db.from('site_settings').upsert({id:1,maintenance_active:active,maintenance_title:title||null,maintenance_message:message||null,upcoming_features:upcoming||null,maintenance_end_time:endVal?new Date(endVal).toISOString():null,updated_at:new Date().toISOString()});
+        await loadSiteSettings();
+        alert(active?'✅ Mode maintenance AKTIF. Pengunjung biasa sekarang lihat halaman perawatan.':'✅ Mode maintenance DIMATIKAN. Website normal lagi buat semua orang.');
+        closeModal('kelolaMaintenanceModal');
+    }catch(e){alert('❌ Gagal simpan pengaturan: '+e.message);}finally{hideLoading();}
+}
+
 window.onload=init;
     </script>
+
+    <!-- MAINTENANCE OVERLAY -->
+    <div id="maintenanceOverlay" class="maintenance-overlay">
+        <div class="maintenance-box">
+            <img src="https://i.imgur.com/wz811e4.png" alt="Grup Karya Logo" class="maintenance-logo" onerror="this.style.display='none'">
+            <div class="maintenance-icon">🛠️</div>
+            <h1 id="maintenanceTitle">Sedang Dalam Perawatan</h1>
+            <p id="maintenanceMessage">Kami sedang melakukan perbaikan untuk pengalaman yang lebih baik. Mohon tunggu sebentar ya!</p>
+            <div id="maintenanceTimer" style="display:none">
+                <div class="maintenance-timer-label">Perkiraan selesai dalam</div>
+                <div class="maintenance-timer" id="maintenanceTimerText">--</div>
+            </div>
+            <div id="maintenanceUpcoming" class="maintenance-upcoming" style="display:none">
+                <h4>✨ Yang Akan Datang</h4>
+                <p id="maintenanceUpcomingText"></p>
+            </div>
+            <div style="margin-top:26px">
+                <span onclick="openLoginModal()" style="color:rgba(255,255,255,.5);font-size:.78rem;cursor:pointer;text-decoration:underline">🔐 Masuk sebagai Admin</span>
+            </div>
+        </div>
+    </div>
+    <div id="maintenanceAdminBadge" class="maintenance-admin-badge" onclick="openKelolaMaintenance()">🔧 Maintenance aktif — klik buat kelola</div>
 </body>
 </html>
-        
